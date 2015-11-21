@@ -1,4 +1,19 @@
 <?php
+/**
+*	REDIRECT.UCSF.EDU SCRIPT
+*
+*	Purpose of this file is to manage redirection of traffic to the new current server.
+*	
+*	RULES
+*	- each line of the rules.csv file contains a possible redirect route
+*	- in some cases the redirect route might work for 2 or more domains
+*	- QUERY STRINGS should be passed along to the new route when possible
+*	- there might be conditions that require re-writing of some of the query results
+*	- condition required where old path needs to write to new path domain-a.com/PATH > domain-b.com/PATH
+* 	- condition where anything underneath a subpath like /realestate/(^*) is rewriteen on the new domain to match
+*	- more specific rules may need to live closer to the top of the file and less specific rules might need to go below
+*/
+
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 echo '<pre>';
@@ -61,7 +76,6 @@ foreach ($externals as $line) {
 				$ph = $ph['host'];
 				echo "<br>Possible host found for redirect to homepage if all else fails!<br>";
 				if (isset($request['path']) && $request['path'] == $fileline['path']) {
-					
 					echo '<br>http://'.$dom.$pair[0] . '&nbsp;&nbsp;  &gt;&gt;&gt;    &nbsp;&nbsp;' . $pair[1].$fileline['query'];
 					echo '<br>Location: '.$pair[1].$fileline['query'];
 				}
