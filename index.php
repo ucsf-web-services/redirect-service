@@ -14,11 +14,11 @@
 *	- more specific rules may need to live closer to the top of the file and less specific rules might need to go below
 *	- $request is the original given URL requested, $response is the first segment of the current line in the CSV file
 */
-
-require 'vendor/autoload.php';
-
 //ini_set('display_errors',1);
 //error_reporting(E_ALL);
+require 'vendor/autoload.php';
+use Psr\Log\LogLevel;
+
 
 DEFINE('REDIRECT_LIST', 'rules.csv');
 DEFINE('ECHO_LOG',		false);
@@ -32,7 +32,7 @@ $log   = array();
 
 //parse the server URL
 $protocol 	= (isset($_SERVER['HTTPS'])) ? 'https://' : 'http://';
-$request 	= $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']
+$request 	= $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 $log[]		= 'REQUEST: '. $request;
 $request 	= parse_url($request);
 
@@ -52,7 +52,6 @@ foreach ($externals as $line) {
 
 	if ($has === false || $com===0) { //skip comment lines.
         //speed up the process by skipping all the tasks we don't need to check
-        //$log[] = 'Skipping line, no matched host or comment line.';
         continue;
     }
 
@@ -131,11 +130,11 @@ foreach ($externals as $line) {
 			//$log[] = "Request: \n".print_r($request, true);
 			//$log[] = "Redirect: \n".print_r($response, true);
 			
-			//make the path consistant
+			//make the path constant
 			$response['path'] = (isset($request['path'])) ? $request['path'] : '/';
 			
 			if (isset($request['path']) && ($request['path'] == $response['path'])) {
-				//header("Location: $redirect");
+				
                 $log[] =  'http://'.$path . '  REDIRECT TO  ' . $redirect.$response['query'];
                 $log[] =  'Location: '.$redirect.$response['query'];
                 handle_log($log);
@@ -153,6 +152,7 @@ if ($ph !== null) {
 	$log[] = 'Redirect to root location, since no path was found.';
 	handle_log($log);
 	header('Location: http://'.$ph['host']);
+	exit;
 }
 
 
@@ -161,7 +161,7 @@ function handle_log($log) {
     if (ECHO_LOG) {
         echo implode("\n\n", $log);
     } else {
-    	$logger = new Katzgrau\KLogger\Logger(__DIR__.'/logs');
+    	$logger = new Katzgrau\KLogger\Logger(__DIR__.'/logs', Psr\Log\LogLevel::INFO, array('extension'=>'log','prefix'=>'redirect_'));
 		
     	//log the results to KLogger class
     	foreach($log as $l) {
