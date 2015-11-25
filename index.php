@@ -12,35 +12,52 @@
 *	- condition required where old path needs to write to new path domain-a.com/PATH > domain-b.com/PATH
 * 	- condition where anything underneath a subpath like /realestate/(^*) is rewriteen on the new domain to match
 *	- more specific rules may need to live closer to the top of the file and less specific rules might need to go below
+*	- $request is the original given URL requested, $response is the first segment of the current line in the CSV file
 */
 
-ini_set('display_errors',1);
-error_reporting(E_ALL);
-echo '<pre>';
-DEFINE('REDIRECT_LIST', 'rules.csv');
+require 'vendor/autoload.php';
 
-//what are we getting in the server
-echo 'HOST: '			. $_SERVER['HTTP_HOST'] . '<br>'; 
-echo 'PATH: ' 			. $_SERVER['REQUEST_URI']. '<br>'; 
-echo 'QUERY: ' 		. $_SERVER['QUERY_STRING'] . '<br>'; 
-//echo ' HTTP_REFERER: ' 	. $_SERVER['HTTP_REFERER']. '<br>'; 
-//echo ' PATH_INFO: ' 		. $_SERVER['PATH_INFO']. '<br>'; 
-echo '<br>';
+//ini_set('display_errors',1);
+//error_reporting(E_ALL);
+
+DEFINE('REDIRECT_LIST', 'rules.csv');
+DEFINE('ECHO_LOG',		false);
+
+
+$log   = array();
+//$log[] =  'HOST: '			. $_SERVER['HTTP_HOST'];
+//$log[] =  'PATH: ' 			. $_SERVER['REQUEST_URI'];
+//$log[] =  'QUERY: ' 			. $_SERVER['QUERY_STRING'];
+
+
 //parse the server URL
-$protocol = (isset($_SERVER['HTTPS'])) ? 'https://' : 'http://';
-$request = parse_url($protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+$protocol 	= (isset($_SERVER['HTTPS'])) ? 'https://' : 'http://';
+$request 	= $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']
+$log[]		= 'REQUEST: '. $request;
+$request 	= parse_url($request);
+
 //read the rules
 $externals = file(REDIRECT_LIST, FILE_IGNORE_NEW_LINES);
 
 //store a possible host to redirect too if no specific URL path was found
-$ph = null;
-$i = 1;
+$ph     = null; //host line found so use this line if all else fails.
+$i      = 1;
+
 //should only read the external file if we know we have a valid redirect...
 foreach ($externals as $line) {
-    echo '<br>Line #'.$i .' : '.$line;
+    //$log[] =  'Line #'.$i++.' : '.$line;
     //here we handle if the URL can come from 2 or more domains as in the httpd.conf example
+    $has 	= strpos(trim($line), $request['host']);
+	$com	= strpos(trim($line), '#');
+
+	if ($has === false || $com===0) { //skip comment lines.
+        //speed up the process by skipping all the tasks we don't need to check
+        //$log[] = 'Skipping line, no matched host or comment line.';
+        continue;
+    }
+
     if ($line[0]=='(') {
-    	echo '<br>Oh look we found a uncommon double or tripple domain rule!';
+        $log[] =  'Found multi-domain rule.';
     	
     	$line = trim($line);
     	
@@ -49,65 +66,107 @@ foreach ($externals as $line) {
     	
     	$domains = substr($line,$start,$end-1);
     	$domains = explode('|',$domains);
-    	echo '<br>';
+
     	$pair = substr($line, $end+1);
-    	$pair = explode('|', $pair);
-    	
-    	
+    	list($path, $redirect) = explode('|', $pair);
+		$d = 1; //domain counter
+
+		//we should never reach here, cause technically we check above.
     	if (!in_array($request['host'], $domains)) {
-    		echo 'Host was not found in line, so move onto next line.';
+            $log[] = 'Host not found in array.';
     		continue;
     	}	
-    	$d = 1;
+
     	foreach($domains as $dom) 
     	{
-    			
-    		echo '<br>Domain #'.$d++.' : ' . $dom; 
-    		$fileline = parse_url('http://'.$dom.$pair[0]);
-			if (isset($request['query'])) {
-				$fileline['query'] = '?'.$request['query'];	
-			} else {
-				$fileline['query'] = '';
-			}
-			echo '<br>'.print_r($fileline,true);
-			if ($fileline['host'] == $request['host']) {
+			//loop and parse each domain and find a matching path.
+            $log[] =  'Domain #'.$d++.' : ' . $dom;
+    		$response = parse_url('http://'.$dom.$path);
+
+			if ($response['host'] == $request['host']) {
 				//host found
-				$ph = parse_url($pair[1]);
-				$ph = $ph['host'];
-				echo "<br>Possible host found for redirect to homepage if all else fails!<br>";
-				if (isset($request['path']) && $request['path'] == $fileline['path']) {
-					echo '<br>http://'.$dom.$pair[0] . '&nbsp;&nbsp;  &gt;&gt;&gt;    &nbsp;&nbsp;' . $pair[1].$fileline['query'];
-					echo '<br>Location: '.$pair[1].$fileline['query'];
+				$ph = parse_url($redirect);
+
+				$response['query'] = (isset($request['query'])) ? '?'.$request['query'] : '';
+				
+				if (!isset($request['path']) && !isset($response['path'])) {
+					$log[] =  'Location: '.$redirect.$response['query'];
+					handle_log($log);	
+					header("HTTP/1.1 301 Moved Permanently");
+					header('location:'.$redirect.$response['query']);
+					exit;
+				}
+				
+				
+				if (isset($request['path']) && $request['path'] == $response['path']) {
+                    $log[] =  'http://'.$dom.$path . '  REDIRECT TO  ' . $redirect.$response['query'];
+                    $log[] =  'Location: '.$redirect.$response['query'];
+                    handle_log($log);
+					header("HTTP/1.1 301 Moved Permanently");
+					header('Location:'.$redirect.$response['query']);
+                    exit;
 				}
 			}
     	}
     } else {
     	//handle single line string	
 		$line = trim($line);
-		$pair = preg_split("/\|/", $line); 
-		$fileline = parse_url('http://'.$pair[0]);
-		if (isset($request['query'])) {
-			$fileline['query'] = '?'.$request['query'];	
-		} else {
-			$fileline['query'] = '';
-		}
-		
-		if ($fileline['host'] == $request['host']) {
-			echo 'Host found in rules.csv<br>';
-			$ph = parse_url($pair[1]);
-			$ph = $ph['host'];
+		list($path, $redirect) = explode('|', $line); 
+		$response = parse_url('http://'.$path);
+
+		if ($response['host'] == $request['host']) {
+            //$log[] 			= 'Host found in rules file.';
+			$ph 			= parse_url($redirect);
+            
+			$response['query'] = (isset($request['query'])) ? '?'.$request['query'] : '';
 			
-			if (isset($request['path']) && $request['path'] == $fileline['path']) {
-				//header("Location: $pair[1]");
-				echo '<br>http://'.$pair[0] . '&nbsp;&nbsp;   &gt;&gt;&gt;   &nbsp;&nbsp;' . $pair[1].$fileline['query'];
-				echo '<br>Location: '.$pair[1].$fileline['query'];
-				//exit;
+			if (!isset($request['path']) && !isset($response['path'])) {
+				//just a direct URL rewrite rule.
+				handle_log($log);
+				header("HTTP/1.1 301 Moved Permanently");
+				header('Location:'.$redirect.$response['query']);
+				exit;
+			}
+			
+			//$log[] = "Request: \n".print_r($request, true);
+			//$log[] = "Redirect: \n".print_r($response, true);
+			
+			//make the path consistant
+			$response['path'] = (isset($request['path'])) ? $request['path'] : '/';
+			
+			if (isset($request['path']) && ($request['path'] == $response['path'])) {
+				//header("Location: $redirect");
+                $log[] =  'http://'.$path . '  REDIRECT TO  ' . $redirect.$response['query'];
+                $log[] =  'Location: '.$redirect.$response['query'];
+                handle_log($log);
+				header("HTTP/1.1 301 Moved Permanently");
+				header('Location:'.$redirect.$response['query']);
+                exit;
 			} 
-			//can't find the path then we need to move onto the next loop
-			//but we can save the host as a possible match to redirect to the root of the site if neccessary
 		}
     } 
-    $i++;
+
 }
 
- echo '<br>'.$ph;
+if ($ph !== null) {
+	//either URL had no paths or we couldn't find a matching path so just redirect to root of site
+	$log[] = 'Redirect to root location, since no path was found.';
+	handle_log($log);
+	header('Location: http://'.$ph['host']);
+}
+
+
+
+function handle_log($log) {
+    if (ECHO_LOG) {
+        echo implode("\n\n", $log);
+    } else {
+    	$logger = new Katzgrau\KLogger\Logger(__DIR__.'/logs');
+		
+    	//log the results to KLogger class
+    	foreach($log as $l) {
+    		$logger->info($l);
+    	}
+    }
+    return true;
+}
