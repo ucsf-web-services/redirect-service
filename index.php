@@ -153,6 +153,11 @@ if ($ph !== null) {
 	handle_log($log);
 	header('Location: http://'.$ph['host']);
 	exit;
+} else {
+	$log[] = 'No where to go but up.';
+	handle_log($log);
+	header('Location: http://www.ucsf.edu');
+	exit;
 }
 
 
