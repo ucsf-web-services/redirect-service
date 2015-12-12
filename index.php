@@ -8,11 +8,12 @@
 *	- each line of the rules.csv file contains a possible redirect route
 *	- in some cases the redirect route might work for 2 or more domains - implemented
 *	- QUERY STRINGS should be passed along to the new route when possible
-*	- @todo - there might be conditions that require re-writing of some of the query results
+*	@todo - there might be conditions that require re-writing of some of the query results
 *	- condition required where old path needs to write to new path domain-a.com/PATH > domain-b.com/PATH
-* 	- @todo - condition where anything underneath a subpath like /realestate/(^*) is rewritten on the new domain to match
+* 	@todo - condition where anything underneath a subpath like /realestate/(^*) is rewritten on the new domain to match
 *	- more specific rules may need to live closer to the top of the file and less specific rules might need to go below
 *	- $request is the original given URL requested, $match is the first segment of the current line in the CSV file
+*   @todo - need to verify $redirect includes http:// or https:// if not add it so redirect is successful.
 */
 //ini_set('display_errors',1);
 //error_reporting(E_ALL);
@@ -58,7 +59,7 @@ foreach ($externals as $line) {
     }
 
     if ($line[0]=='(') {
-        $log[] =  'ATTENTION: MULTI-DOMAIN RULE';
+        //$log[] =  'ATTENTION: MULTI-DOMAIN RULE';
     	
     	$line = trim($line);
     	
@@ -74,14 +75,14 @@ foreach ($externals as $line) {
 
 		//we should never reach here, cause technically we check above.
     	if (!in_array($request['host'], $domains)) {
-            $log[] = 'Host not found in multi-domain string.';
+            //$log[] = 'Host not found in multi-domain string.';
     		continue;
     	}	
 
     	foreach($domains as $dom) 
     	{
 			//loop and parse each domain and find a matching path.
-            $log[] = 'Domain #'.$d++.' : ' . $dom;
+            //$log[] = 'Domain #'.$d++.' : ' . $dom;
     		$match = parse_url('http://'.$dom.$path);
 
 			if ($match['host'] == $request['host']) {
@@ -139,7 +140,7 @@ foreach ($externals as $line) {
 
 if ($ph !== null) {
 	//either URL had no paths or we couldn't find a matching path so just redirect to root of site
-	$log[] = 'Redirect to root location, since no path was found: '. $ph['host'];
+	$log[] = 'WHOOPS: Redirect to base path, no path was found: '. $ph['host'];
 	$log[] =  'END';
 	handle_log($log);
 	header('Location: http://'.$ph['host']);
