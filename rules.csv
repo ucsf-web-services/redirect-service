@@ -1,8 +1,11 @@
-#these are all test accounts
+# Note - always place more granular URLs at the top of the list, less granular toward the bottom
+# Test URLs for local development
 genetics.ucsf.local/main/networking/g1/wireless|http://it.ucsf.edu/services/wireless-service
 (genetics.ucsf.local|genes.ucsf.local)/main/service_catalog/email.html|http://it.ucsf.edu/main/service_catalog/email.html
 fastpay.ucsf.local|http://nutrition.ucsfmedicalcenter.org/fastpay/
 smartchoice.ucsf.local|http://nutrition.ucsfmedicalcenter.org/smartchoice/
+gnome.ucsf.local/eric/|https://drupal.ucsf.edu/
+gnome.ucsf.local|https://btrctissuecore.ucsf.edu/tbank/index.html
 #skipping line used here for commenting
 (its.ucsf.edu|oaais.ucsf.edu)/main/networking/g1/wireless|http://it.ucsf.edu/services/wireless-service
 (its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email.html|http://it.ucsf.edu/services/email
@@ -25,7 +28,7 @@ smartchoice.ucsf.local|http://nutrition.ucsfmedicalcenter.org/smartchoice/
 (its.ucsf.edu|oaais.ucsf.edu)/main/9816-DSY.html|http://it.ucsf.edu/services/imedris
 (its.ucsf.edu|oaais.ucsf.edu)/main/about_us.html|http://it.ucsf.edu/about
 (its.ucsf.edu|oaais.ucsf.edu)/main/networking/g1/wireless.html|http://it.ucsf.edu/services/wireslss-service
-(its.ucsf.edu|oaais.ucsf.edu)/main/projects/telmed/desktop_vc.html| http://it.ucsf.edu/services/movi-desktop-video-conferencing
+(its.ucsf.edu|oaais.ucsf.edu)/main/projects/telmed/desktop_vc.html|http://it.ucsf.edu/services/movi-desktop-video-conferencing
 (its.ucsf.edu|oaais.ucsf.edu)/main/projects/telmed/movi_downloads.html|http://it.ucsf.edu/services/email
 (its.ucsf.edu|oaais.ucsf.edu)/main/service_alerts.html|http://it.ucsf.edu/status
 (its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email/mobile_devices.html|http://it.ucsf.edu/services/email-mobile-access
@@ -75,4 +78,3 @@ teamcentral.ucsfmedicalcenter.org|https://teamcentral.ucsf.edu
 myteamcentral.ucsfmedicalcenter.org|https://myteamcentral.ucsf.edu
 ucsfpolicies.ucsfmedicalcenter.org|https://ucsfpolicies.ucsf.edu
 gnome.ucsf.edu|https://btrctissuecore.ucsf.edu/tbank/index.html
-gnome.ucsf.local|https://btrctissuecore.ucsf.edu/tbank/index.html

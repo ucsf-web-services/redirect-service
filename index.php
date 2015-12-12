@@ -1,27 +1,28 @@
 <?php
 /**
 *	REDIRECT.UCSF.EDU SCRIPT
-*
+*	
 *	Purpose of this file is to manage redirection of traffic to the new current server.
 *	
 *	RULES
 *	- each line of the rules.csv file contains a possible redirect route
-*	- in some cases the redirect route might work for 2 or more domains
+*	- in some cases the redirect route might work for 2 or more domains - implemented
 *	- QUERY STRINGS should be passed along to the new route when possible
-*	- there might be conditions that require re-writing of some of the query results
+*	- @todo - there might be conditions that require re-writing of some of the query results
 *	- condition required where old path needs to write to new path domain-a.com/PATH > domain-b.com/PATH
-* 	- condition where anything underneath a subpath like /realestate/(^*) is rewriteen on the new domain to match
+* 	- @todo - condition where anything underneath a subpath like /realestate/(^*) is rewritten on the new domain to match
 *	- more specific rules may need to live closer to the top of the file and less specific rules might need to go below
-*	- $request is the original given URL requested, $response is the first segment of the current line in the CSV file
+*	- $request is the original given URL requested, $match is the first segment of the current line in the CSV file
 */
 //ini_set('display_errors',1);
 //error_reporting(E_ALL);
+
 require 'vendor/autoload.php';
 use Psr\Log\LogLevel;
 
 
 DEFINE('REDIRECT_LIST', 'rules.csv');
-DEFINE('ECHO_LOG',		false);
+DEFINE('ECHO_LOG',	false);
 
 
 $log   = array();
@@ -33,7 +34,8 @@ $log   = array();
 //parse the server URL
 $protocol 	= (isset($_SERVER['HTTPS'])) ? 'https://' : 'http://';
 $request 	= $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-$log[]		= 'REQUEST: '. $request;
+$log[]		= 'BEGIN';
+$log[]		= 'INCOMING URL REQUEST: '. $request;
 $request 	= parse_url($request);
 
 //read the rules
@@ -56,7 +58,7 @@ foreach ($externals as $line) {
     }
 
     if ($line[0]=='(') {
-        $log[] =  'Found multi-domain rule.';
+        $log[] =  'ATTENTION: MULTI-DOMAIN RULE';
     	
     	$line = trim($line);
     	
@@ -72,36 +74,29 @@ foreach ($externals as $line) {
 
 		//we should never reach here, cause technically we check above.
     	if (!in_array($request['host'], $domains)) {
-            $log[] = 'Host not found in array.';
+            $log[] = 'Host not found in multi-domain string.';
     		continue;
     	}	
 
     	foreach($domains as $dom) 
     	{
 			//loop and parse each domain and find a matching path.
-            $log[] =  'Domain #'.$d++.' : ' . $dom;
-    		$response = parse_url('http://'.$dom.$path);
+            $log[] = 'Domain #'.$d++.' : ' . $dom;
+    		$match = parse_url('http://'.$dom.$path);
 
-			if ($response['host'] == $request['host']) {
+			if ($match['host'] == $request['host']) {
 				//host found
 				$ph = parse_url($redirect);
 
-				$response['query'] = (isset($request['query'])) ? '?'.$request['query'] : '';
+				$match['query'] = 	(isset($request['query'])) ? '?'.$request['query'] : '';
+				$match['path'] 	= 	(!isset($match['path'])) ?  '/' : $match['path'];
 				
-				if (!isset($request['path']) && !isset($response['path'])) {
-					$log[] =  'Location: '.$redirect.$response['query'];
-					handle_log($log);	
-					header("HTTP/1.1 301 Moved Permanently");
-					header('location:'.$redirect.$response['query']);
-					exit;
-				}
-				
-				
-				if (isset($request['path']) && $request['path'] == $response['path']) {
-                    $log[] =  'http://'.$dom.$path . '  REDIRECT TO  ' . $redirect.$response['query'];
-                    $log[] =  'Location: '.$redirect.$response['query'];
+				if (isset($request['path']) && $request['path'] == $match['path']) {
+                    $log[] = 'http://'.$dom.$path.$match['query'] . '  REDIRECT TO  ' . $redirect.$match['query'];
+                    $log[] = 'LOCATION: '.$redirect.$match['query'];
+                    $log[] = 'END';
                     handle_log($log);
-					header("HTTP/1.1 301 Moved Permanently");
+					header('HTTP/1.1 301 Moved Permanently');
 					header('Location:'.$redirect.$response['query']);
                     exit;
 				}
@@ -111,35 +106,30 @@ foreach ($externals as $line) {
     	//handle single line string	
 		$line = trim($line);
 		list($path, $redirect) = explode('|', $line); 
-		$response = parse_url('http://'.$path);
+		$match = parse_url('http://'.$path);
 
-		if ($response['host'] == $request['host']) {
-            //$log[] 			= 'Host found in rules file.';
-			$ph 			= parse_url($redirect);
+		if ($match['host'] == $request['host']) {
+            $log[] 		= 'Host '.$request['host'].' found in rules file.';
+			$ph 		= parse_url($redirect);
             
-			$response['query'] = (isset($request['query'])) ? '?'.$request['query'] : '';
+			$match['query'] = (isset($request['query'])) ? '?'.$request['query'] : '';
 			
-			if (!isset($request['path']) && !isset($response['path'])) {
-				//just a direct URL rewrite rule.
-				handle_log($log);
-				header("HTTP/1.1 301 Moved Permanently");
-				header('Location:'.$redirect.$response['query']);
-				exit;
-			}
-			
+		
+			//print_r($request);
 			//$log[] = "Request: \n".print_r($request, true);
 			//$log[] = "Redirect: \n".print_r($response, true);
 			
 			//make the path constant
-			$response['path'] = (isset($request['path'])) ? $request['path'] : '/';
-			
-			if (isset($request['path']) && ($request['path'] == $response['path'])) {
+			$match['path'] = (!isset($match['path'])) ?  '/' : $match['path'];
+			//print_r($match);
+			if (isset($request['path']) && ($request['path'] == $match['path'])) {
 				
-                $log[] =  'http://'.$path . '  REDIRECT TO  ' . $redirect.$response['query'];
-                $log[] =  'Location: '.$redirect.$response['query'];
+                $log[] =  'http://'.$path . '  REDIRECT TO  ' . $redirect.$match['query'];
+                $log[] =  'LOCATION: '.$redirect.$match['query'];
+            	$log[] =  'END';
                 handle_log($log);
-				header("HTTP/1.1 301 Moved Permanently");
-				header('Location:'.$redirect.$response['query']);
+				header('HTTP/1.1 301 Moved Permanently');
+				header('Location:'.$redirect.$match['query']);
                 exit;
 			} 
 		}
@@ -149,12 +139,14 @@ foreach ($externals as $line) {
 
 if ($ph !== null) {
 	//either URL had no paths or we couldn't find a matching path so just redirect to root of site
-	$log[] = 'Redirect to root location, since no path was found.';
+	$log[] = 'Redirect to root location, since no path was found: '. $ph['host'];
+	$log[] =  'END';
 	handle_log($log);
-	header('Location: http://'.$ph['host']);
+	//header('Location: http://'.$ph['host']);
 	exit;
 } else {
-	$log[] = 'No where to go but up.';
+	$log[] = 'WHOOPS: Cannot find destination URL, just goto www.ucsf.edu.';
+	$log[] = 'END';
 	handle_log($log);
 	header('Location: http://www.ucsf.edu');
 	exit;
@@ -164,7 +156,9 @@ if ($ph !== null) {
 
 function handle_log($log) {
     if (ECHO_LOG) {
+        echo '<pre>';
         echo implode("\n\n", $log);
+        echo '</pre>';
     } else {
     	$logger = new Katzgrau\KLogger\Logger(__DIR__.'/logs', Psr\Log\LogLevel::INFO, array('extension'=>'log','prefix'=>'redirect_'));
 		
