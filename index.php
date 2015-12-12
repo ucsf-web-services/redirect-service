@@ -142,7 +142,7 @@ if ($ph !== null) {
 	$log[] = 'Redirect to root location, since no path was found: '. $ph['host'];
 	$log[] =  'END';
 	handle_log($log);
-	//header('Location: http://'.$ph['host']);
+	header('Location: http://'.$ph['host']);
 	exit;
 } else {
 	$log[] = 'WHOOPS: Cannot find destination URL, just goto www.ucsf.edu.';
