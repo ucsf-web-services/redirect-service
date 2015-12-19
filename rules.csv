@@ -5,9 +5,11 @@ genetics.ucsf.local/main/networking/g1/wireless|http://it.ucsf.edu/services/wire
 fastpay.ucsf.local|http://nutrition.ucsfmedicalcenter.org/fastpay/
 smartchoice.ucsf.local|http://nutrition.ucsfmedicalcenter.org/smartchoice/
 gnome.ucsf.local/eric|https://drupal.ucsf.edu/
-#gnome.ucsf.local|https://btrctissuecore.ucsf.edu/tbank/index.html\
+gnome.ucsf.local/apple/*|https://www.apple.com
+gnome.ucsf.local/apple/ipad/*|https://www.apple.com
+
 #try matching end path to the same end path on the revised domain  try /technology/
-gnome.ucsf.local/apple/{*}|https://www.apple.com
+
 #skipping line used here for commenting
 (its.ucsf.edu|oaais.ucsf.edu)/main/networking/g1/wireless|http://it.ucsf.edu/services/wireless-service
 (its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email.html|http://it.ucsf.edu/services/email
@@ -78,4 +80,4 @@ epicsp.ucsfmedicalcenter.org|https://epicsp.ucsf.edu
 teamcentral.ucsfmedicalcenter.org|https://teamcentral.ucsf.edu
 myteamcentral.ucsfmedicalcenter.org|https://myteamcentral.ucsf.edu
 ucsfpolicies.ucsfmedicalcenter.org|https://ucsfpolicies.ucsf.edu
-gnome.ucsf.edu|https://btrctissuecore.ucsf.edu/tbank/index.html
+gnome.ucsf.local|https://btrctissuecore.ucsf.edu/tbank/index.html
