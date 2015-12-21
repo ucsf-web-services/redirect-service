@@ -12,9 +12,9 @@
  *	- more specific rules may need to live closer to the top of the file and less specific rules might need to go below
  *	- $request is the original given URL requested, $match is the first segment of the current line in the CSV file
  * @todo - need to verify $redirect includes http:// or https:// if not add it so redirect is successful.
- * @todo - need to trim last forward slash off the request and match so that the paths are always equivalent for matching
+ * @done - need to trim last forward slash off the request and match so that the paths are always equivalent for matching
  * @todo - simplify the code, remove redundancy and start refactoring.
- * @todo - condition where anything underneath a subpath like /realestate/{*} is rewritten on the new domain.
+ * @done - condition where anything underneath a subpath like /realestate/{*} is rewritten on the new domain.
  * @todo - there might be conditions that require re-writing of some of the query results, no support now.
  */
 
@@ -60,12 +60,12 @@ class redirectToRule {
 			$this->enableDebugging();
 		}
 
-		$this->log[]		= 'BEGIN';
+		//$this->log[]		= 'BEGIN';
 		$this->log[]		= 'INCOMING URL REQUEST: '. print_r($request,true);
 
-		$this->redirectTo 	= $this->sortRulesFile();
+		$this->sortRulesFile();
 
-
+		$this->redirectTo = $this->determineRoute();
 	}
 
 	public function enableDebugging() {
@@ -114,128 +114,95 @@ class redirectToRule {
 				}
 				//we know the host exists, in the line, so just use the host and forget the possible domain options.
 				$match = parse_url('http://'.$this->request['host'].$path);
+
 			} else {
 				list($path, $redirect) = explode('|', $rule);
 				$match = parse_url('http://'.$path);
 			}
 
 			$match['path'] = (!isset($match['path'])) ?  '/' : $match['path'];
+			$match['redirect']		= $redirect;
 
-
-			if ($this->request['path'] == $match['path']) {
-				$this->log[] = 'Claims path matches: ' .$this->request['path'] . ' == ' .$match['path'];
-				array_unshift($this->potentials, array('rule' => $rule, 'match' => $match));
-			} elseif (strpos($match['path'],'*')) {
+			if (strpos($match['path'],'*')) {
 				$returnedPath = $this->subpathMatch($this->request, $match, $redirect);
 				if ($returnedPath) {
-					$this->log[] = 'Return path found with * rule: ' .$this->request['path'] . ' == ' .$match['path'];
+					//$this->log[] = 'Return path found with * rule: ' .$this->request['path'] . ' == ' .$match['path'];
+					$match['path'] = $returnedPath;
+					$match['include_path'] 	= true;
+
 					array_unshift($this->potentials, array('rule'=>$rule,'match'=>$match));
 				} else {
-					$this->log[] = 'No return path match with * rule: ' .$this->request['path'] . ' == ' .$match['path'];
+					//$this->log[] = 'No return path with * rule: ' .$this->request['path'] . ' == ' .$match['path'];
+					$match['include_path'] = false;
+
 					array_push($this->potentials, array('rule'=>$rule,'match'=>$match));
 				}
-			} elseif ($match['host'] == $this->request['host'] && $this->request['path'] != $match['path']) {
-				$this->log[] = 'Only the host is matching: ' .$this->request['host'] . ' == ' .$match['host'];
+			}
+			elseif (strtolower(trim($this->request['path'],' /')) == strtolower(trim($match['path'],' /'))) {
+				//$this->log[] = 'Path matches: ' .$this->request['path'] . ' == ' .$match['path'];
+				$match['include_path'] = false;
+				array_unshift($this->potentials, array('rule' => $rule, 'match' => $match));
+			}
+			elseif ($match['host'] == $this->request['host']) {
+				//$this->log[] = 'Found only host: ' .$this->request['host'] . ' == ' .$match['host'];
+				$match['include_path'] = false;
 				array_push($this->potentials, array('rule'=>$rule,'match'=>$match));
 			}
 		}
 
 	}
 
-
-	public function determineRoute() {
-
-		if ($match['host'] == $this->request['host']) {
-			$this->log[] 			= 'Host '.$this->request['host'].' found in this rule.';
-			$this->defaultHost 		= parse_url($redirect);
-
-			$match['query'] = (isset($this->request['query'])) ? '?'.$this->request['query'] : '';
-
-			$this->log[] = 'PARTIAL MATCH: ' . $rule;
-
-			$this->log[] = "Request: \n\n".print_r($this->request, true);
-			$this->log[] = "Match: \n\n".print_r($match, true);
-
-			/* NEED TO MAKE THIS WORK SOMEHOW BETTER.*/
-			if (strpos($match['path'],'*')) {
-				$this->log[] = 'REMAP EXISTING PATH TO NEW ONE: '.strpos($match['path'],'*');
-				$this->pathRemap 	= true;
-
-				$response = $this->getPathRemap($this->request, $match, $redirect);
-
-				if ($response==false) {
-
-				} else {
-
-				}
-			}
-
-			$match['path'] = (!isset($match['path'])) ?  '/' : $match['path'];
-
-			if (isset($this->request['path']) && ($this->request['path'] == $match['path'])) {
-				$this->log[] =  'http://'.$this->request['host'].$this->request['path'] . '  ROUTES TO  ' . $redirect.$match['query'];
-				$this->log[] =  'REDIRECT TO: '.$redirect.$match['query'];
-
-				//return $redirect.$match['query'];
-
-			} elseif ($this->pathRemap) {
-
-			} else {
-				//return $this->noExactRule();
-			}
-
-
-
-		}
-
-	}
-
 	/**
-	 * If not exact rule is found, there some alternate routes we could try.
+	 * All of the rules are sorted now, only 1st rule matters as it is the best option.
 	 *
 	 * @return string
 	 */
-	public function noExactRule()
-	{
+	public function determineRoute() {
+		if (isset($this->potentials[0])) {
 
-		if ($this->pathRemap == true) {
-			$this->log[] = 'Remapping rule was found, but could not find exact match, let us redirect host and old path.';
-			$this->log[] = 'http://'.$this->defaultHost['host'].$this->path_remapping_url;
+			$route = $this->potentials[0];
 
-			return 'http://'.$this->defaultHost['host'].$this->path_remapping_url;
-		}
-		elseif ($this->defaultHost !== null) {
-			//either URL had no paths or we couldn't find a matching path so just redirect to root of site
-			$this->log[] = 'Redirect to base path, no distinct rule was found: '. $this->defaultHost['host'];
-
-			return 'http://'.$this->defaultHost['host'];
+			if ($route['match']['include_path']!==false) {
+				return $route['match']['redirect'].$route['match']['path'];
+			}
+			else {
+				return $route['match']['redirect'];
+			}
 
 		} else {
-			//everything else fails, maybe just go to UCSF.edu
-			$this->log[] = 'No rules found, goto www.ucsf.edu'; //should probably be 404 page.
-
-			return 'https://www.ucsf.edu';
+			return 'https://www.ucsf.edu/404';
 		}
 
 	}
 
+
 	/**
-	 * This function still needs work, not exactly sure how to deal with this yet.
+	 *  Partially or fully match the path, returning either the new subpath or true or false on
+	 *	other conditions.
 	 *
 	 * @param $request
 	 * @param $match
 	 * @return bool|mixed
 	 */
-	public function subpathMatch($request, $match, $redirect) {
+	public function subpathMatch($request, $match) {
 
-		$match['path'] = (!isset($match['path'])) ?  '/' : str_replace('/*','',$match['path']);
-		$this->log[] = 'Subpath match: '.$match['path'];
 
+		$this->log[] 		= 'Subpath match: '.$match['path'];
+		$match['path'] 		= (!isset($match['path'])) ?  '' : str_replace('*','',$match['path']);
+		$request['path']	= strtolower(rtrim($request['path'],' /'));
+		$match['path'] 		= strtolower(rtrim($match['path'],' /'));
+		$this->log[]		= $match['path'] .' Should match '.$request['path'];
 		if (0 === strpos($request['path'], $match['path'])) {
 			// It starts with 'http'
 
 			$request_subpath = str_replace($match['path'],'', $request['path']);
+			//$this->log[]	= 'Request Subpath: '.$request_subpath;
 
+			//if empty path matches exactly, return true.
+			if (empty($request_subpath)) {
+				//$this->log[] = 'Exact match, return true';
+				return true;
+			}
 			return $request_subpath;
 		} else {
 			return false;
@@ -262,9 +229,9 @@ class redirectToRule {
 
 
 	public function redirect() {
-		$this->log[] = 	print_r($this->potentials,true);
+		//$this->log[] = 	print_r($this->potentials,true);
 		$this->log[] =  'REDIRECT INITIATED: '.$this->redirectTo;
-		$this->log[] =  'END';
+		//$this->log[] =  'END';
 
 		$this->outputLog();
 
@@ -282,5 +249,5 @@ class redirectToRule {
  * Pass $_SERVER to the class constructor, pass testmode as second arg and rules file if not default filename as third.
  *
  */
-$redirect = new redirectToRule($_SERVER, true);
+$redirect = new redirectToRule($_SERVER, false);
 $redirect->redirect();
