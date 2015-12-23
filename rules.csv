@@ -100,7 +100,7 @@ ucsfwpa.ucsf.edu|http://it.ucsf.edu/services/wireless-service
 healthpsych.ucsf.edu|http://healthpsychology.ucsf.edu
 #OSR rewrite rules
 #conflict of interest redirects
-or.ucsf.edu/osr/coi.html|http://coi.ucsf.edu/ [R,NC]
+or.ucsf.edu/osr/coi.html|http://coi.ucsf.edu
 or.ucsf.edu/osr/coi/RevisedRule.html|http://coi.ucsf.edu/revised-phs-rule-coi
 or.ucsf.edu/osr/coi/Webinars.html|http://coi.ucsf.edu/webinars
 or.ucsf.edu/osr/coi/about.html|http://coi.ucsf.edu/about-coi-research

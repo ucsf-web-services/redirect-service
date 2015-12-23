@@ -49,7 +49,12 @@ class redirectToRule {
 	public function __construct($request, $testmode, $rulesFile=null)
 	{
 		$protocol		= (isset($request['HTTPS'])) ? 'https://' : 'http://';
-		$this->request 	= parse_url($protocol.$request['HTTP_HOST'].$request['REQUEST_URI']);
+		$this->request 	= $protocol.$request['HTTP_HOST'].$request['REQUEST_URI'];
+
+		//$this->log[]		= 'BEGIN';
+		$this->log[]		= 'INCOMING URL REQUEST: '. $this->request;
+
+		$this->request  = parse_url($this->request);
 		$this->testMode = $testmode;
 
 		if ($rulesFile!=null) {
@@ -60,8 +65,6 @@ class redirectToRule {
 			$this->enableDebugging();
 		}
 
-		//$this->log[]		= 'BEGIN';
-		//$this->log[]		= 'INCOMING URL REQUEST: '. print_r($request,true);
 
 		$this->sortRulesFile();
 
