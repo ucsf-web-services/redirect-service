@@ -191,7 +191,7 @@ class redirectToRule {
 	public function subpathMatch($request, $match) {
 
 
-		$this->log[] 		= 'Subpath match: '.$match['path'];
+		//$this->log[] 		= 'Subpath match: '.$match['path'];
 		$match['path'] 		= (!isset($match['path'])) ?  '' : str_replace('*','',$match['path']);
 		$request['path']	= strtolower(rtrim($request['path'],' /'));
 		$match['path'] 		= strtolower(rtrim($match['path'],' /'));
