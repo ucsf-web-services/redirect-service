@@ -61,7 +61,7 @@ class redirectToRule {
 		}
 
 		//$this->log[]		= 'BEGIN';
-		$this->log[]		= 'INCOMING URL REQUEST: '. print_r($request,true);
+		//$this->log[]		= 'INCOMING URL REQUEST: '. print_r($request,true);
 
 		$this->sortRulesFile();
 
@@ -127,7 +127,11 @@ class redirectToRule {
 				$returnedPath = $this->subpathMatch($this->request, $match, $redirect);
 				if ($returnedPath) {
 					//$this->log[] = 'Return path found with * rule: ' .$this->request['path'] . ' == ' .$match['path'];
-					$match['path'] = $returnedPath;
+					if ($returnedPath===true) {
+						$match['path'] = str_replace('*','',$match['path']);
+					} else {
+						$match['path'] = $returnedPath;
+					}
 					$match['include_path'] 	= true;
 
 					array_unshift($this->potentials, array('rule'=>$rule,'match'=>$match));
@@ -191,7 +195,7 @@ class redirectToRule {
 		$match['path'] 		= (!isset($match['path'])) ?  '' : str_replace('*','',$match['path']);
 		$request['path']	= strtolower(rtrim($request['path'],' /'));
 		$match['path'] 		= strtolower(rtrim($match['path'],' /'));
-		$this->log[]		= $match['path'] .' Should match '.$request['path'];
+		//$this->log[]		= $match['path'] .' Should match '.$request['path'];
 		if (0 === strpos($request['path'], $match['path'])) {
 			// It starts with 'http'
 
