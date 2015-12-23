@@ -128,7 +128,8 @@ class redirectToRule {
 				if ($returnedPath) {
 					//$this->log[] = 'Return path found with * rule: ' .$this->request['path'] . ' == ' .$match['path'];
 					if ($returnedPath===true) {
-						$match['path'] = str_replace('*','',$match['path']);
+						//just empty the path since it matched exact and we don't want to route to it.
+						$match['path'] = ''; //str_replace('*','',$match['path']);
 					} else {
 						$match['path'] = $returnedPath;
 					}
