@@ -65,6 +65,11 @@ class redirectToRule {
 			$this->enableDebugging();
 		}
 
+		//do nothing with these sophos scanner requests.
+		if (stristr($this->request['path'],'/sophos/update/')) {
+			exit();
+		}
+
 
 		$this->sortRulesFile();
 
