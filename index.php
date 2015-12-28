@@ -52,7 +52,7 @@ class redirectToRule {
 		$this->request 	= $protocol.$request['HTTP_HOST'].$request['REQUEST_URI'];
 
 		//$this->log[]		= 'BEGIN';
-		$this->log[]		= 'INCOMING URL REQUEST: '. $this->request;
+		$this->log[]		= 'REQUEST: '. $this->request;
 
 		$this->request  = parse_url($this->request);
 		$this->testMode = $testmode;
@@ -128,7 +128,7 @@ class redirectToRule {
 				$match = parse_url('http://'.$path);
 			}
 
-			$match['path'] = (!isset($match['path'])) ?  '/' : $match['path'];
+			$match['path'] 			= (!isset($match['path'])) ?  '/' : str_replace('*','',$match['path']);
 			$match['redirect']		= $redirect;
 
 			if (strpos($match['path'],'*')) {
@@ -143,23 +143,23 @@ class redirectToRule {
 					}
 					$match['include_path'] 	= true;
 
-					array_unshift($this->potentials, array('rule'=>$rule,'match'=>$match));
+					array_unshift($this->potentials, array('rule'=>$rule,'match'=>$match,'complete'=>1));
 				} else {
 					//$this->log[] = 'No return path with * rule: ' .$this->request['path'] . ' == ' .$match['path'];
 					$match['include_path'] = false;
 
-					array_push($this->potentials, array('rule'=>$rule,'match'=>$match));
+					array_push($this->potentials, array('rule'=>$rule,'match'=>$match,'complete'=>0));
 				}
 			}
 			elseif (strtolower(trim($this->request['path'],' /')) == strtolower(trim($match['path'],' /'))) {
 				//$this->log[] = 'Path matches: ' .$this->request['path'] . ' == ' .$match['path'];
 				$match['include_path'] = false;
-				array_unshift($this->potentials, array('rule' => $rule, 'match' => $match));
+				array_unshift($this->potentials, array('rule' => $rule, 'match' => $match,'complete'=>1));
 			}
 			elseif ($match['host'] == $this->request['host']) {
 				//$this->log[] = 'Found only host: ' .$this->request['host'] . ' == ' .$match['host'];
 				$match['include_path'] = false;
-				array_push($this->potentials, array('rule'=>$rule,'match'=>$match));
+				array_push($this->potentials, array('rule'=>$rule,'match'=>$match,'complete'=>0));
 			}
 		}
 
@@ -175,11 +175,17 @@ class redirectToRule {
 
 			$route = $this->potentials[0];
 
-			if ($route['match']['include_path']!==false) {
+			if ($route['match']['include_path']!==false && $route['complete']==1) {
 				return $route['match']['redirect'].$route['match']['path'];
 			}
 			else {
-				return $route['match']['redirect'];
+				if ($route['complete']==1) {
+					return $route['match']['redirect'];
+				} else {
+					$root = parse_url($route['match']['redirect']);
+					return 'http://'.$root['host'];
+				}
+
 			}
 
 		} else {
@@ -204,7 +210,7 @@ class redirectToRule {
 		$match['path'] 		= (!isset($match['path'])) ?  '' : str_replace('*','',$match['path']);
 		$request['path']	= strtolower(rtrim($request['path'],' /'));
 		$match['path'] 		= strtolower(rtrim($match['path'],' /'));
-		//$this->log[]		= $match['path'] .' Should match '.$request['path'];
+		$this->log[]		= $match['path'] .' should match '.$request['path'];
 		if (0 === strpos($request['path'], $match['path'])) {
 			// It starts with 'http'
 
@@ -243,7 +249,7 @@ class redirectToRule {
 
 	public function redirect() {
 		//$this->log[] = 	print_r($this->potentials,true);
-		$this->log[] =  'REDIRECT INITIATED: '.$this->redirectTo;
+		$this->log[] =  'REDIRECT: '.$this->redirectTo;
 		//$this->log[] =  'END';
 
 		$this->outputLog();
@@ -262,5 +268,5 @@ class redirectToRule {
  * Pass $_SERVER to the class constructor, pass testmode as second arg and rules file if not default filename as third.
  *
  */
-$redirect = new redirectToRule($_SERVER, false);
+$redirect = new redirectToRule($_SERVER, true);
 $redirect->redirect();
