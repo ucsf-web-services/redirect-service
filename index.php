@@ -268,5 +268,5 @@ class redirectToRule {
  * Pass $_SERVER to the class constructor, pass testmode as second arg and rules file if not default filename as third.
  *
  */
-$redirect = new redirectToRule($_SERVER, true);
+$redirect = new redirectToRule($_SERVER, false);
 $redirect->redirect();
