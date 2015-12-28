@@ -65,7 +65,7 @@ class redirectToRule {
 			$this->enableDebugging();
 		}
 
-		//do nothing with these sophos scanner requests.
+		//do nothing with these sophos scanner requests, hundreds of these are happening per second?
 		if (stristr($this->request['path'],'/sophos/update/')) {
 			exit();
 		}
