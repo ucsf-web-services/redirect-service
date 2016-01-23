@@ -173,7 +173,7 @@ class redirectToRule {
 			$route = $this->potentials[0];
 
 			if ($route['match']['include_path']!==false && $route['complete']==1) {
-				$this->log[] 		= 'Include_path: true   Path: '.$route['match']['path'].' Complete: true';
+				//$this->log[] 		= 'Include_path: true   Path: '.$route['match']['path'].' Complete: true';
 				return $route['match']['redirect'].$route['match']['path'];
 			}
 			else {
