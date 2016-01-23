@@ -70,9 +70,7 @@ class redirectToRule {
 			exit();
 		}
 
-
 		$this->sortRulesFile();
-
 		$this->redirectTo = $this->determineRoute();
 	}
 
@@ -80,7 +78,6 @@ class redirectToRule {
 		ini_set('display_errors',1);
 		error_reporting(E_ALL);
 	}
-
 
 	/**
 	 * This is the bulk of the class right now.
@@ -95,12 +92,10 @@ class redirectToRule {
 
 		//should only read the external file if we know we have a valid redirect...
 		foreach ($rules as $rule) {
-
 			//here we handle if the URL can come from 2 or more domains as in the httpd.conf example
 			$has 	= strpos(trim($rule), $this->request['host']);
 			$com	= strpos(trim($rule), '#');
 			$rule 	= trim($rule);
-
 
 			if ($has === false || $com===0) { //skip comment lines.
 				//speed up the process by skipping all the tasks we don't need to check
@@ -134,11 +129,13 @@ class redirectToRule {
 			if (strpos($match['path'],'*')) {
 				$returnedPath = $this->subpathMatch($this->request, $match, $redirect);
 				if ($returnedPath) {
-					//$this->log[] = 'Return path found with * rule: ' .$this->request['path'] . ' == ' .$match['path'];
+					//$this->log[] = 'Return path found with * rule';
 					if ($returnedPath===true) {
 						//just empty the path since it matched exact and we don't want to route to it.
+						//$this->log[] = '(returnedPath==true) Delete the matching subpath, then append remaining path.';
 						$match['path'] = ''; //str_replace('*','',$match['path']);
 					} else {
+						//$this->log[] = 'Append the returned path.';
 						$match['path'] = $returnedPath;
 					}
 					$match['include_path'] 	= true;
@@ -147,7 +144,6 @@ class redirectToRule {
 				} else {
 					//$this->log[] = 'No return path with * rule: ' .$this->request['path'] . ' == ' .$match['path'];
 					$match['include_path'] = false;
-
 					array_push($this->potentials, array('rule'=>$rule,'match'=>$match,'complete'=>0));
 				}
 			}
@@ -171,13 +167,13 @@ class redirectToRule {
 	 * @return string
 	 */
 	public function determineRoute() {
-		//print_r($this->potentials);
+
 		if (isset($this->potentials[0])) {
 
 			$route = $this->potentials[0];
 
 			if ($route['match']['include_path']!==false && $route['complete']==1) {
-				//$this->log[] 		= 'Include path = true path: '.$route['match']['path'];
+				$this->log[] 		= 'Include_path: true   Path: '.$route['match']['path'].' Complete: true';
 				return $route['match']['redirect'].$route['match']['path'];
 			}
 			else {
@@ -187,15 +183,12 @@ class redirectToRule {
 					$root = parse_url($route['match']['redirect']);
 					return 'http://'.$root['host'];
 				}
-
 			}
-
 		} else {
 			return 'https://www.ucsf.edu/404';
 		}
 
 	}
-
 
 	/**
 	 *  Partially or fully match the path, returning either the new subpath or true or false on
@@ -206,24 +199,24 @@ class redirectToRule {
 	 * @return bool|mixed
 	 */
 	public function subpathMatch($request, $match, $redirect) {
-
-
-		//$this->log[] 		= 'Subpath match: '.$match['path'];
-		$match['path'] 		= (!isset($match['path'])) ?  '' : str_replace('*','',$match['path']);
-		$request['path']	= strtolower(rtrim($request['path'],' /'));
-		$match['path'] 		= strtolower(rtrim($match['path'],' /'));
+		//echo "<pre>Request: ".print_r($request, true) . 'Match: ' . print_r($match, true);
+		$match['path'] 		= (isset($match['path'])) ?  str_replace('*','',$match['path']) : '/';
+		//$request['path']	= strtolower(rtrim($request['path'],' /'));
+		//$match['path'] 		= strtolower(rtrim($match['path'],' /'));
 		//$this->log[]		= $match['path'] .' should match '.$request['path'];
 		if (0 === strpos($request['path'], $match['path'])) {
-			// It starts with 'http'
-
-			$request_subpath = str_replace($match['path'],'', $request['path']);
+			if (strlen($match['path'])>1) {
+				$request_subpath = str_replace($match['path'],'', $request['path']);
+			} else {
+				$request_subpath = $request['path'];
+			}
 			//$this->log[]	= 'Request Subpath: '.$request_subpath;
-
 			//if empty path matches exactly, return true.
 			if (empty($request_subpath)) {
 				//$this->log[] = 'Exact match, return true';
 				return true;
 			}
+			if (strpos($request_subpath, $match['path'])!==0) $request_subpath = '/'.$request_subpath;
 			return $request_subpath;
 		} else {
 			return false;
@@ -252,8 +245,6 @@ class redirectToRule {
 	public function redirect() {
 		//$this->log[] = 	print_r($this->potentials,true);
 		$this->log[] =  'REDIRECT: '.$this->redirectTo;
-		//$this->log[] =  'END';
-
 		$this->outputLog();
 
 		if ($this->testMode==false) {
