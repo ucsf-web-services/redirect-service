@@ -38,7 +38,7 @@ class redirectToRule {
 
 	//if enabled show log and errors on screen, don't redirect to destination
 	public $testMode		= false;
-	public $log				= array();
+	public $log					= array();
 
 	//final destination from rules
 	public $redirectTo		= null;
@@ -128,7 +128,7 @@ class redirectToRule {
 				$match = parse_url('http://'.$path);
 			}
 
-			$match['path'] 			= (!isset($match['path'])) ?  '/' : str_replace('*','',$match['path']);
+			$match['path'] 			= (!isset($match['path'])) ?  '/' : $match['path'];
 			$match['redirect']		= $redirect;
 
 			if (strpos($match['path'],'*')) {
@@ -171,11 +171,13 @@ class redirectToRule {
 	 * @return string
 	 */
 	public function determineRoute() {
+		//print_r($this->potentials);
 		if (isset($this->potentials[0])) {
 
 			$route = $this->potentials[0];
 
 			if ($route['match']['include_path']!==false && $route['complete']==1) {
+				//$this->log[] 		= 'Include path = true path: '.$route['match']['path'];
 				return $route['match']['redirect'].$route['match']['path'];
 			}
 			else {
@@ -203,14 +205,14 @@ class redirectToRule {
 	 * @param $match
 	 * @return bool|mixed
 	 */
-	public function subpathMatch($request, $match) {
+	public function subpathMatch($request, $match, $redirect) {
 
 
 		//$this->log[] 		= 'Subpath match: '.$match['path'];
 		$match['path'] 		= (!isset($match['path'])) ?  '' : str_replace('*','',$match['path']);
 		$request['path']	= strtolower(rtrim($request['path'],' /'));
 		$match['path'] 		= strtolower(rtrim($match['path'],' /'));
-		$this->log[]		= $match['path'] .' should match '.$request['path'];
+		//$this->log[]		= $match['path'] .' should match '.$request['path'];
 		if (0 === strpos($request['path'], $match['path'])) {
 			// It starts with 'http'
 
