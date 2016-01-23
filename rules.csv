@@ -198,7 +198,7 @@ stepitup.ucsf.edu|http://ucsf.extracon.com
 www.ohns.ucsf.edu/*|http://ohns.ucsf.edu
 workorders.ucsfmedicalcenter.org|https://ucsf.service-now.com/fss/fss.do
 staffcouncil.ucsf.edu|http://staffassembly.ucsf.edu
-missionbayhospitals.ucsf.edu|http://www.ucsfmissionbayhospitals.org/
+missionbayhospitals.ucsf.edu|http://www.ucsfmissionbayhospitals.org
 intranet.ucsfmedicalcenter.org|http://it.ucsf.edu/sites-retired
 it.ucsfmedicalcenter.org|http://it.ucsf.edu/sites-retired
 cmb.ucsf.edu|http://craniofacialresearch.ucsf.edu/research
@@ -251,11 +251,11 @@ precisionmed.ucsf.edu|http://precisionmedicine.ucsf.edu
 pulse.ucsf.edu|http://www.ucsf.edu/pulse
 roylab.ucsf.edu|http://pharm.ucsf.edu/roy
 smartdiaphragm.ucsf.edu|http://pharm.ucsf.edu/roy/research
-smartmail.ucsf.edu|http://communicators.ucsf.edu/resources/smartmail/
+smartmail.ucsf.edu|http://communicators.ucsf.edu/resources/smartmail
 kidney.ucsf.edu|http://pharm.ucsf.edu/kidney
 #new redirect requests from service-now
 # INC2210438
-fastpay.ucsf.edu|http://nutrition.ucsfmedicalcenter.org/fastpay/
-smartchoice.ucsf.edu|http://nutrition.ucsfmedicalcenter.org/smartchoice/
+fastpay.ucsf.edu|http://nutrition.ucsfmedicalcenter.org/fastpay
+smartchoice.ucsf.edu|http://nutrition.ucsfmedicalcenter.org/smartchoice
 recruit.ucsf.edu|http://accelerate.ucsf.edu/research/prs-consult
-futurehealth.ucsf.edu/*|http://healthforce.ucsf.edu/
+futurehealth.ucsf.edu/*|http://healthforce.ucsf.edu
