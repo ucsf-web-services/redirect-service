@@ -50,9 +50,9 @@ gnome.ucsf.local/garret/king|http://www.microsoft.com
 (its.ucsf.edu|oaais.ucsf.edu)/main/1788-DSY.html|http://it.ucsf.edu/services/email/tutorial/outlook-web-app-faq
 (its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email/owa_2010_features.html|http://it.ucsf.edu/services/email/tutorial/outlook-web-app-2010-new-features
 (its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email/owa_2010_features/conversation_mode_n_reading_pane.html|http://it.ucsf.edu/services/email/tutorial/owa-2010-conversation-and-reading-pane-view
-(its.ucsf.edu|oaais.ucsf.edu)/main/12918-DSY.html|http://it.ucsf.edu/services/email/tutorial/outlook-2010-configuration 
+(its.ucsf.edu|oaais.ucsf.edu)/main/12918-DSY.html|http://it.ucsf.edu/services/email/tutorial/outlook-2010-configuration
 (its.ucsf.edu|oaais.ucsf.edu)/main/13025-DSY.html|http://it.ucsf.edu/services/email/tutorial/outlook-2007-configuration
-(its.ucsf.edu|oaais.ucsf.edu)/main/12892-DSY.html|http://it.ucsf.edu/services/email/tutorial/outlook-2011-configuration 
+(its.ucsf.edu|oaais.ucsf.edu)/main/12892-DSY.html|http://it.ucsf.edu/services/email/tutorial/outlook-2011-configuration
 (its.ucsf.edu|oaais.ucsf.edu)/main/12939-DSY.html|http://it.ucsf.edu/services/email/tutorial/entourage-2008-wse-configuration
 (its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email/popimap.html|http://it.ucsf.edu/services/email/tutorial/ucsf-email-pop-and-imap-settings
 (its.ucsf.edu|oaais.ucsf.edu)/main/12934-DSY.html|http://it.ucsf.edu/services/email/tutorial/apple-mail-os-106x-configuration
@@ -129,17 +129,17 @@ or.ucsf.edu/osr/coi/ucpolicies/ucsf/rp-10034.html|http://coi.ucsf.edu/responsibi
 or.ucsf.edu/osr/coi/ucpolicies/ucsf/rp-10035.html|http://coi.ucsf.edu/responsibilities-procedures-100-35
 or.ucsf.edu/osr/15865-DSY.html|http://coi.ucsf.edu/completed
 #OSR redirects
-or.ucsf.edu/osr/osr.html|http://osr.ucsf.edu/ 
-or.ucsf.edu/osr/train.html|http://osr.ucsf.edu/training 
-or.ucsf.edu/osr/sitemap.html|http://osr.ucsf.edu/sitemap 
-or.ucsf.edu/osr/7020-DSY.html|http://grants.nih.gov/training/responsibleconduct.htm 
-or.ucsf.edu/osr/9003-DSY.html|http://osr.ucsf.edu/content/develop-proposal 
-or.ucsf.edu/osr/6117-DSY.html|http://osr.ucsf.edu/fa-rates 
-or.ucsf.edu/osr/11337-DSY.html|http://osr.ucsf.edu/develop-budget 
-or.ucsf.edu/osr/5426-DSY.html|http://osr.ucsf.edu/training 
-or.ucsf.edu/osr/15864-DSY.html| http://coi.ucsf.edu/completed 
-or.ucsf.edu/osr/6118-DSY.html|http://osr.ucsf.edu/fringe-benefit-rates 
-or.ucsf.edu/osr/5431-DSY.html|http://osr.ucsf.edu/institutional-information 
+or.ucsf.edu/osr/osr.html|http://osr.ucsf.edu/
+or.ucsf.edu/osr/train.html|http://osr.ucsf.edu/training
+or.ucsf.edu/osr/sitemap.html|http://osr.ucsf.edu/sitemap
+or.ucsf.edu/osr/7020-DSY.html|http://grants.nih.gov/training/responsibleconduct.htm
+or.ucsf.edu/osr/9003-DSY.html|http://osr.ucsf.edu/content/develop-proposal
+or.ucsf.edu/osr/6117-DSY.html|http://osr.ucsf.edu/fa-rates
+or.ucsf.edu/osr/11337-DSY.html|http://osr.ucsf.edu/develop-budget
+or.ucsf.edu/osr/5426-DSY.html|http://osr.ucsf.edu/training
+or.ucsf.edu/osr/15864-DSY.html| http://coi.ucsf.edu/completed
+or.ucsf.edu/osr/6118-DSY.html|http://osr.ucsf.edu/fringe-benefit-rates
+or.ucsf.edu/osr/5431-DSY.html|http://osr.ucsf.edu/institutional-information
 or.ucsf.edu/osr/|http://osr.ucsf.edu
 or.ucsf.edu/cg/|http://osr.ucsf.edu/
 or.ucsf.edu/icd/|http://ita.ucsf.edu/industry
@@ -258,4 +258,4 @@ kidney.ucsf.edu|http://pharm.ucsf.edu/kidney
 fastpay.ucsf.edu|http://nutrition.ucsfmedicalcenter.org/fastpay/
 smartchoice.ucsf.edu|http://nutrition.ucsfmedicalcenter.org/smartchoice/
 recruit.ucsf.edu|http://accelerate.ucsf.edu/research/prs-consult
-futurehealth.ucsf.edu|http://healthforce.ucsf.edu
+futurehealth.ucsf.edu/*|http://healthforce.ucsf.edu
