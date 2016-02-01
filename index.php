@@ -13,7 +13,6 @@
  *	- $request is the original given URL requested, $match is the first segment of the current line in the CSV file
  * @todo - need to verify $redirect includes http:// or https:// if not add it so redirect is successful.
  * @done - need to trim last forward slash off the request and match so that the paths are always equivalent for matching
- * @todo - simplify the code, remove redundancy and start refactoring.
  * @done - condition where anything underneath a subpath like /realestate/{*} is rewritten on the new domain.
  * @todo - there might be conditions that require re-writing of some of the query results, no support now.
  */
