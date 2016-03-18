@@ -256,14 +256,14 @@ smartmail.ucsf.edu|http://communicators.ucsf.edu/resources/smartmail
 kidney.ucsf.edu|http://pharm.ucsf.edu/kidney
 #new redirect requests from service-now
 # INC2210438
-fastpay.ucsf.edu|https://nutrition.ucsfmedicalcenter.org/fastpay
-smartchoice.ucsf.edu|https://nutrition.ucsfmedicalcenter.org/smartchoice
-recruit.ucsf.edu|https://accelerate.ucsf.edu/research/prs-consult
-futurehealth.ucsf.edu/*|https://healthforce.ucsf.edu
-www.futurehealth.ucsf.edu/*|https://healthforce.ucsf.edu
-passport.ucsf.edu|https://studentlife.ucsf.edu
-ome.ucsf.edu|https://www.ucsf.edu/welcome-to-ome
-orofacialpain.ucsf.edu|https://omfs.ucsf.edu/ucsf-center-orofacial-pain-and-sleep-dentistry-patients
-dentalimplants.ucsf.edu|https://omfs.ucsf.edu/dental-implants
-sleepapnea.ucsf.edu|https://omfs.ucsf.edu/ucsf-center-orofacial-pain-and-sleep-dentistry-patients
+fastpay.ucsf.edu|http://nutrition.ucsfmedicalcenter.org/fastpay
+smartchoice.ucsf.edu|http://nutrition.ucsfmedicalcenter.org/smartchoice
+recruit.ucsf.edu|http://accelerate.ucsf.edu/research/prs-consult
+futurehealth.ucsf.edu/*|http://healthforce.ucsf.edu
+www.futurehealth.ucsf.edu/*|http://healthforce.ucsf.edu
+passport.ucsf.edu|http://studentlife.ucsf.edu
+ome.ucsf.edu|http://www.ucsf.edu/welcome-to-ome
+orofacialpain.ucsf.edu|http://omfs.ucsf.edu/ucsf-center-orofacial-pain-and-sleep-dentistry-patients
+dentalimplants.ucsf.edu|http://omfs.ucsf.edu/dental-implants
+sleepapnea.ucsf.edu|http://omfs.ucsf.edu/ucsf-center-orofacial-pain-and-sleep-dentistry-patients
 act.ucsf.edu|http://orthosurg.ucsf.edu/patient-care/divisions/orthotics-and-prosthetics/patient-information/amputee-comprehensive-training/act/
