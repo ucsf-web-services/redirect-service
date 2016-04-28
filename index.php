@@ -6,7 +6,7 @@
  *
  *	RULES
  *	- each line of the rules.csv file contains a possible redirect route
- *	- in some cases the redirect route might work for 2 or more domains - implemented
+ *	- Redirect route might work for 2 or more domains - use parentheses and pipe to seperate (domain1.com|domain2.com)
  *	- QUERY STRINGS should be passed along to the new route when possible
  *	- condition required where old path needs to write to new path domain-a.com/PATH > domain-b.com/PATH
  *	- more specific rules may need to live closer to the top of the file and less specific rules might need to go below
@@ -15,6 +15,9 @@
  * @done - need to trim last forward slash off the request and match so that the paths are always equivalent for matching
  * @done - condition where anything underneath a subpath like /realestate/{*} is rewritten on the new domain.
  * @todo - there might be conditions that require re-writing of some of the query results, no support now.
+ * @todo - add SQLlite support for faster lookup and retrival of requests.  Maybe cache most requested sites.
+ * @todo - need to ensure LOG files are writable, either setting them here or messaging there is a problem when not writable.
+ * @todo - need to improve sorting function to get the path closest to the original request path, SQLlite would help here maybe.
  */
 
 require 'vendor/autoload.php';
@@ -50,7 +53,6 @@ class redirectToRule {
 		$protocol		= (isset($request['HTTPS'])) ? 'https://' : 'http://';
 		$this->request 	= $protocol.$request['HTTP_HOST'].$request['REQUEST_URI'];
 
-		//$this->log[]		= 'BEGIN';
 		$this->log[]		= 'REQUEST: '. $this->request;
 
 		$this->request  = parse_url($this->request);
@@ -128,7 +130,7 @@ class redirectToRule {
 			if (strpos($match['path'],'*')) {
 				$returnedPath = $this->subpathMatch($this->request, $match, $redirect);
 				if ($returnedPath) {
-					//$this->log[] = 'Return path found with * rule';
+					
 					if ($returnedPath===true) {
 						//just empty the path since it matched exact and we don't want to route to it.
 						//$this->log[] = '(returnedPath==true) Delete the matching subpath, then append remaining path.';
@@ -198,10 +200,9 @@ class redirectToRule {
 	 * @return bool|mixed
 	 */
 	public function subpathMatch($request, $match, $redirect) {
-		//echo "<pre>Request: ".print_r($request, true) . 'Match: ' . print_r($match, true);
+		
 		$match['path'] 		= (isset($match['path'])) ?  str_replace('*','',$match['path']) : '/';
-		//$request['path']	= strtolower(rtrim($request['path'],' /'));
-		//$match['path'] 		= strtolower(rtrim($match['path'],' /'));
+	
 		//$this->log[]		= $match['path'] .' should match '.$request['path'];
 		if (0 === strpos($request['path'], $match['path'])) {
 			if (strlen($match['path'])>1) {
@@ -209,10 +210,10 @@ class redirectToRule {
 			} else {
 				$request_subpath = $request['path'];
 			}
-			//$this->log[]	= 'Request Subpath: '.$request_subpath;
+			
 			//if empty path matches exactly, return true.
 			if (empty($request_subpath)) {
-				//$this->log[] = 'Exact match, return true';
+		
 				return true;
 			}
 			if (strpos($request_subpath, $match['path'])!==0) $request_subpath = '/'.$request_subpath;

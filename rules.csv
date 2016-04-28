@@ -61,6 +61,7 @@ gnome.ucsf.local|https://btrctissuecore.ucsf.edu/tbank/index.html
 (its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/|http://it.ucsf.edu/services
 (its.ucsf.edu|oaais.ucsf.edu)/main/|http://it.ucsf.edu/
 (its.ucsf.edu|oaais.ucsf.edu)|http://it.ucsf.edu/
+# END its.ucsf.edu
 wireless.ucsf.edu|http://its.ucsf.edu/main/projects/wireless_project.html
 www.radiology.ucsf.edu|http://radiology.ucsf.edu
 ucsfpolicies.ucsfmedicalcenter.org|https://ucsfpolicies.ucsf.edu
@@ -72,6 +73,7 @@ epicsp.ucsfmedicalcenter.org|https://epicsp.ucsf.edu
 teamcentral.ucsfmedicalcenter.org|https://teamcentral.ucsf.edu
 myteamcentral.ucsfmedicalcenter.org|https://myteamcentral.ucsf.edu
 ucsfpolicies.ucsfmedicalcenter.org|https://ucsfpolicies.ucsf.edu
+# stimulus and oaais redirects
 (stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/hooper/*|http://hooper.ucsf.edu
 (stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/APASA/*|http://apasa.ucsf.edu
 (stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/realestate/*|http://realestate.ucsf.edu
@@ -94,8 +96,7 @@ ucsfpolicies.ucsfmedicalcenter.org|https://ucsfpolicies.ucsf.edu
 (stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/rrp/*|http://rrp.ucsf.edu
 ucsfwpa.ucsf.edu|http://it.ucsf.edu/services/wireless-service
 healthpsych.ucsf.edu|http://healthpsychology.ucsf.edu
-#OSR rewrite rules
-#conflict of interest redirects
+#OSR rewrite rules - conflict of interest redirects
 or.ucsf.edu/osr/coi.html|http://coi.ucsf.edu
 or.ucsf.edu/osr/coi/RevisedRule.html|http://coi.ucsf.edu/revised-phs-rule-coi
 or.ucsf.edu/osr/coi/Webinars.html|http://coi.ucsf.edu/webinars
@@ -251,7 +252,8 @@ smartdiaphragm.ucsf.edu|http://pharm.ucsf.edu/roy/research
 smartmail.ucsf.edu|http://communicators.ucsf.edu/resources/smartmail
 kidney.ucsf.edu|http://pharm.ucsf.edu/kidney
 #new redirect requests from service-now
-# INC2210438
+www.neuroscience.ucsf.edu/neurograd/*|http://brain.cin.ucsf.edu/neurograd/
+neuroscience.ucsf.edu/neurograd/*|http://brain.cin.ucsf.edu/neurograd/
 fastpay.ucsf.edu|http://nutrition.ucsfmedicalcenter.org/fastpay
 smartchoice.ucsf.edu|http://nutrition.ucsfmedicalcenter.org/smartchoice
 recruit.ucsf.edu|http://accelerate.ucsf.edu/research/prs-consult
