@@ -124,13 +124,18 @@ class redirectToRule {
 				$match = parse_url('http://'.$path);
 			}
 
+			//anything thats a partial match but not at beginning of the rule is not a match
+			if ((strpos(trim($rule), $this->request['host']) > 0)) {
+				continue;
+			}
+
 			$match['path'] 			= (!isset($match['path'])) ?  '/' : $match['path'];
 			$match['redirect']		= $redirect;
 
 			if (strpos($match['path'],'*')) {
 				$returnedPath = $this->subpathMatch($this->request, $match, $redirect);
 				if ($returnedPath) {
-					
+
 					if ($returnedPath===true) {
 						//just empty the path since it matched exact and we don't want to route to it.
 						//$this->log[] = '(returnedPath==true) Delete the matching subpath, then append remaining path.';
@@ -200,9 +205,9 @@ class redirectToRule {
 	 * @return bool|mixed
 	 */
 	public function subpathMatch($request, $match, $redirect) {
-		
+
 		$match['path'] 		= (isset($match['path'])) ?  str_replace('*','',$match['path']) : '/';
-	
+
 		//$this->log[]		= $match['path'] .' should match '.$request['path'];
 		if (0 === strpos($request['path'], $match['path'])) {
 			if (strlen($match['path'])>1) {
@@ -210,10 +215,10 @@ class redirectToRule {
 			} else {
 				$request_subpath = $request['path'];
 			}
-			
+
 			//if empty path matches exactly, return true.
 			if (empty($request_subpath)) {
-		
+
 				return true;
 			}
 			if (strpos($request_subpath, $match['path'])!==0) $request_subpath = '/'.$request_subpath;
