@@ -28,4 +28,4 @@ Purpose of this file is to manage redirection of traffic to the new host locatio
 
 __Help contribute to this project__
 https://github.com/ucsf-web-services/redirect-service
-
+https://github.com/ucsf-web-services/redirect-service.git
