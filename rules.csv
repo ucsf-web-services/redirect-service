@@ -329,7 +329,7 @@ appinventory.ucsf.edu|https://ucsf.service-now.com/ess/inventory.do
 ids.ucsfmedicalcenter.org|http://ids.ucsf.edu
 bchoutreach.ucsf.edu|http://bchsfoutreach.ucsf.edu
 catalyst.ucsf.edu|http://ctsi.ucsf.edu/catalyst
-oralsurgery.ucsf.edu|http://omfs.ucsf.edu
+oralsurgery.ucsf.edu|http://www.ucsfdentalcenter.org/clinic/oral-and-maxillofacial-surgery-faculty-clinic-parnassus
 prep.ucsf.edu|http://preprx.ucsf.edu
 willseylab.ucsf.edu|https://willseylab.com
 lto.ucsf.edu|http://lean.ucsf.edu
@@ -341,7 +341,6 @@ skeletaldysplasias.ucsf.edu|http://skeletaldysplasias.radiology.ucsf.edu
 strauss.ucsf.edu|http://sociology.ucsf.edu
 facialplastics.ucsf.edu|https://ohns.ucsf.edu/facialplastics
 www.bms.ucsf.edu|http://bms.ucsf.edu
-dashboard.ucsf.edu|https://ucsf.numerify.com:443/NumerifyWeb/servlet/mstrWeb?evt=3140&src=mstrWeb.3140&documentID=56E9D01311E697030F5B0080EF756339&server=10.0.1.199&Project=Numerify_BI_UCSF&port=0&share=1&uid=ch_shared@ucsf.edu&pwd=Numerify@2
 ccm.ucsf.edu|https://anesthesia.ucsf.edu/divisions/critical-care-medicine
 cpa.ucsf.edu|https://anesthesia.ucsf.edu/events/upcoming
 hashimotolab.ucsf.edu|https://anesthesia.ucsf.edu/research-group/hashimoto-lab
@@ -357,3 +356,8 @@ www.osherminimedicalschool.ucsf.edu|http://osherminimed.ucsf.edu
 champion.ucsf.edu|http://championprovider.ucsf.edu
 oralmed.ucsf.edu|http://www.ucsfdentalcenter.org/clinic/oral-medicine-faculty-clinic-parnassus
 safety.ucsfmedicalcenter.org|http://safety.ucsf.edu
+orthodash.ucsf.edu|https://bidashboards.ucsfmedicalcenter.org/QvAJAXZfc/opendoc.htm?document=Franchise%20Apps%2FOrthoDash%2FOrthoDash.qvw&host=QVS%40mcqkvwwap001
+addiction.ucsf.edu|http://psych.ucsf.edu/substanceabuse
+ti.ucsf.edu|http://accelerate.ucsf.edu/research/informatics
+dashboard.ucsf.edu|https://ucsf.numerify.com:443/NumerifyWeb/servlet/mstrWeb?evt=3140&src=mstrWeb.3140&documentID=56E9D01311E697030F5B0080EF756339&server=10.0.1.199&Project=Numerify_BI_UCSF&port=0&share=1&uid=ch_shared@ucsf.edu&pwd=Numerify@2
+ocr.ucsf.edu|http://officeofclinicalresearch.ucsf.edu
