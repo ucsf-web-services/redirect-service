@@ -363,3 +363,13 @@ dashboard.ucsf.edu|https://ucsf.numerify.com:443/NumerifyWeb/servlet/mstrWeb?evt
 ocr.ucsf.edu|http://officeofclinicalresearch.ucsf.edu
 ct2g.ucsf.edu|http://www.ct2g.org
 dashboard.ucsf.edu|https://ucsf.numerify.com:443/NumerifyWeb/servlet/mstrWeb?evt=3140&src=mstrWeb.3140&documentID=56E9D01311E697030F5B0080EF756339&server=10.0.1.199&Project=Numerify_BI_UCSF&port=0&share=1&uid=ch_shared@ucsf.edu&pwd=Numerify@2
+#these were all handled by help.ucsf.edu at one point.
+help.ucsf.edu/custom/hbs_update.jsp|http://help.ucsf.edu/HelpApps/hbs_update.php
+help.ucsf.edu/custom/hbs_access.jsp|http://help.ucsf.edu/HelpApps/hbs_access.php
+help.ucsf.edu/software|http://software.ucsf.edu
+help.ucsf.edu/custom/ipNetVerify.jsp|http://help.ucsf.edu/HelpApps/ipNetVerify.php
+help.ucsf.edu/HelpWebApps/VPN/|http://security.ucsf.edu/EIS/services_products/RemoteAccessVPN/GettingVPNAccess.html
+help.ucsf.edu/HelpWebApps/Listserv/|https://ucsf.service-now.com/ess/catalog_detail.do?uri=com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=4d94ee7b876410009b5428676d434dca
+help.ucsf.edu/HelpWebApps/Pager/|https://ucsf.service-now.com/ess/catalog_detail.do?uri=com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=39024a54879dd0009b5428676d434d5e
+help.ucsf.edu/HelpWebApps/AD/RsrcAcctForm.jsp|https://ucsf.service-now.com/ess/catalog_detail.do?uri=com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=4615c1f7877850009b5428676d434d04
+help.ucsf.edu/HelpWebApps/EmailHelper/EmailHelper.jsp|http://help.ucsf.edu/HelpApps/EmailHelper.php
