@@ -36,7 +36,7 @@ class redirectToRule {
 	public $pathRemap	 	= false;
 	public $pathRemapUrl	= null;
 	//the file that contains the rule set
-	public $rulesFile		= 'rules.csv';
+	public $rulesFile		= 'rules.tsv';
 
 	//if enabled show log and errors on screen, don't redirect to destination
 	public $testMode		= false;
