@@ -1,6 +1,4 @@
-# Column 1 source path 	Column 2 is the destination path
-# Note - always place more granular URLs at the top of the list, less granular toward the bottom	
-# Test Source	Tests Destination
+# Source	Destination
 genetics.ucsf.local/main/networking/g1/wireless	http://it.ucsf.edu/services/wireless-service
 (genetics.ucsf.local|genes.ucsf.local)/main/service_catalog/email.html	http://it.ucsf.edu/services/email-online
 fastpay.ucsf.local	http://nutrition.ucsfmedicalcenter.org/fastpay/
