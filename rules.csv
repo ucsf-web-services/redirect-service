@@ -1,486 +1,485 @@
-# Note - always place more granular URLs at the top of the list, less granular toward the bottom
-# Test URLs for local development
-genetics.ucsf.local/main/networking/g1/wireless|http://it.ucsf.edu/services/wireless-service
-(genetics.ucsf.local|genes.ucsf.local)/main/service_catalog/email.html|http://it.ucsf.edu/main/service_catalog/email.html
-fastpay.ucsf.local|http://nutrition.ucsfmedicalcenter.org/fastpay/
-smartchoice.ucsf.local|http://nutrition.ucsfmedicalcenter.org/smartchoice/
-gnome.ucsf.local|https://btrctissuecore.ucsf.edu/tbank/index.html
-#its redirects to it.ucsf.edu or others.
-(its.ucsf.edu|oaais.ucsf.edu)/main/networking/g1/wireless|http://it.ucsf.edu/services/wireless-service
-(its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email.html|http://it.ucsf.edu/services/email
-(its.ucsf.edu|oaais.ucsf.edu)/main/8810-DSY|http://it.ucsf.edu/services/hbs-timekeeping-system
-(its.ucsf.edu|oaais.ucsf.edu)/main/networking/g1/wireless|http://it.ucsf.edu/services/wireless-service
-(its.ucsf.edu|oaais.ucsf.edu)/main/7-DSY/email/secured_com/Remote_Access/web_vpn|http://it.ucsf.edu/services/vpn/web-proxy-access
-(its.ucsf.edu|oaais.ucsf.edu)/main/about_us|http://it.ucsf.edu/pages/about
-(its.ucsf.edu|oaais.ucsf.edu)/main/projects/telmed/movi_downloads.html|http://it.ucsf.edu/services/movi-desktop-video-conferencing
-(its.ucsf.edu|oaais.ucsf.edu)/main/2766-DSY|http://it.ucsf.edu/services/weblinks
-(its.ucsf.edu|oaais.ucsf.edu)/idm/myaccess/myaccess|http://it.ucsf.edu/services/myaccess-sso/faqs
-(its.ucsf.edu|oaais.ucsf.edu)/idm/myaccess/help/get_myaccess|http://it.ucsf.edu/services/myaccess-sso/tutorial/myaccess-account-activation
-(its.ucsf.edu|oaais.ucsf.edu)/service_catalog/vpn|http://it.ucsf.edu/services/networking/vpn
-(its.ucsf.edu|oaais.ucsf.edu)/announcements/service_catalog/email.html|http://it.ucsf.edu/services/accounts
-(its.ucsf.edu|oaais.ucsf.edu)/main/10587.html|http://it.ucsf.edu/services/ucsf-active-directory-customer-accounts
-(its.ucsf.edu|oaais.ucsf.edu)/main/171-DSY.html|http://it.ucsf.edu/services/secure-email/tutorial/secure-email-overview
-(its.ucsf.edu|oaais.ucsf.edu)/main/1901-DSY.html|http://it.ucsf.edu/services/ucsf-listserv
-(its.ucsf.edu|oaais.ucsf.edu)/main/2766-DSY.html|http://it.ucsf.edu/services/weblinks
-(its.ucsf.edu|oaais.ucsf.edu)/main/7-DSY/email/secured_com/Remote_Access.html|http://it.ucsf.edu/services/vpn
-(its.ucsf.edu|oaais.ucsf.edu)/main/7-DSY/email/secured_com/Remote_Access/web_vpn.html|http://it.ucsf.edu/services/vpn/web-proxy-access
-(its.ucsf.edu|oaais.ucsf.edu)/main/9816-DSY.html|http://it.ucsf.edu/services/imedris
-(its.ucsf.edu|oaais.ucsf.edu)/main/about_us.html|http://it.ucsf.edu/about
-(its.ucsf.edu|oaais.ucsf.edu)/main/networking/g1/wireless.html|http://it.ucsf.edu/services/wireless-service
-(its.ucsf.edu|oaais.ucsf.edu)/main/projects/telmed/desktop_vc.html|http://it.ucsf.edu/services/movi-desktop-video-conferencing
-(its.ucsf.edu|oaais.ucsf.edu)/main/projects/telmed/movi_downloads.html|http://it.ucsf.edu/services/email
-(its.ucsf.edu|oaais.ucsf.edu)/main/service_alerts.html|http://it.ucsf.edu/status
-(its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email/mobile_devices.html|http://it.ucsf.edu/services/email-mobile-access
-(its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email/web_app.html|http://it.ucsf.edu/services/email/web-browser-compatibility-and-features
-(its.ucsf.edu|oaais.ucsf.edu)/main/288-DSY.html|http://it.ucsf.edu/services/email-spam-filter
-(its.ucsf.edu|oaais.ucsf.edu)/students/student_email/287-DSY/spam/g1/903-DSY.html|http://it.ucsf.edu/services/email-spam-filter/spam-glossary
-(its.ucsf.edu|oaais.ucsf.edu)/students/student_email/287-DSY/spam/g1/215-DSY.html|http://it.ucsf.edu/services/email-spam-filter/tutorial/spam-filter-operational-faq
-(its.ucsf.edu|oaais.ucsf.edu)/students/student_email/287-DSY/spam/g1/228-DSY.html|http://it.ucsf.edu/services/email-spam-filter/tutorial/spam-filter-functional-faq
-(its.ucsf.edu|oaais.ucsf.edu)/students/student_email/287-DSY/spam/963-DSY.html|http://it.ucsf.edu/services/email-spam-filter/what-spam-filter-does
-(its.ucsf.edu|oaais.ucsf.edu)/students/student_email/287-DSY/spam/g1/966-DSY.html|http://it.ucsf.edu/services/email-spam-filter/what-spam-filter-does
-(its.ucsf.edu|oaais.ucsf.edu)/students/student_home.html|http://it.ucsf.edu/students
-(its.ucsf.edu|oaais.ucsf.edu)/students/student_email.html|http://it.ucsf.edu/pages/ucsf-email-information-new-students
-(its.ucsf.edu|oaais.ucsf.edu)/students/myaccess_info.html|http://it.ucsf.edu/pages/myaccess-student-information
-(its.ucsf.edu|oaais.ucsf.edu)/students/4498-DSY.html|http://it.ucsf.edu/pages/requesting-student-vpnucsf-account
-(its.ucsf.edu|oaais.ucsf.edu)/main/1788-DSY.html|http://it.ucsf.edu/services/email/tutorial/outlook-web-app-faq
-(its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email/owa_2010_features.html|http://it.ucsf.edu/services/email/tutorial/outlook-web-app-2010-new-features
-(its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email/owa_2010_features/conversation_mode_n_reading_pane.html|http://it.ucsf.edu/services/email/tutorial/owa-2010-conversation-and-reading-pane-view
-(its.ucsf.edu|oaais.ucsf.edu)/main/12918-DSY.html|http://it.ucsf.edu/services/email/tutorial/outlook-2010-configuration
-(its.ucsf.edu|oaais.ucsf.edu)/main/13025-DSY.html|http://it.ucsf.edu/services/email/tutorial/outlook-2007-configuration
-(its.ucsf.edu|oaais.ucsf.edu)/main/12892-DSY.html|http://it.ucsf.edu/services/email/tutorial/outlook-2011-configuration
-(its.ucsf.edu|oaais.ucsf.edu)/main/12939-DSY.html|http://it.ucsf.edu/services/email/tutorial/entourage-2008-wse-configuration
-(its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email/popimap.html|http://it.ucsf.edu/services/email/tutorial/ucsf-email-pop-and-imap-settings
-(its.ucsf.edu|oaais.ucsf.edu)/main/12934-DSY.html|http://it.ucsf.edu/services/email/tutorial/apple-mail-os-106x-configuration
-(its.ucsf.edu|oaais.ucsf.edu)/faq/ActiveSync/2864-DSY.html|http://it.ucsf.edu/services/email-mobile-access/tutorial/iphone-email-configuration-eas
-(its.ucsf.edu|oaais.ucsf.edu)/announcements/service_catalog/email.html|http://it.ucsf.edu/services/email
-(its.ucsf.edu|oaais.ucsf.edu)/announcements/|http://it.ucsf.edu/status
-(its.ucsf.edu|oaais.ucsf.edu)/students/171-DSY.html|http://it.ucsf.edu/services/secure-email/tutorial/secure-email-overview
-(its.ucsf.edu|oaais.ucsf.edu)/students/student_email|http://it.ucsf.edu/how_do/ucsf-email-information-new-students
-(its.ucsf.edu|oaais.ucsf.edu)/faq/ActiveSync/13083-DSY.html|http://it.ucsf.edu/services/email-mobile-access/tutorial/activesync-settings-android
-(its.ucsf.edu|oaais.ucsf.edu)/main/1772-DSY.html|http://it.ucsf.edu/services/email-mobile-access/tutorial/blackberry-enterprise-activation
-(its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/|http://it.ucsf.edu/services
-(its.ucsf.edu|oaais.ucsf.edu)/main/|http://it.ucsf.edu/
-(its.ucsf.edu|oaais.ucsf.edu)|http://it.ucsf.edu/
-# END its.ucsf.edu
-wireless.ucsf.edu|http://it.ucsf.edu/projects/expanding-wireless
-www.radiology.ucsf.edu|http://radiology.ucsf.edu
-ucsfpolicies.ucsfmedicalcenter.org|https://ucsfpolicies.ucsf.edu
-epicsp-test.ucsfmedicalcenter.org|https://epicsp-test.ucsf.edu
-teamcentral-test.ucsfmedicalcenter.org|https://teamcentral-test.ucsf.edu
-myteamcentral-test.ucsfmedicalcenter.org|https://myteamcentral-test.ucsf.edu
-ucsfpolicies-test.ucsfmedicalcenter.org|https://ucsfpolicies-test.ucsf.edu
-epicsp.ucsfmedicalcenter.org|https://epicsp.ucsf.edu
-teamcentral.ucsfmedicalcenter.org|https://teamcentral.ucsf.edu
-myteamcentral.ucsfmedicalcenter.org|https://myteamcentral.ucsf.edu
-ucsfpolicies.ucsfmedicalcenter.org|https://ucsfpolicies.ucsf.edu
-# stimulus and oaais redirects
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/hooper/*|http://hooper.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/APASA/*|http://apasa.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/realestate/*|http://realestate.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/pmo/*|http://pmo.ucsf.edu/
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/pibs/*|http://pibs.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/remedy/*|http://remedy.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/HealthPsychology/*|http://realestate.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/BRM/*|http://brm.ucsf.edu/BRM
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/finance/*|http://brm.ucsf.edu/finance
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/cbe/*|http://cbe.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/brizlab/*|http://brizlab.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/aaeod/*|http://aaeod.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/FAS/*|http://fas.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/ABOG/*|http://abog.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/gsice/*|http://gsice.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/manuals/*|http://manuals.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/hoshimoto/*|http://hoshimoto.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/shortofbreath/*|http://shortofbreath.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/esct/*|http://escore.ucsf.edu
-(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/rrp/*|http://rrp.ucsf.edu
-ucsfwpa.ucsf.edu|http://it.ucsf.edu/services/wireless-service
-healthpsych.ucsf.edu|http://healthpsychology.ucsf.edu
-#OSR rewrite rules - conflict of interest redirects
-or.ucsf.edu/osr/coi.html|http://coi.ucsf.edu
-or.ucsf.edu/osr/coi/RevisedRule.html|http://coi.ucsf.edu/revised-phs-rule-coi
-or.ucsf.edu/osr/coi/Webinars.html|http://coi.ucsf.edu/webinars
-or.ucsf.edu/osr/coi/about.html|http://coi.ucsf.edu/about-coi-research
-or.ucsf.edu/osr/coi/coiac.html|http://coi.ucsf.edu/coiac
-or.ucsf.edu/osr/coi/contact.html|http://coi.ucsf.edu/contact-information
-or.ucsf.edu/osr/coi/laws.html|http://coi.ucsf.edu/laws-policies
-or.ucsf.edu/osr/coi/laws/fedregs.html|http://coi.ucsf.edu/federal-regulations
-or.ucsf.edu/osr/coi/laws/calaw.html|http://coi.ucsf.edu/california-law
-or.ucsf.edu/osr/coi/ucpolicies.html|http://coi.ucsf.edu/ucop-policies
-or.ucsf.edu/osr/coi/ucpolicies/ucsf.html|http://coi.ucsf.edu/ucsf-policies-and-guidelines
-or.ucsf.edu/osr/coi/specific.html|http://coi.ucsf.edu/specific-situations
-or.ucsf.edu/osr/coi/specific/agencyspecific.html|http://coi.ucsf.edu/agency-specific-requirements
-or.ucsf.edu/osr/coi/specific/rsrchgifts.html|http://coi.ucsf.edu/research-gifts
-or.ucsf.edu/osr/coi/specific/subcontracts.html|http://coi.ucsf.edu/subcontracts
-or.ucsf.edu/osr/coi/specific/sbirsttr.html|http://coi.ucsf.edu/small-business-sbirsttr
-or.ucsf.edu/osr/coi/specific/discovery.html|http://coi.ucsf.edu/uc-discovery-grants
-or.ucsf.edu/osr/coi/specific/mta.html|http://coi.ucsf.edu/material-transfer-agreements
-or.ucsf.edu/osr/coi/specific/clinicalstudies.html|http://coi.ucsf.edu/clinical-studies
-or.ucsf.edu/osr/coi/specific/consultagree.html|	http://coi.ucsf.edu/consulting-agreements
-or.ucsf.edu/osr/coi/forms.html|http://coi.ucsf.edu/coi-disclosures-research
-or.ucsf.edu/osr/coi/faq.html|http://coi.ucsf.edu/faqs
-or.ucsf.edu/osr/coi/ucpolicies/ucsf/GuidelineTable.html|http://coi.ucsf.edu/guideline-table-100-34
-or.ucsf.edu/osr/coi/ucpolicies/ucsf/rp-10033.html|http://coi.ucsf.edu/responsibilities-procedures-100-33
-or.ucsf.edu/osr/coi/ucpolicies/ucsf/rp-10034.html|http://coi.ucsf.edu/responsibilities-procedures-100-34
-or.ucsf.edu/osr/coi/ucpolicies/ucsf/rp-10035.html|http://coi.ucsf.edu/responsibilities-procedures-100-35
-or.ucsf.edu/osr/15865-DSY.html|http://coi.ucsf.edu/completed
-#OSR redirects
-or.ucsf.edu/osr/osr.html|http://osr.ucsf.edu/
-or.ucsf.edu/osr/train.html|http://osr.ucsf.edu/training
-or.ucsf.edu/osr/sitemap.html|http://osr.ucsf.edu/sitemap
-or.ucsf.edu/osr/7020-DSY.html|http://grants.nih.gov/training/responsibleconduct.htm
-or.ucsf.edu/osr/9003-DSY.html|http://osr.ucsf.edu/content/develop-proposal
-or.ucsf.edu/osr/6117-DSY.html|http://osr.ucsf.edu/fa-rates
-or.ucsf.edu/osr/11337-DSY.html|http://osr.ucsf.edu/develop-budget
-or.ucsf.edu/osr/5426-DSY.html|http://osr.ucsf.edu/training
-or.ucsf.edu/osr/15864-DSY.html| http://coi.ucsf.edu/completed
-or.ucsf.edu/osr/6118-DSY.html|http://osr.ucsf.edu/fringe-benefit-rates
-or.ucsf.edu/osr/5431-DSY.html|http://osr.ucsf.edu/institutional-information
-or.ucsf.edu/osr/|http://osr.ucsf.edu
-or.ucsf.edu/cg/|http://osr.ucsf.edu/
-or.ucsf.edu/icd/|http://ita.ucsf.edu/industry
-or.ucsf.edu/OR-OTM/|http://ita.ucsf.edu
-or.ucsf.edu/finance/|http://brm.ucsf.edu
-#end or.ucsf.edu
-itservices.ucsf.edu|http://it.ucsf.edu
-registry.ucsf.edu|https://ucsf.co1.qualtrics.com/SE/?SID=SV_6fKdIWZqzZIZu73
-www.missionbayhospitals.ucsf.edu|http://missionbayhospitals.ucsf.edu
-www.kidscancertrials.ucsf.edu|http://kidscancertrials.ucsf.edu
-pedsplus.ucsf.edu|http://pediatrics.ucsf.edu/medical-education/residency/program-design/programs-tracks-and-pathways/plus-program
-remc.ucsf.edu/*|http://remcdata.ucsf.edu/
-ihps.medschool.ucsf.edu|http://healthpolicy.ucsf.edu
-www.ihps.medschool.ucsf.edu|http://healthpolicy.ucsf.edu
-#vonbudingenlab
-vonbudingenlab.ucsf.edu|http://www.vonbudingenlab.org
-www.vonbudingenlab.ucsf.edu|http://www.vonbudingenlab.org
-remedy.ucsf.edu|http://it.ucsf.edu/services/remedy
-legoscope.ucsf.edu|http://designscience.ucsf.edu
-humgen.medschool.ucsf.edu/*|http://humangenetics.ucsf.edu
-aaeod.ucsf.edu|http://aaeo.ucsf.edu
-nurseweb.ucsf.edu|http://nursing.ucsf.edu
-industry.ucsf.edu|http://ita.ucsf.edu
-cbe.ucsf.edu|http://ita.ucsf.edu
-aaeeo.ucsf.edu|http://aaeo.ucsf.edu
-chatter.ucsf.edu|https://ucsf.my.salesforce.com/_ui/core/chatter/ui/ChatterPage
-cgr.ucsf.edu|http://www.ucsf.edu/cgr
-readyfor7.ucsf.edu|http://it.ucsf.edu/projects/windows-7
-myfertilefuture.ucsf.edu|http://coe.ucsf.edu/ivf/fertility_preservation.html
-www.myfertilefuture.ucsf.edu|http://coe.ucsf.edu/ivf/fertility_preservation.html
-frpo.ucsf.edu|https://ucsf.my.salesforce.com/apex/FACR_Dashboard
-www.frpo.ucsf.edu|https://ucsf.my.salesforce.com/apex/FACR_Dashboard
-simulation.ucsf.edu|http://meded.ucsf.edu/simulation
-medstudents.ucsf.edu|http://meded.ucsf.edu/ume/medstudents
-encryption.ucsf.edu|https://it.ucsf.edu/services/category/encryption
-windows7upgradesurvey.ucsf.edu|https://ucsf.co1.qualtrics.com/SE/?SID=SV_738Q01EtRTfIbiJ
-bamps.ucsf.edu|http://mphd.ucsf.edu/bamps
-ergonomics.ucsf.edu|http://www.ehs.ucsf.edu/ergonomics-program-0
-sensory.ucsf.edu|http://anp.ucsf.edu/overview/spd
-spd.ucsf.edu|http://anp.ucsf.edu/overview/spd
-catalystawards.ucsf.edu|http://accelerate.ucsf.edu/funding/catalyst
-preventkidney.ucsf.edu|http://khrc.ucsf.edu
-careweb.ucsf.edu|http://centerfordigitalhealthinnovation.org/CareWeb
-ccig.ucsf.edu|http://criticalcareinnovationsgroup.org
-www.rmis.ucsf.edu|http://rmis.ucsf.edu
-cw.ucsf.edu|https://medctr-ucsf.my.salesforce.com/apex/careweb
-emergencymedicine.ucsf.edu|http://emergency.ucsf.edu/
-security.ucsf.edu|http://it.ucsf.edu/security
-cpbc.ucsf.edu/*|http://supplychain.ucsf.edu
-www.dahsm.ucsf.edu|http://dahsm.ucsf.edu
-discrimination.ucsf.edu|http://aaeo.ucsf.edu
-help.ucsf.edu|https://ucsf.service-now.com/ess/home.do
-sshelp.ucsf.edu|https://ucsf.service-now.com/fss/fss.do
-sshelpdesk.ucsf.edu|https://ucsf.service-now.com/fss/fss.do
-englandlab.ucsf.edu|http://pharm.ucsf.edu/england
-stepitup.ucsf.edu|http://ucsf.extracon.com
-www.ohns.ucsf.edu/*|http://ohns.ucsf.edu
-workorders.ucsfmedicalcenter.org|https://ucsf.service-now.com/fss/fss.do
-staffcouncil.ucsf.edu|http://staffassembly.ucsf.edu
-missionbayhospitals.ucsf.edu|http://www.ucsfmissionbayhospitals.org
-intranet.ucsfmedicalcenter.org|http://it.ucsf.edu/sites-retired
-it.ucsfmedicalcenter.org|http://it.ucsf.edu/sites-retired
-cmb.ucsf.edu|http://craniofacialresearch.ucsf.edu/research
-wisdomteeth.ucsf.edu|http://omfs.ucsf.edu/wisdom-teeth
-bandlab.ucsf.edu|http://woolleylab.ucsf.edu
-cep.ucsf.edu|http://eaop.ucsf.edu
-www.irm.ucsf.edu|http://stemcell.ucsf.edu
-irm.ucsf.edu|http://stemcell.ucsf.edu
-virtualhosting.ucsf.edu|http://it.ucsf.edu/services/virtual-server-hosting
-myexpense.ucsf.edu|https://dp.ucsf.edu/idp/profile/SAML2/Unsolicited/SSO?providerId=https://concursolutions.com&target=https://concursolutions.com
-connexxus.ucsf.edu|https://dp.ucsf.edu/idp/profile/SAML2/Unsolicited/SSO?providerId=https://ucsso.travelprefs.com
-bb.ucsf.edu|https://exbbsrv3.net.ucsf.edu/webconsole/app
-#neuro surgery
-neurosurgqi.ucsf.edu|https://its-sp.ucsf.edu/sites/neurosurgery/SitePages/Home.aspx
-neurosurgeryqi.ucsf.edu|https://its-sp.ucsf.edu/sites/neurosurgery/SitePages/Home.aspx
-neurosurgqi.ucsfmedicalcenter.org|https://its-sp.ucsf.edu/sites/neurosurgery/SitePages/Home.aspx
-neurosurgeryqi.ucsfmedicalcenter.org|https://its-sp.ucsf.edu/sites/neurosurgery/SitePages/Home.aspx
-#more it related
-basic.ucsf.edu|https://its-sp.ucsf.edu/sites/basic/SitePages/Home.aspx
-succession.ucsf.edu|https://its-sp.ucsf.edu/sites/FAS-Succession-Planning/SitePages/Home.aspx
-spam.ucsf.edu|https://cuda.ucsf.edu/cgi-mod/index.cgi
-itsdash.ucsf.edu|https://its-sp.ucsf.edu/sites/itsdash/SitePages/Home.aspx
-mccontracts.ucsf.edu|https://its-sp.ucsf.edu/sites/FSCContracts/MCRequest/default.aspx
-lynctool.ucsf.edu|https://lynctool.net.ucsf.edu/LyncDeviceSelection
-contracts-request.ucsf.edu|https://lynctool.net.ucsf.edu/LyncDeviceSelection
-passwords.ucsfmedicalcenter.org|https://pwmanage.ucsf.edu/pm
-password.ucsfmedicalcenter.org|https://pwmanage.ucsf.edu/pm
-itsdsp.ucsf.edu|https://its-sp.ucsf.edu/sites/ITSDSP/SitePages/Home.aspx
-babybrain.ucsf.edu|http://radiology.ucsf.edu/research/labs/baby-brain
-babybrain.ucsf.edu/fetal|http://radiology.ucsf.edu/baby-brain/fetal-mri
-mqir.ucsf.edu|http://radiology.ucsf.edu/research/labs/musculoskeletal-quantitative-imaging
-surbeck.ucsf.edu|http://radiology.ucsf.edu/research/centers/surbeck
-bil.ucsf.edu|http://radiology.ucsf.edu/research/labs/biomagnetic-imaging
-bbd.ucsf.edu|http://radiology.ucsf.edu/research/labs/breast-bone-density
-gnome.ucsf.edu|https://btrctissuecore.ucsf.edu/tbank/index.html
-epicsp.ucsfmedicalcenter.org|https://epicsp.ucsf.edu/default.aspx
-teamcentral.ucsfmedicalcenter.org|https://teamcentral.ucsf.edu/default.aspx
-myteamcentral.ucsfmedicalcenter.org|https://myteamcentral.ucsf.edu/default.aspx
-ucsfpolicies-test.ucsfmedicalcenter.org|https://ucsfpolicies-test.ucsf.edu
-myteamcentral-test.ucsfmedicalcenter.org|https://myteamcentral-test.ucsf.edu
-teamcentral-test.ucsfmedicalcenter.org|https://teamcentral-test.ucsf.edu
-epicsp-test.ucsfmedicalcenter.org|https://epicsp-test.ucsf.edu
-ucsfpolicies.ucsfmedicalcenter.org|https://ucsfpolicies.ucsf.edu/default.aspx
-telemedicine.ucsf.edu|http://telehealth.ucsf.edu/
-beacon.ucsf.edu|http://myapex.ucsf.edu/oncology-providers
-ucsfchancellor.ucsf.edu|http://chancellor.ucsf.edu
-nurseweb.ucsf.edu|http://nursing.ucsf.edu
-mountsutro.ucsf.edu|https://www.ucsf.edu/about/cgr/current-projects/mount-sutro-open-space-reserve
-mtsutro.ucsf.edu|http://www.ucsf.edu/node/93656
-sci-res.ucsf.edu|http://www.ucsf.edu/node/131506
-precisionmed.ucsf.edu|http://precisionmedicine.ucsf.edu
-pulse.ucsf.edu|http://www.ucsf.edu/pulse
-roylab.ucsf.edu|http://pharm.ucsf.edu/roy
-smartdiaphragm.ucsf.edu|http://pharm.ucsf.edu/roy/research
-smartmail.ucsf.edu|http://communicators.ucsf.edu/resources/smartmail
-kidney.ucsf.edu|http://pharm.ucsf.edu/kidney
-#new redirect requests from service-now
-www.neuroscience.ucsf.edu/neurograd/*|http://brain.cin.ucsf.edu/neurograd/
-neuroscience.ucsf.edu/neurograd/*|http://brain.cin.ucsf.edu/neurograd/
-fastpay.ucsf.edu|http://nutrition.ucsfmedicalcenter.org/fastpay
-smartchoice.ucsf.edu|http://nutrition.ucsfmedicalcenter.org/smartchoice
-recruit.ucsf.edu|http://accelerate.ucsf.edu/research/recruitment
-futurehealth.ucsf.edu/*|http://healthforce.ucsf.edu
-www.futurehealth.ucsf.edu/*|http://healthforce.ucsf.edu
-passport.ucsf.edu|http://studentlife.ucsf.edu
-ome.ucsf.edu|http://www.ucsf.edu/welcome-to-ome
-orofacialpain.ucsf.edu|http://omfs.ucsf.edu/ucsf-center-orofacial-pain-and-sleep-dentistry-patients
-dentalimplants.ucsf.edu|http://omfs.ucsf.edu/dental-implants
-sleepapnea.ucsf.edu|http://omfs.ucsf.edu/ucsf-oral-and-maxillofacial-surgery
-act.ucsf.edu|http://orthosurg.ucsf.edu/patient-care/divisions/orthotics-and-prosthetics/patient-information/amputee-comprehensive-training/act/
-www.360.ucsf.edu|http://360.ucsf.edu
-positivehealth.ucsf.edu|http://360.ucsf.edu
-www.positivehealth.ucsf.edu|http://360.ucsf.edu
-immunotherapy.ucsf.edu|http://cancer.ucsf.edu/support/immunotherapy
-sb50.ucsf.edu|http://orthosurg.ucsf.edu
-www.ucsanfrancisco.edu|https://www.ucsf.edu
-ucsanfrancisco.edu|https://www.ucsf.edu
-telemedicine.ucsf.edu|http://telehealth.ucsf.edu
-www.cme.ucsf.edu|http://meded.ucsf.edu/cme
-cme.ucsf.edu|http://meded.ucsf.edu/cme
-rps.ucsf.edu|http://accelerate.ucsf.edu/research-participant-services
-citywide.ucsf.edu|http://psych.ucsf.edu/sfgh/citywide
-www.neuroscience.ucsf.edu|http://weill.ucsf.edu
-neuroscience.ucsf.edu|http://weill.ucsf.edu
-neurosciences.ucsf.edu|http://weill.ucsf.edu
-www.neurosciences.ucsf.edu|http://weill.ucsf.edu
-neuro.ucsf.edu|http://weill.ucsf.edu
-publicaffairs.ucsf.edu|https://www.ucsf.edu
-pub.ucsf.edu|https://www.ucsf.edu
-news.ucsf.edu|https://www.ucsf.edu/news
-eir.ucsf.edu|https://www.ucsf.edu
-w2w.ucsf.edu|https://www.ucsf.edu
-sfghed.ucsf.edu|https://emergency.ucsf.edu
-asian.library.ucsf.edu/*|http://japanesewoodblockprints.library.ucsf.edu
-mobilephonerequest.ucsfmedicalcenter.org|https://ucsf.service-now.com/ess/order_voice.do
-hrpp.ucsf.edu/*|http://irb.ucsf.edu
-radiologyresidents.ucsf.edu|http://radiology.ucsf.edu
-rtr.ucsf.edu|http://consult.ucsf.edu
-ethics.ucsf.edu|http://compliance.ucsf.edu
-iddrc.ucsf.edu|http://star.ucsf.edu
-intellectualdisability.ucsf.edu|http://star.ucsf.edu
-asd.ucsf.edu|http://star.ucsf.edu
-autismclinic.ucsf.edu|http://star.ucsf.edu
-facialnerve.ucsf.edu|http://ohns.ucsf.edu/facialnerve
-laryngology.ucsf.edu|http://ohns.ucsf.edu/laryngology
-fetus.ucsfmedicalcenter.org/*|fetus.ucsf.edu
-accessibility.ucsf.edu|http://digitalaccess.ucsf.edu
-pedsohns.ucsf.edu|http://ohns.ucsf.edu/pediatric
-globalanesthesia.ucsf.edu|http://anesthesia.ucsf.edu/divisions/global-health#home
-fetus.ucsfmedicalcenter.org/*|http://fetus.ucsf.edu
-www.aaeo.ucsf.edu/*|http://aaeo.ucsf.edu
-www.analcancerinfo.ucsf.edu/*|http://analcancerinfo.ucsf.edu
-www.beyondthepill.ucsf.edu/*|http://beyondthepill.ucsf.edu
-www.bmi.ucsf.edu/*|http://bmi.ucsf.edu
-www.ctsi.ucsf.edu/*|http://ctsi.ucsf.edu
-www.dahsm.ucsf.edu/*|http://dahsm.ucsf.edu
-www.diabetes.ucsf.edu/*|http://diabetes.ucsf.edu
-www.ehs.ucsf.edu/*|http://ehs.ucsf.edu
-www.greenlab.ucsf.edu/*|http://greenlab.ucsf.edu
-www.larc.ucsf.edu/*|http://larc.ucsf.edu
-www.medschool.ucsf.edu/*|http://medschool.ucsf.edu
-www.microbiology.ucsf.edu/*|http://microbiology.ucsf.edu
-www.ohns.ucsf.edu/*|http://ohns.ucsf.edu
-www.police.ucsf.edu/*|http://police.ucsf.edu
-www.proctor.ucsf.edu/*|http://proctor.ucsf.edu
-www.radiology.ucsf.edu/*|http://radiology.ucsf.edu
-www.rmis.ucsf.edu/*|http://rmis.ucsf.edu
-www.urology.ucsf.edu/*|http://urology.ucsf.edu
-globalhealth.ucsf.edu|http://anesthesia.ucsf.edu/extranet/globalhealth
-appinventory.ucsf.edu|https://ucsf.service-now.com/ess/inventory.do
-ids.ucsfmedicalcenter.org|http://ids.ucsf.edu
-bchoutreach.ucsf.edu|http://bchsfoutreach.ucsf.edu
-catalyst.ucsf.edu|http://ctsi.ucsf.edu/catalyst
-oralsurgery.ucsf.edu|http://www.ucsfdentalcenter.org/clinic/oral-and-maxillofacial-surgery-faculty-clinic-parnassus
-prep.ucsf.edu|http://preprx.ucsf.edu
-willseylab.ucsf.edu|https://willseylab.com
-lto.ucsf.edu|http://lean.ucsf.edu
-pulsatiletinnitus.ucsf.edu|https://radiology.ucsf.edu/patient-care/services/pulsatile-tinnitus-clinic
-insideguide.ucsf.edu|http://success.ucsf.edu
-www.obgyn.ucsf.edu|http://obgyn.ucsf.edu
-food.ucsf.edu|http://finaid.ucsf.edu/food
-skeletaldysplasias.ucsf.edu|http://skeletaldysplasias.radiology.ucsf.edu
-strauss.ucsf.edu|http://sociology.ucsf.edu
-facialplastics.ucsf.edu|https://ohns.ucsf.edu/facialplastics
-www.bms.ucsf.edu|http://bms.ucsf.edu
-ccm.ucsf.edu|https://anesthesia.ucsf.edu/divisions/critical-care-medicine
-cpa.ucsf.edu|https://anesthesia.ucsf.edu/events/upcoming
-hashimotolab.ucsf.edu|https://anesthesia.ucsf.edu/research-group/hashimoto-lab
-leelab.ucsf.edu|https://anesthesia.ucsf.edu/research-group/lee-lab
-leung.ucsf.edu|https://anesthesia.ucsf.edu/research-group/perioperative-medicine
-neuroanesthesia.ucsf.edu|https://anesthesia.ucsf.edu/divisions/neuroanesthesia
-pain.ucsf.edu|https://anesthesia.ucsf.edu/divisions/pain-medicine
-pedianesthesia.ucsf.edu|https://anesthesia.ucsf.edu/divisions/pediatric-anesthesia
-sfghrcs.ucsf.edu|https://anesthesia.ucsf.edu/divisions/zsfg-respiratory-care-services
-nerveatlas.ucsf.edu|https://anesthesia.ucsf.edu/research-group/nerve-imaging-atlas
-osherminimedicalschool.ucsf.edu|http://osherminimed.ucsf.edu
-www.osherminimedicalschool.ucsf.edu|http://osherminimed.ucsf.edu
-oralmed.ucsf.edu|http://www.ucsfdentalcenter.org/clinic/oral-medicine-faculty-clinic-parnassus
-safety.ucsfmedicalcenter.org|http://safety.ucsf.edu
-orthodash.ucsf.edu|https://bidashboards.ucsfmedicalcenter.org/QvAJAXZfc/opendoc.htm?document=Franchise%20Apps%2FOrthoDash%2FOrthoDash.qvw&host=QVS%40mcqkvwwap001
-addiction.ucsf.edu|http://psych.ucsf.edu/substanceabuse
-ti.ucsf.edu|http://accelerate.ucsf.edu/research/informatics
-dashboard.ucsf.edu|https://ucsf.numerify.com:443/NumerifyWeb/servlet/mstrWeb?evt=3140&src=mstrWeb.3140&documentID=56E9D01311E697030F5B0080EF756339&server=10.0.1.199&Project=Numerify_BI_UCSF&port=0&share=1&uid=ch_shared@ucsf.edu&pwd=Numerify@2
-ocr.ucsf.edu|http://officeofclinicalresearch.ucsf.edu
-#these were all handled by help.ucsf.edu at one point.
-help.ucsf.edu/custom/hbs_update.jsp|http://help.ucsf.edu/HelpApps/hbs_update.php
-help.ucsf.edu/custom/hbs_access.jsp|http://help.ucsf.edu/HelpApps/hbs_access.php
-help.ucsf.edu/software|http://software.ucsf.edu
-help.ucsf.edu/custom/ipNetVerify.jsp|http://help.ucsf.edu/HelpApps/ipNetVerify.php
-help.ucsf.edu/HelpWebApps/VPN/|http://security.ucsf.edu/EIS/services_products/RemoteAccessVPN/GettingVPNAccess.html
-help.ucsf.edu/HelpWebApps/Listserv/|https://ucsf.service-now.com/ess/catalog_detail.do?uri=com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=4d94ee7b876410009b5428676d434dca
-help.ucsf.edu/HelpWebApps/Pager/|https://ucsf.service-now.com/ess/catalog_detail.do?uri=com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=39024a54879dd0009b5428676d434d5e
-help.ucsf.edu/HelpWebApps/AD/RsrcAcctForm.jsp|https://ucsf.service-now.com/ess/catalog_detail.do?uri=com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=4615c1f7877850009b5428676d434d04
-help.ucsf.edu/HelpWebApps/EmailHelper/EmailHelper.jsp|http://help.ucsf.edu/HelpApps/EmailHelper.php
-#end help.ucsf.edu redirects
-cilia.ucsf.edu|https://webapps.ucsf.edu/cilia
-pando.ucsf.edu|https://webapps.ucsf.edu/pando
-tas.ucsf.edu|https://tashq.org
-championprovider.ucsf.edu|http://champion.ucsf.edu
-ct2g.ucsf.edu|http://www.ct2g.org
-#these are all redirects from the support.ucsf.edu website
-support.ucsf.edu|http://giving.ucsf.edu
-support.ucsf.edu/alumni|http://www.ucsfalumni.org
-support.ucsf.edu/alumni/faculty-alumni-av|http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=2494
-support.ucsf.edu/alumni/faculty-alumni-food-and-beverage|http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=2495
-support.ucsf.edu/alumni/faculty-alumni-house-rates|http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=2496
-support.ucsf.edu/alumni/faculty-alumni-house-reservations|http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=2493
-support.ucsf.edu/alumni/faculty-alumni-house-student-groups|http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=2497
-support.ucsf.edu/alumni/membership|http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=371
-support.ucsf.edu/alumni/ucsf-faculty-alumni-house|http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=965
-support.ucsf.edu/cancer|http://giving.ucsf.edu/funds/cancer
-support.ucsf.edu/cancer/honor-roll|http://giving.ucsf.edu/funds/cancer
-support.ucsf.edu/contact|http://giving.ucsf.edu/contact
-support.ucsf.edu/content/insiderfebruary2016|http://giving.ucsf.edu/impact
-support.ucsf.edu/content/insiderjuly2016|http://giving.ucsf.edu/impact
-support.ucsf.edu/content/insiderjune2016-0|http://giving.ucsf.edu/impact
-support.ucsf.edu/content/insidermay2012|http://giving.ucsf.edu/impact
-support.ucsf.edu/content/insiderseptember2012|http://giving.ucsf.edu/impact
-support.ucsf.edu/discovery|http://giving.ucsf.edu/stories/discovery-fellows-ambassadors
-support.ucsf.edu/giving-areas|http://giving.ucsf.edu/explore
-support.ucsf.edu/giving-areas/asthma|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Asthma
-support.ucsf.edu/giving-areas/dentistry|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Dentistry
-support.ucsf.edu/giving-areas/diabetes|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Diabetes
-support.ucsf.edu/giving-areas/organ-transplant|https://makeagift.ucsf.edu/site/SPageServer/?pagename=A1_API_GeneralGivingForm&Primary=Transplant
-support.ucsf.edu/giving-areas/nursing|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Nursing
-support.ucsf.edu/giving-areas/osher-center-for-integrative-medicine|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Osher%20Center%20for%20Integrative%20Medicine
-support.ucsf.edu/giving-areas/graduate-education|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Graduate%20Education
-support.ucsf.edu/giving-areas/about-neuro-oncology-gordon-murray-caregiver-program|http://giving.ucsf.edu/funds/neuroscience
-support.ucsf.edu/giving-areas/aids|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=AIDS
-support.ucsf.edu/giving-areas/artificial-kidney|http://giving.ucsf.edu/explore
-support.ucsf.edu/giving-areas/benefits-and-events|http://giving.ucsf.edu/fundraise
-support.ucsf.edu/giving-areas/benioff-childrens-hospital|http://giving.ucsf.edu/funds/childrens-health
-support.ucsf.edu/giving-areas/biomedical-science|http://giving.ucsf.edu/funds/neuroscience
-support.ucsf.edu/giving-areas/campaign-for-ucsf-medical-center|http://giving.ucsf.edu/explore
-support.ucsf.edu/giving-areas/cancer|http://giving.ucsf.edu/funds/cancer
-support.ucsf.edu/giving-areas/class-campaigns|http://giving.ucsf.edu/class-giving
-support.ucsf.edu/giving-areas/dermatology|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Dermatology
-support.ucsf.edu/giving-areas/donor-honor-roll|http://giving.ucsf.edu/funds/neuroscience
-support.ucsf.edu/giving-areas/fundraising-program-inspired-by-gordon-murray|http://giving.ucsf.edu/funds/neuroscience
-support.ucsf.edu/giving-areas/global-health|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Global%20Health
-support.ucsf.edu/giving-areas/head-and-neck-surgery|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Ear,%20Nose%20and%20Throat&ACode=B1290
-support.ucsf.edu/giving-areas/health-sciences-education-at-ucsf|http://giving.ucsf.edu/funds/student-faculty
-support.ucsf.edu/giving-areas/heart-disease|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Heart%20Disease
-support.ucsf.edu/giving-areas/honor-roll-of-donors-2011–2012|http://giving.ucsf.edu/explore
-support.ucsf.edu/giving-areas/how-to-support-neuro-oncology-gordon-murray-caregiver-program|http://giving.ucsf.edu/funds/neuroscience
-support.ucsf.edu/giving-areas/kidney-disease|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Kidney%20Disease
-support.ucsf.edu/giving-areas/liver-disease|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Liver%20Disease
-support.ucsf.edu/giving-areas/lung-disease|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Lung%20Disease
-support.ucsf.edu/giving-areas/medical-education|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Medical%20Education
-support.ucsf.edu/giving-areas/more-giving-areas|http://giving.ucsf.edu/explore
-support.ucsf.edu/giving-areas/murray-family|http://giving.ucsf.edu/funds/neuroscience
-support.ucsf.edu/giving-areas/neurosciences|http://giving.ucsf.edu/funds/neuroscience
-support.ucsf.edu/giving-areas/orthopaedic-surgery|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Orthopaedics
-support.ucsf.edu/giving-areas/pharmacy|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Pharmacy
-support.ucsf.edu/giving-areas/psychiatry|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Psychiatry
-support.ucsf.edu/giving-areas/rosalind-russell-medical-research-center-arthritis|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Arthritis
-support.ucsf.edu/giving-areas/stem-cell-and-regeneration-medicine|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Stem%20Cell%20and%20Regeneration%20Medicine
-support.ucsf.edu/giving-areas/surgery|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Surgery&AppealCode=SD7WB
-support.ucsf.edu/giving-areas/uc-san-francisco-discovery-fellows-program|http://giving.ucsf.edu/stories/discovery-fellows-ambassadors
-support.ucsf.edu/giving-areas/ucsf-medical-center-hospitals|https://makeagift.ucsf.edu/site/SPageServer/?pagename=A1_API_GeneralGivingForm
-support.ucsf.edu/giving-areas/ucsf-neurosciences-initiative-campaign|http://giving.ucsf.edu/funds/neuroscience
-support.ucsf.edu/giving-areas/womens-health|https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Women%27s%20Health
-support.ucsf.edu/magazine|http://giving.ucsf.edu/magazine
-support.ucsf.edu/news|http://giving.ucsf.edu/stories
-support.ucsf.edu/news/2016-gbch|http://giving.ucsf.edu/events/give-breast-cancer-boot
-support.ucsf.edu/news/3-d-virtual-reality-colonoscopy|http://giving.ucsf.edu/stories
-support.ucsf.edu/news/battle-against-prostate-cancer-its-beard|http://giving.ucsf.edu/stories
-support.ucsf.edu/news/bold-innovation-program-fast-tracks-precision-medicine-research|http://giving.ucsf.edu/stories
-support.ucsf.edu/news/chancellor-and-husband’s-historic-gift-student-support-inspires-bernadetts|http://giving.ucsf.edu/stories
-support.ucsf.edu/news/channeling-grief-to-find-cure|http://giving.ucsf.edu/stories
-support.ucsf.edu/news/concert-ucsf-benioff-childrens-hospital-alanis-morissette-and-jay-leno|http://giving.ucsf.edu/stories
-support.ucsf.edu/news/friends-establish-neurohospitalist-distinguished-professorship|http://giving.ucsf.edu/stories
-support.ucsf.edu/news/medicine-alumnus-bernadett-establishes-education-chair|http://giving.ucsf.edu/stories
-support.ucsf.edu/news/passion-urban-underserved|http://giving.ucsf.edu/stories
-support.ucsf.edu/news/publications|http://giving.ucsf.edu/stories
-support.ucsf.edu/news/susan-desmond-hellmann-and-nicholas-hellmann-make-historic-gift-health-sciences-education-0|http://giving.ucsf.edu/stories
-support.ucsf.edu/ucsf-foundation|http://giving.ucsf.edu/about
-support.ucsf.edu/ucsf-foundation/about|http://giving.ucsf.edu/about
-support.ucsf.edu/ucsf-foundation/annual-report|http://giving.ucsf.edu/about
-support.ucsf.edu/ucsf-foundation/board-overseers|http://giving.ucsf.edu/about
-support.ucsf.edu/ucsf-foundation/committees|http://giving.ucsf.edu/about
-support.ucsf.edu/ways-to-give|http://giving.ucsf.edu/ways-to-give
-support.ucsf.edu/ways-to-give/annual-employee-giving-program|http://giving.ucsf.edu/employee-giving
-support.ucsf.edu/ways-to-give/annual-giving|http://giving.ucsf.edu/ways-to-give
-support.ucsf.edu/ways-to-give/chancellors-circle|http://giving.ucsf.edu/giving-societies/chancellors-circle
-support.ucsf.edu/ways-to-give/compounding-makes-comeback|http://giving.ucsf.edu/ways-to-give
-support.ucsf.edu/ways-to-give/corporate-partners|http://giving.ucsf.edu/corporate-foundation
-support.ucsf.edu/ways-to-give/corporate-support|http://giving.ucsf.edu/corporate-foundation
-support.ucsf.edu/ways-to-give/corporate-collaborations|http://giving.ucsf.edu/corporate-foundation
-support.ucsf.edu/ways-to-give/corporations-and-foundations-for-faculty-and-staff|http://giving.ucsf.edu/corporate-foundation
-support.ucsf.edu/ways-to-give/employee-giving-donor-testimonials|http://giving.ucsf.edu/employee-giving
-support.ucsf.edu/ways-to-give/employee-giving-faqs|http://giving.ucsf.edu/employee-giving
-support.ucsf.edu/ways-to-give/foundation-partners|http://giving.ucsf.edu/corporate-foundation
-support.ucsf.edu/ways-to-give/host-community-fundraiser|http://giving.ucsf.edu/fundraise
-support.ucsf.edu/ways-to-give/monthly-giving|http://giving.ucsf.edu/payment-faq
-support.ucsf.edu/ways-to-give/named-endowments-and-facilities|http://giving.ucsf.edu/endowments
-support.ucsf.edu/ways-to-give/office-of-corporate-and-foundation-relations|http://giving.ucsf.edu/corporate-foundation
-support.ucsf.edu/ways-to-give/people-who-give|http://giving.ucsf.edu/stories
-support.ucsf.edu/ways-to-give/playing-hivaids-prevention-game|http://giving.ucsf.edu/explore
-support.ucsf.edu/ways-to-give/societies|http://giving.ucsf.edu/societies
-support.ucsf.edu/ways-to-give/tribute-giving|http://giving.ucsf.edu/honor-memorial
-support.ucsf.edu/ways-to-give/ucsf-giving-societies-and-academies|http://giving.ucsf.edu/societies
-support.ucsf.edu/ways-to-give/volunteer-leadership|http://giving.ucsf.edu/involved
-support.ucsf.edu/ways-to-givesupport.ucsf.edu/ways-to-give-faq|http://giving.ucsf.edu/payment-faq
-support.ucsf.edu/giving-areas/prevent-skin-cancer-0|http://giving.ucsf.edu/skin-cancer-prevention
-support.ucsf.edu/ways-to-give/class-1961-scholarship-fund|http://giving.ucsf.edu/class-giving
-#continue non support.ucsf.edu domains
-giftplanning.ucsf.edu|http://ucsf.giftplans.org/
+# Column 1 source path 	Column 2 is the destination path
+# Note - always place more granular URLs at the top of the list, less granular toward the bottom	
+# Test Source	Tests Destination
+genetics.ucsf.local/main/networking/g1/wireless	http://it.ucsf.edu/services/wireless-service
+(genetics.ucsf.local|genes.ucsf.local)/main/service_catalog/email.html	http://it.ucsf.edu/services/email-online
+fastpay.ucsf.local	http://nutrition.ucsfmedicalcenter.org/fastpay/
+smartchoice.ucsf.local	http://nutrition.ucsfmedicalcenter.org/smartchoice/
+gnome.ucsf.local	https://btrctissuecore.ucsf.edu/tbank/index.html
+# its.ucsf.edu redirects	Destination
+(its.ucsf.edu|oaais.ucsf.edu)/main/networking/g1/wireless	http://it.ucsf.edu/services/wireless-service
+(its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email.html	http://it.ucsf.edu/services/email
+(its.ucsf.edu|oaais.ucsf.edu)/main/8810-DSY	http://it.ucsf.edu/services/hbs-timekeeping-system
+(its.ucsf.edu|oaais.ucsf.edu)/main/7-DSY/email/secured_com/Remote_Access/web_vpn	http://it.ucsf.edu/services/vpn/web-proxy-access
+(its.ucsf.edu|oaais.ucsf.edu)/main/about_us	http://it.ucsf.edu/pages/about
+(its.ucsf.edu|oaais.ucsf.edu)/main/projects/telmed/movi_downloads.html	http://it.ucsf.edu/services/movi-desktop-video-conferencing
+(its.ucsf.edu|oaais.ucsf.edu)/main/2766-DSY	http://it.ucsf.edu/services/weblinks
+(its.ucsf.edu|oaais.ucsf.edu)/idm/myaccess/myaccess	http://it.ucsf.edu/services/myaccess-sso/faqs
+(its.ucsf.edu|oaais.ucsf.edu)/idm/myaccess/help/get_myaccess	http://it.ucsf.edu/services/myaccess-sso/tutorial/myaccess-account-activation
+(its.ucsf.edu|oaais.ucsf.edu)/service_catalog/vpn	http://it.ucsf.edu/services/networking/vpn
+(its.ucsf.edu|oaais.ucsf.edu)/announcements/service_catalog/email.html	http://it.ucsf.edu/services/accounts
+(its.ucsf.edu|oaais.ucsf.edu)/main/10587.html	http://it.ucsf.edu/services/ucsf-active-directory-customer-accounts
+(its.ucsf.edu|oaais.ucsf.edu)/main/171-DSY.html	http://it.ucsf.edu/services/secure-email/tutorial/secure-email-overview
+(its.ucsf.edu|oaais.ucsf.edu)/main/1901-DSY.html	http://it.ucsf.edu/services/ucsf-listserv
+(its.ucsf.edu|oaais.ucsf.edu)/main/2766-DSY.html	http://it.ucsf.edu/services/weblinks
+(its.ucsf.edu|oaais.ucsf.edu)/main/7-DSY/email/secured_com/Remote_Access.html	http://it.ucsf.edu/services/vpn
+(its.ucsf.edu|oaais.ucsf.edu)/main/7-DSY/email/secured_com/Remote_Access/web_vpn.html	http://it.ucsf.edu/services/vpn/web-proxy-access
+(its.ucsf.edu|oaais.ucsf.edu)/main/9816-DSY.html	http://it.ucsf.edu/services/imedris
+(its.ucsf.edu|oaais.ucsf.edu)/main/about_us.html	http://it.ucsf.edu/about
+(its.ucsf.edu|oaais.ucsf.edu)/main/networking/g1/wireless.html	http://it.ucsf.edu/services/wireless-service
+(its.ucsf.edu|oaais.ucsf.edu)/main/projects/telmed/desktop_vc.html	http://it.ucsf.edu/services/movi-desktop-video-conferencing
+(its.ucsf.edu|oaais.ucsf.edu)/main/projects/telmed/movi_downloads.html	http://it.ucsf.edu/services/email
+(its.ucsf.edu|oaais.ucsf.edu)/main/service_alerts.html	http://it.ucsf.edu/status
+(its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email/mobile_devices.html	http://it.ucsf.edu/services/email-mobile-access
+(its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email/web_app.html	http://it.ucsf.edu/services/email/web-browser-compatibility-and-features
+(its.ucsf.edu|oaais.ucsf.edu)/main/288-DSY.html	http://it.ucsf.edu/services/email-spam-filter
+(its.ucsf.edu|oaais.ucsf.edu)/students/student_email/287-DSY/spam/g1/903-DSY.html	http://it.ucsf.edu/services/email-spam-filter/spam-glossary
+(its.ucsf.edu|oaais.ucsf.edu)/students/student_email/287-DSY/spam/g1/215-DSY.html	http://it.ucsf.edu/services/email-spam-filter/tutorial/spam-filter-operational-faq
+(its.ucsf.edu|oaais.ucsf.edu)/students/student_email/287-DSY/spam/g1/228-DSY.html	http://it.ucsf.edu/services/email-spam-filter/tutorial/spam-filter-functional-faq
+(its.ucsf.edu|oaais.ucsf.edu)/students/student_email/287-DSY/spam/963-DSY.html	http://it.ucsf.edu/services/email-spam-filter/what-spam-filter-does
+(its.ucsf.edu|oaais.ucsf.edu)/students/student_email/287-DSY/spam/g1/966-DSY.html	http://it.ucsf.edu/services/email-spam-filter/what-spam-filter-does
+(its.ucsf.edu|oaais.ucsf.edu)/students/student_home.html	http://it.ucsf.edu/students
+(its.ucsf.edu|oaais.ucsf.edu)/students/student_email.html	http://it.ucsf.edu/pages/ucsf-email-information-new-students
+(its.ucsf.edu|oaais.ucsf.edu)/students/myaccess_info.html	http://it.ucsf.edu/pages/myaccess-student-information
+(its.ucsf.edu|oaais.ucsf.edu)/students/4498-DSY.html	http://it.ucsf.edu/pages/requesting-student-vpnucsf-account
+(its.ucsf.edu|oaais.ucsf.edu)/main/1788-DSY.html	http://it.ucsf.edu/services/email/tutorial/outlook-web-app-faq
+(its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email/owa_2010_features.html	http://it.ucsf.edu/services/email/tutorial/outlook-web-app-2010-new-features
+(its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email/owa_2010_features/conversation_mode_n_reading_pane.html	http://it.ucsf.edu/services/email/tutorial/owa-2010-conversation-and-reading-pane-view
+(its.ucsf.edu|oaais.ucsf.edu)/main/12918-DSY.html	http://it.ucsf.edu/services/email/tutorial/outlook-2010-configuration
+(its.ucsf.edu|oaais.ucsf.edu)/main/13025-DSY.html	http://it.ucsf.edu/services/email/tutorial/outlook-2007-configuration
+(its.ucsf.edu|oaais.ucsf.edu)/main/12892-DSY.html	http://it.ucsf.edu/services/email/tutorial/outlook-2011-configuration
+(its.ucsf.edu|oaais.ucsf.edu)/main/12939-DSY.html	http://it.ucsf.edu/services/email/tutorial/entourage-2008-wse-configuration
+(its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email/popimap.html	http://it.ucsf.edu/services/email/tutorial/ucsf-email-pop-and-imap-settings
+(its.ucsf.edu|oaais.ucsf.edu)/main/12934-DSY.html	http://it.ucsf.edu/services/email/tutorial/apple-mail-os-106x-configuration
+(its.ucsf.edu|oaais.ucsf.edu)/faq/ActiveSync/2864-DSY.html	http://it.ucsf.edu/services/email-mobile-access/tutorial/iphone-email-configuration-eas
+(its.ucsf.edu|oaais.ucsf.edu)/announcements/service_catalog/email.html	http://it.ucsf.edu/services/email
+(its.ucsf.edu|oaais.ucsf.edu)/announcements/	http://it.ucsf.edu/status
+(its.ucsf.edu|oaais.ucsf.edu)/students/171-DSY.html	http://it.ucsf.edu/services/secure-email/tutorial/secure-email-overview
+(its.ucsf.edu|oaais.ucsf.edu)/students/student_email	http://it.ucsf.edu/how_do/ucsf-email-information-new-students
+(its.ucsf.edu|oaais.ucsf.edu)/faq/ActiveSync/13083-DSY.html	http://it.ucsf.edu/services/email-mobile-access/tutorial/activesync-settings-android
+(its.ucsf.edu|oaais.ucsf.edu)/main/1772-DSY.html	http://it.ucsf.edu/services/email-mobile-access/tutorial/blackberry-enterprise-activation
+(its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/	http://it.ucsf.edu/services
+(its.ucsf.edu|oaais.ucsf.edu)/main/	http://it.ucsf.edu/
+(its.ucsf.edu|oaais.ucsf.edu)	http://it.ucsf.edu/
+# END its.ucsf.edu	Destination
+wireless.ucsf.edu	http://it.ucsf.edu/projects/expanding-wireless
+www.radiology.ucsf.edu	http://radiology.ucsf.edu
+ucsfpolicies.ucsfmedicalcenter.org	https://ucsfpolicies.ucsf.edu
+epicsp-test.ucsfmedicalcenter.org	https://epicsp-test.ucsf.edu
+teamcentral-test.ucsfmedicalcenter.org	https://teamcentral-test.ucsf.edu
+myteamcentral-test.ucsfmedicalcenter.org	https://myteamcentral-test.ucsf.edu
+ucsfpolicies-test.ucsfmedicalcenter.org	https://ucsfpolicies-test.ucsf.edu
+epicsp.ucsfmedicalcenter.org	https://epicsp.ucsf.edu
+teamcentral.ucsfmedicalcenter.org	https://teamcentral.ucsf.edu
+myteamcentral.ucsfmedicalcenter.org	https://myteamcentral.ucsf.edu
+ucsfpolicies.ucsfmedicalcenter.org	https://ucsfpolicies.ucsf.edu
+# stimulus and oaais redirects	Destination
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/hooper/*	http://hooper.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/APASA/*	http://apasa.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/realestate/*	http://realestate.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/pmo/*	http://pmo.ucsf.edu/
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/pibs/*	http://pibs.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/remedy/*	http://remedy.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/HealthPsychology/*	http://realestate.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/BRM/*	http://brm.ucsf.edu/BRM
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/finance/*	http://brm.ucsf.edu/finance
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/cbe/*	http://cbe.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/brizlab/*	http://brizlab.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/aaeod/*	http://aaeod.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/FAS/*	http://fas.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/ABOG/*	http://abog.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/gsice/*	http://gsice.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/manuals/*	http://manuals.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/hoshimoto/*	http://hoshimoto.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/shortofbreath/*	http://shortofbreath.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/esct/*	http://escore.ucsf.edu
+(stimulus.ucsf.edu|oaais.ucsf.edu|its.ucsf.edu)/rrp/*	http://rrp.ucsf.edu
+ucsfwpa.ucsf.edu	http://it.ucsf.edu/services/wireless-service
+healthpsych.ucsf.edu	http://healthpsychology.ucsf.edu
+# OSR rewrite rules - conflict of interest redirects	Destination
+or.ucsf.edu/osr/coi.html	http://coi.ucsf.edu
+or.ucsf.edu/osr/coi/RevisedRule.html	http://coi.ucsf.edu/revised-phs-rule-coi
+or.ucsf.edu/osr/coi/Webinars.html	http://coi.ucsf.edu/webinars
+or.ucsf.edu/osr/coi/about.html	http://coi.ucsf.edu/about-coi-research
+or.ucsf.edu/osr/coi/coiac.html	http://coi.ucsf.edu/coiac
+or.ucsf.edu/osr/coi/contact.html	http://coi.ucsf.edu/contact-information
+or.ucsf.edu/osr/coi/laws.html	http://coi.ucsf.edu/laws-policies
+or.ucsf.edu/osr/coi/laws/fedregs.html	http://coi.ucsf.edu/federal-regulations
+or.ucsf.edu/osr/coi/laws/calaw.html	http://coi.ucsf.edu/california-law
+or.ucsf.edu/osr/coi/ucpolicies.html	http://coi.ucsf.edu/ucop-policies
+or.ucsf.edu/osr/coi/ucpolicies/ucsf.html	http://coi.ucsf.edu/ucsf-policies-and-guidelines
+or.ucsf.edu/osr/coi/specific.html	http://coi.ucsf.edu/specific-situations
+or.ucsf.edu/osr/coi/specific/agencyspecific.html	http://coi.ucsf.edu/agency-specific-requirements
+or.ucsf.edu/osr/coi/specific/rsrchgifts.html	http://coi.ucsf.edu/research-gifts
+or.ucsf.edu/osr/coi/specific/subcontracts.html	http://coi.ucsf.edu/subcontracts
+or.ucsf.edu/osr/coi/specific/sbirsttr.html	http://coi.ucsf.edu/small-business-sbirsttr
+or.ucsf.edu/osr/coi/specific/discovery.html	http://coi.ucsf.edu/uc-discovery-grants
+or.ucsf.edu/osr/coi/specific/mta.html	http://coi.ucsf.edu/material-transfer-agreements
+or.ucsf.edu/osr/coi/specific/clinicalstudies.html	http://coi.ucsf.edu/clinical-studies
+or.ucsf.edu/osr/coi/specific/consultagree.html		http://coi.ucsf.edu/consulting-agreements
+or.ucsf.edu/osr/coi/forms.html	http://coi.ucsf.edu/coi-disclosures-research
+or.ucsf.edu/osr/coi/faq.html	http://coi.ucsf.edu/faqs
+or.ucsf.edu/osr/coi/ucpolicies/ucsf/GuidelineTable.html	http://coi.ucsf.edu/guideline-table-100-34
+or.ucsf.edu/osr/coi/ucpolicies/ucsf/rp-10033.html	http://coi.ucsf.edu/responsibilities-procedures-100-33
+or.ucsf.edu/osr/coi/ucpolicies/ucsf/rp-10034.html	http://coi.ucsf.edu/responsibilities-procedures-100-34
+or.ucsf.edu/osr/coi/ucpolicies/ucsf/rp-10035.html	http://coi.ucsf.edu/responsibilities-procedures-100-35
+or.ucsf.edu/osr/15865-DSY.html	http://coi.ucsf.edu/completed
+# OSR redirects	Destination
+or.ucsf.edu/osr/osr.html	http://osr.ucsf.edu/
+or.ucsf.edu/osr/train.html	http://osr.ucsf.edu/training
+or.ucsf.edu/osr/sitemap.html	http://osr.ucsf.edu/sitemap
+or.ucsf.edu/osr/7020-DSY.html	http://grants.nih.gov/training/responsibleconduct.htm
+or.ucsf.edu/osr/9003-DSY.html	http://osr.ucsf.edu/content/develop-proposal
+or.ucsf.edu/osr/6117-DSY.html	http://osr.ucsf.edu/fa-rates
+or.ucsf.edu/osr/11337-DSY.html	http://osr.ucsf.edu/develop-budget
+or.ucsf.edu/osr/5426-DSY.html	http://osr.ucsf.edu/training
+or.ucsf.edu/osr/15864-DSY.html	 http://coi.ucsf.edu/completed
+or.ucsf.edu/osr/6118-DSY.html	http://osr.ucsf.edu/fringe-benefit-rates
+or.ucsf.edu/osr/5431-DSY.html	http://osr.ucsf.edu/institutional-information
+or.ucsf.edu/osr/	http://osr.ucsf.edu
+or.ucsf.edu/cg/	http://osr.ucsf.edu/
+or.ucsf.edu/icd/	http://ita.ucsf.edu/industry
+or.ucsf.edu/OR-OTM/	http://ita.ucsf.edu
+or.ucsf.edu/finance/	http://brm.ucsf.edu
+# Source	Destination
+itservices.ucsf.edu	http://it.ucsf.edu
+registry.ucsf.edu	https://ucsf.co1.qualtrics.com/SE/?SID=SV_6fKdIWZqzZIZu73
+www.missionbayhospitals.ucsf.edu	http://missionbayhospitals.ucsf.edu
+www.kidscancertrials.ucsf.edu	http://kidscancertrials.ucsf.edu
+pedsplus.ucsf.edu	http://pediatrics.ucsf.edu/medical-education/residency/program-design/programs-tracks-and-pathways/plus-program
+remc.ucsf.edu/*	http://remcdata.ucsf.edu/
+ihps.medschool.ucsf.edu	http://healthpolicy.ucsf.edu
+www.ihps.medschool.ucsf.edu	http://healthpolicy.ucsf.edu
+vonbudingenlab.ucsf.edu	http://www.vonbudingenlab.org
+www.vonbudingenlab.ucsf.edu	http://www.vonbudingenlab.org
+remedy.ucsf.edu	http://it.ucsf.edu/services/remedy
+legoscope.ucsf.edu	http://designscience.ucsf.edu
+humgen.medschool.ucsf.edu/*	http://humangenetics.ucsf.edu
+aaeod.ucsf.edu	http://aaeo.ucsf.edu
+nurseweb.ucsf.edu	http://nursing.ucsf.edu
+industry.ucsf.edu	http://ita.ucsf.edu
+cbe.ucsf.edu	http://ita.ucsf.edu
+aaeeo.ucsf.edu	http://aaeo.ucsf.edu
+chatter.ucsf.edu	https://ucsf.my.salesforce.com/_ui/core/chatter/ui/ChatterPage
+cgr.ucsf.edu	http://www.ucsf.edu/cgr
+readyfor7.ucsf.edu	http://it.ucsf.edu/projects/windows-7
+myfertilefuture.ucsf.edu	http://coe.ucsf.edu/ivf/fertility_preservation.html
+www.myfertilefuture.ucsf.edu	http://coe.ucsf.edu/ivf/fertility_preservation.html
+frpo.ucsf.edu	https://ucsf.my.salesforce.com/apex/FACR_Dashboard
+www.frpo.ucsf.edu	https://ucsf.my.salesforce.com/apex/FACR_Dashboard
+simulation.ucsf.edu	http://meded.ucsf.edu/simulation
+medstudents.ucsf.edu	http://meded.ucsf.edu/ume/medstudents
+encryption.ucsf.edu	https://it.ucsf.edu/services/category/encryption
+windows7upgradesurvey.ucsf.edu	https://ucsf.co1.qualtrics.com/SE/?SID=SV_738Q01EtRTfIbiJ
+bamps.ucsf.edu	http://mphd.ucsf.edu/bamps
+ergonomics.ucsf.edu	http://www.ehs.ucsf.edu/ergonomics-program-0
+sensory.ucsf.edu	http://anp.ucsf.edu/overview/spd
+spd.ucsf.edu	http://anp.ucsf.edu/overview/spd
+catalystawards.ucsf.edu	http://accelerate.ucsf.edu/funding/catalyst
+preventkidney.ucsf.edu	http://khrc.ucsf.edu
+careweb.ucsf.edu	http://centerfordigitalhealthinnovation.org/CareWeb
+ccig.ucsf.edu	http://criticalcareinnovationsgroup.org
+www.rmis.ucsf.edu	http://rmis.ucsf.edu
+cw.ucsf.edu	https://medctr-ucsf.my.salesforce.com/apex/careweb
+emergencymedicine.ucsf.edu	http://emergency.ucsf.edu/
+security.ucsf.edu	http://it.ucsf.edu/security
+cpbc.ucsf.edu/*	http://supplychain.ucsf.edu
+www.dahsm.ucsf.edu	http://dahsm.ucsf.edu
+discrimination.ucsf.edu	http://aaeo.ucsf.edu
+help.ucsf.edu	https://ucsf.service-now.com/ess/home.do
+sshelp.ucsf.edu	https://ucsf.service-now.com/fss/fss.do
+sshelpdesk.ucsf.edu	https://ucsf.service-now.com/fss/fss.do
+englandlab.ucsf.edu	http://pharm.ucsf.edu/england
+stepitup.ucsf.edu	http://ucsf.extracon.com
+www.ohns.ucsf.edu/*	http://ohns.ucsf.edu
+workorders.ucsfmedicalcenter.org	https://ucsf.service-now.com/fss/fss.do
+staffcouncil.ucsf.edu	http://staffassembly.ucsf.edu
+missionbayhospitals.ucsf.edu	http://www.ucsfmissionbayhospitals.org
+intranet.ucsfmedicalcenter.org	http://it.ucsf.edu/sites-retired
+it.ucsfmedicalcenter.org	http://it.ucsf.edu/sites-retired
+cmb.ucsf.edu	http://craniofacialresearch.ucsf.edu/research
+wisdomteeth.ucsf.edu	http://omfs.ucsf.edu/wisdom-teeth
+bandlab.ucsf.edu	http://woolleylab.ucsf.edu
+cep.ucsf.edu	http://eaop.ucsf.edu
+www.irm.ucsf.edu	http://stemcell.ucsf.edu
+irm.ucsf.edu	http://stemcell.ucsf.edu
+virtualhosting.ucsf.edu	http://it.ucsf.edu/services/virtual-server-hosting
+myexpense.ucsf.edu	https://dp.ucsf.edu/idp/profile/SAML2/Unsolicited/SSO?providerId=https://concursolutions.com&target=https://concursolutions.com
+connexxus.ucsf.edu	https://dp.ucsf.edu/idp/profile/SAML2/Unsolicited/SSO?providerId=https://ucsso.travelprefs.com
+bb.ucsf.edu	https://exbbsrv3.net.ucsf.edu/webconsole/app
+# neurosurgery	Destination
+neurosurgqi.ucsf.edu	https://its-sp.ucsf.edu/sites/neurosurgery/SitePages/Home.aspx
+neurosurgeryqi.ucsf.edu	https://its-sp.ucsf.edu/sites/neurosurgery/SitePages/Home.aspx
+neurosurgqi.ucsfmedicalcenter.org	https://its-sp.ucsf.edu/sites/neurosurgery/SitePages/Home.aspx
+neurosurgeryqi.ucsfmedicalcenter.org	https://its-sp.ucsf.edu/sites/neurosurgery/SitePages/Home.aspx
+# Source	Destination
+basic.ucsf.edu	https://its-sp.ucsf.edu/sites/basic/SitePages/Home.aspx
+succession.ucsf.edu	https://its-sp.ucsf.edu/sites/FAS-Succession-Planning/SitePages/Home.aspx
+spam.ucsf.edu	https://cuda.ucsf.edu/cgi-mod/index.cgi
+itsdash.ucsf.edu	https://its-sp.ucsf.edu/sites/itsdash/SitePages/Home.aspx
+mccontracts.ucsf.edu	https://its-sp.ucsf.edu/sites/FSCContracts/MCRequest/default.aspx
+lynctool.ucsf.edu	https://lynctool.net.ucsf.edu/LyncDeviceSelection
+contracts-request.ucsf.edu	https://lynctool.net.ucsf.edu/LyncDeviceSelection
+passwords.ucsfmedicalcenter.org	https://pwmanage.ucsf.edu/pm
+password.ucsfmedicalcenter.org	https://pwmanage.ucsf.edu/pm
+itsdsp.ucsf.edu	https://its-sp.ucsf.edu/sites/ITSDSP/SitePages/Home.aspx
+babybrain.ucsf.edu	http://radiology.ucsf.edu/research/labs/baby-brain
+babybrain.ucsf.edu/fetal	http://radiology.ucsf.edu/baby-brain/fetal-mri
+mqir.ucsf.edu	http://radiology.ucsf.edu/research/labs/musculoskeletal-quantitative-imaging
+surbeck.ucsf.edu	http://radiology.ucsf.edu/research/centers/surbeck
+bil.ucsf.edu	http://radiology.ucsf.edu/research/labs/biomagnetic-imaging
+bbd.ucsf.edu	http://radiology.ucsf.edu/research/labs/breast-bone-density
+gnome.ucsf.edu	https://btrctissuecore.ucsf.edu/tbank/index.html
+epicsp.ucsfmedicalcenter.org	https://epicsp.ucsf.edu/default.aspx
+teamcentral.ucsfmedicalcenter.org	https://teamcentral.ucsf.edu/default.aspx
+myteamcentral.ucsfmedicalcenter.org	https://myteamcentral.ucsf.edu/default.aspx
+ucsfpolicies-test.ucsfmedicalcenter.org	https://ucsfpolicies-test.ucsf.edu
+myteamcentral-test.ucsfmedicalcenter.org	https://myteamcentral-test.ucsf.edu
+teamcentral-test.ucsfmedicalcenter.org	https://teamcentral-test.ucsf.edu
+epicsp-test.ucsfmedicalcenter.org	https://epicsp-test.ucsf.edu
+ucsfpolicies.ucsfmedicalcenter.org	https://ucsfpolicies.ucsf.edu/default.aspx
+telemedicine.ucsf.edu	http://telehealth.ucsf.edu/
+beacon.ucsf.edu	http://myapex.ucsf.edu/oncology-providers
+ucsfchancellor.ucsf.edu	http://chancellor.ucsf.edu
+nurseweb.ucsf.edu	http://nursing.ucsf.edu
+mountsutro.ucsf.edu	https://www.ucsf.edu/about/cgr/current-projects/mount-sutro-open-space-reserve
+mtsutro.ucsf.edu	http://www.ucsf.edu/node/93656
+sci-res.ucsf.edu	http://www.ucsf.edu/node/131506
+precisionmed.ucsf.edu	http://precisionmedicine.ucsf.edu
+pulse.ucsf.edu	http://www.ucsf.edu/pulse
+roylab.ucsf.edu	http://pharm.ucsf.edu/roy
+smartdiaphragm.ucsf.edu	http://pharm.ucsf.edu/roy/research
+smartmail.ucsf.edu	http://communicators.ucsf.edu/resources/smartmail
+kidney.ucsf.edu	http://pharm.ucsf.edu/kidney
+# Source	Destination
+www.neuroscience.ucsf.edu/neurograd/*	http://brain.cin.ucsf.edu/neurograd/
+neuroscience.ucsf.edu/neurograd/*	http://brain.cin.ucsf.edu/neurograd/
+fastpay.ucsf.edu	http://nutrition.ucsfmedicalcenter.org/fastpay
+smartchoice.ucsf.edu	http://nutrition.ucsfmedicalcenter.org/smartchoice
+recruit.ucsf.edu	http://accelerate.ucsf.edu/research/recruitment
+futurehealth.ucsf.edu/*	http://healthforce.ucsf.edu
+www.futurehealth.ucsf.edu/*	http://healthforce.ucsf.edu
+passport.ucsf.edu	http://studentlife.ucsf.edu
+ome.ucsf.edu	http://www.ucsf.edu/welcome-to-ome
+orofacialpain.ucsf.edu	http://omfs.ucsf.edu/ucsf-center-orofacial-pain-and-sleep-dentistry-patients
+dentalimplants.ucsf.edu	http://omfs.ucsf.edu/dental-implants
+sleepapnea.ucsf.edu	http://omfs.ucsf.edu/ucsf-oral-and-maxillofacial-surgery
+act.ucsf.edu	http://orthosurg.ucsf.edu/patient-care/divisions/orthotics-and-prosthetics/patient-information/amputee-comprehensive-training/act/
+www.360.ucsf.edu	http://360.ucsf.edu
+positivehealth.ucsf.edu	http://360.ucsf.edu
+www.positivehealth.ucsf.edu	http://360.ucsf.edu
+immunotherapy.ucsf.edu	http://cancer.ucsf.edu/support/immunotherapy
+sb50.ucsf.edu	http://orthosurg.ucsf.edu
+www.ucsanfrancisco.edu	https://www.ucsf.edu
+ucsanfrancisco.edu	https://www.ucsf.edu
+telemedicine.ucsf.edu	http://telehealth.ucsf.edu
+www.cme.ucsf.edu	http://meded.ucsf.edu/cme
+cme.ucsf.edu	http://meded.ucsf.edu/cme
+rps.ucsf.edu	http://accelerate.ucsf.edu/research-participant-services
+citywide.ucsf.edu	http://psych.ucsf.edu/sfgh/citywide
+www.neuroscience.ucsf.edu	http://weill.ucsf.edu
+neuroscience.ucsf.edu	http://weill.ucsf.edu
+neurosciences.ucsf.edu	http://weill.ucsf.edu
+www.neurosciences.ucsf.edu	http://weill.ucsf.edu
+neuro.ucsf.edu	http://weill.ucsf.edu
+publicaffairs.ucsf.edu	https://www.ucsf.edu
+pub.ucsf.edu	https://www.ucsf.edu
+news.ucsf.edu	https://www.ucsf.edu/news
+eir.ucsf.edu	https://www.ucsf.edu
+w2w.ucsf.edu	https://www.ucsf.edu
+sfghed.ucsf.edu	https://emergency.ucsf.edu
+asian.library.ucsf.edu/*	http://japanesewoodblockprints.library.ucsf.edu
+mobilephonerequest.ucsfmedicalcenter.org	https://ucsf.service-now.com/ess/order_voice.do
+hrpp.ucsf.edu/*	http://irb.ucsf.edu
+radiologyresidents.ucsf.edu	http://radiology.ucsf.edu
+rtr.ucsf.edu	http://consult.ucsf.edu
+ethics.ucsf.edu	http://compliance.ucsf.edu
+iddrc.ucsf.edu	http://star.ucsf.edu
+intellectualdisability.ucsf.edu	http://star.ucsf.edu
+asd.ucsf.edu	http://star.ucsf.edu
+autismclinic.ucsf.edu	http://star.ucsf.edu
+facialnerve.ucsf.edu	http://ohns.ucsf.edu/facialnerve
+laryngology.ucsf.edu	http://ohns.ucsf.edu/laryngology
+fetus.ucsfmedicalcenter.org/*	fetus.ucsf.edu
+accessibility.ucsf.edu	http://digitalaccess.ucsf.edu
+pedsohns.ucsf.edu	http://ohns.ucsf.edu/pediatric
+globalanesthesia.ucsf.edu	http://anesthesia.ucsf.edu/divisions/global-health#home
+fetus.ucsfmedicalcenter.org/*	http://fetus.ucsf.edu
+www.aaeo.ucsf.edu/*	http://aaeo.ucsf.edu
+www.analcancerinfo.ucsf.edu/*	http://analcancerinfo.ucsf.edu
+www.beyondthepill.ucsf.edu/*	http://beyondthepill.ucsf.edu
+www.bmi.ucsf.edu/*	http://bmi.ucsf.edu
+www.ctsi.ucsf.edu/*	http://ctsi.ucsf.edu
+www.dahsm.ucsf.edu/*	http://dahsm.ucsf.edu
+www.diabetes.ucsf.edu/*	http://diabetes.ucsf.edu
+www.ehs.ucsf.edu/*	http://ehs.ucsf.edu
+www.greenlab.ucsf.edu/*	http://greenlab.ucsf.edu
+www.larc.ucsf.edu/*	http://larc.ucsf.edu
+www.medschool.ucsf.edu/*	http://medschool.ucsf.edu
+www.microbiology.ucsf.edu/*	http://microbiology.ucsf.edu
+www.ohns.ucsf.edu/*	http://ohns.ucsf.edu
+www.police.ucsf.edu/*	http://police.ucsf.edu
+www.proctor.ucsf.edu/*	http://proctor.ucsf.edu
+www.radiology.ucsf.edu/*	http://radiology.ucsf.edu
+www.rmis.ucsf.edu/*	http://rmis.ucsf.edu
+www.urology.ucsf.edu/*	http://urology.ucsf.edu
+globalhealth.ucsf.edu	http://anesthesia.ucsf.edu/extranet/globalhealth
+appinventory.ucsf.edu	https://ucsf.service-now.com/ess/inventory.do
+ids.ucsfmedicalcenter.org	http://ids.ucsf.edu
+bchoutreach.ucsf.edu	http://bchsfoutreach.ucsf.edu
+catalyst.ucsf.edu	http://ctsi.ucsf.edu/catalyst
+oralsurgery.ucsf.edu	http://www.ucsfdentalcenter.org/clinic/oral-and-maxillofacial-surgery-faculty-clinic-parnassus
+prep.ucsf.edu	http://preprx.ucsf.edu
+willseylab.ucsf.edu	https://willseylab.com
+lto.ucsf.edu	http://lean.ucsf.edu
+pulsatiletinnitus.ucsf.edu	https://radiology.ucsf.edu/patient-care/services/pulsatile-tinnitus-clinic
+insideguide.ucsf.edu	http://success.ucsf.edu
+www.obgyn.ucsf.edu	http://obgyn.ucsf.edu
+food.ucsf.edu	http://finaid.ucsf.edu/food
+skeletaldysplasias.ucsf.edu	http://skeletaldysplasias.radiology.ucsf.edu
+strauss.ucsf.edu	http://sociology.ucsf.edu
+facialplastics.ucsf.edu	https://ohns.ucsf.edu/facialplastics
+www.bms.ucsf.edu	http://bms.ucsf.edu
+ccm.ucsf.edu	https://anesthesia.ucsf.edu/divisions/critical-care-medicine
+cpa.ucsf.edu	https://anesthesia.ucsf.edu/events/upcoming
+hashimotolab.ucsf.edu	https://anesthesia.ucsf.edu/research-group/hashimoto-lab
+leelab.ucsf.edu	https://anesthesia.ucsf.edu/research-group/lee-lab
+leung.ucsf.edu	https://anesthesia.ucsf.edu/research-group/perioperative-medicine
+neuroanesthesia.ucsf.edu	https://anesthesia.ucsf.edu/divisions/neuroanesthesia
+pain.ucsf.edu	https://anesthesia.ucsf.edu/divisions/pain-medicine
+pedianesthesia.ucsf.edu	https://anesthesia.ucsf.edu/divisions/pediatric-anesthesia
+sfghrcs.ucsf.edu	https://anesthesia.ucsf.edu/divisions/zsfg-respiratory-care-services
+nerveatlas.ucsf.edu	https://anesthesia.ucsf.edu/research-group/nerve-imaging-atlas
+osherminimedicalschool.ucsf.edu	http://osherminimed.ucsf.edu
+www.osherminimedicalschool.ucsf.edu	http://osherminimed.ucsf.edu
+oralmed.ucsf.edu	http://www.ucsfdentalcenter.org/clinic/oral-medicine-faculty-clinic-parnassus
+safety.ucsfmedicalcenter.org	http://safety.ucsf.edu
+orthodash.ucsf.edu	https://bidashboards.ucsfmedicalcenter.org/QvAJAXZfc/opendoc.htm?document=Franchise%20Apps%2FOrthoDash%2FOrthoDash.qvw&host=QVS%40mcqkvwwap001
+addiction.ucsf.edu	http://psych.ucsf.edu/substanceabuse
+ti.ucsf.edu	http://accelerate.ucsf.edu/research/informatics
+dashboard.ucsf.edu	https://ucsf.numerify.com:443/NumerifyWeb/servlet/mstrWeb?evt=3140&src=mstrWeb.3140&documentID=56E9D01311E697030F5B0080EF756339&server=10.0.1.199&Project=Numerify_BI_UCSF&port=0&share=1&uid=ch_shared@ucsf.edu&pwd=Numerify@2
+ocr.ucsf.edu	http://officeofclinicalresearch.ucsf.edu
+# help.ucsf.edu Source	Destination
+help.ucsf.edu/custom/hbs_update.jsp	http://help.ucsf.edu/HelpApps/hbs_update.php
+help.ucsf.edu/custom/hbs_access.jsp	http://help.ucsf.edu/HelpApps/hbs_access.php
+help.ucsf.edu/software	http://software.ucsf.edu
+help.ucsf.edu/custom/ipNetVerify.jsp	http://help.ucsf.edu/HelpApps/ipNetVerify.php
+help.ucsf.edu/HelpWebApps/VPN/	http://security.ucsf.edu/EIS/services_products/RemoteAccessVPN/GettingVPNAccess.html
+help.ucsf.edu/HelpWebApps/Listserv/	https://ucsf.service-now.com/ess/catalog_detail.do?uri=com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=4d94ee7b876410009b5428676d434dca
+help.ucsf.edu/HelpWebApps/Pager/	https://ucsf.service-now.com/ess/catalog_detail.do?uri=com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=39024a54879dd0009b5428676d434d5e
+help.ucsf.edu/HelpWebApps/AD/RsrcAcctForm.jsp	https://ucsf.service-now.com/ess/catalog_detail.do?uri=com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=4615c1f7877850009b5428676d434d04
+help.ucsf.edu/HelpWebApps/EmailHelper/EmailHelper.jsp	http://help.ucsf.edu/HelpApps/EmailHelper.php
+# Source	Destination
+cilia.ucsf.edu	https://webapps.ucsf.edu/cilia
+pando.ucsf.edu	https://webapps.ucsf.edu/pando
+tas.ucsf.edu	https://tashq.org
+championprovider.ucsf.edu	http://champion.ucsf.edu
+ct2g.ucsf.edu	http://www.ct2g.org
+#these are all redirects from the support.ucsf.edu website	Destination
+support.ucsf.edu	http://giving.ucsf.edu
+support.ucsf.edu/alumni	http://www.ucsfalumni.org
+support.ucsf.edu/alumni/faculty-alumni-av	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=2494
+support.ucsf.edu/alumni/faculty-alumni-food-and-beverage	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=2495
+support.ucsf.edu/alumni/faculty-alumni-house-rates	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=2496
+support.ucsf.edu/alumni/faculty-alumni-house-reservations	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=2493
+support.ucsf.edu/alumni/faculty-alumni-house-student-groups	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=2497
+support.ucsf.edu/alumni/membership	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=371
+support.ucsf.edu/alumni/ucsf-faculty-alumni-house	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=965
+support.ucsf.edu/cancer	http://giving.ucsf.edu/funds/cancer
+support.ucsf.edu/cancer/honor-roll	http://giving.ucsf.edu/funds/cancer
+support.ucsf.edu/contact	http://giving.ucsf.edu/contact
+support.ucsf.edu/content/insiderfebruary2016	http://giving.ucsf.edu/impact
+support.ucsf.edu/content/insiderjuly2016	http://giving.ucsf.edu/impact
+support.ucsf.edu/content/insiderjune2016-0	http://giving.ucsf.edu/impact
+support.ucsf.edu/content/insidermay2012	http://giving.ucsf.edu/impact
+support.ucsf.edu/content/insiderseptember2012	http://giving.ucsf.edu/impact
+support.ucsf.edu/discovery	http://giving.ucsf.edu/stories/discovery-fellows-ambassadors
+support.ucsf.edu/giving-areas	http://giving.ucsf.edu/explore
+support.ucsf.edu/giving-areas/asthma	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Asthma
+support.ucsf.edu/giving-areas/dentistry	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Dentistry
+support.ucsf.edu/giving-areas/diabetes	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Diabetes
+support.ucsf.edu/giving-areas/organ-transplant	https://makeagift.ucsf.edu/site/SPageServer/?pagename=A1_API_GeneralGivingForm&Primary=Transplant
+support.ucsf.edu/giving-areas/nursing	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Nursing
+support.ucsf.edu/giving-areas/osher-center-for-integrative-medicine	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Osher%20Center%20for%20Integrative%20Medicine
+support.ucsf.edu/giving-areas/graduate-education	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Graduate%20Education
+support.ucsf.edu/giving-areas/about-neuro-oncology-gordon-murray-caregiver-program	http://giving.ucsf.edu/funds/neuroscience
+support.ucsf.edu/giving-areas/aids	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=AIDS
+support.ucsf.edu/giving-areas/artificial-kidney	http://giving.ucsf.edu/explore
+support.ucsf.edu/giving-areas/benefits-and-events	http://giving.ucsf.edu/fundraise
+support.ucsf.edu/giving-areas/benioff-childrens-hospital	http://giving.ucsf.edu/funds/childrens-health
+support.ucsf.edu/giving-areas/biomedical-science	http://giving.ucsf.edu/funds/neuroscience
+support.ucsf.edu/giving-areas/campaign-for-ucsf-medical-center	http://giving.ucsf.edu/explore
+support.ucsf.edu/giving-areas/cancer	http://giving.ucsf.edu/funds/cancer
+support.ucsf.edu/giving-areas/class-campaigns	http://giving.ucsf.edu/class-giving
+support.ucsf.edu/giving-areas/dermatology	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Dermatology
+support.ucsf.edu/giving-areas/donor-honor-roll	http://giving.ucsf.edu/funds/neuroscience
+support.ucsf.edu/giving-areas/fundraising-program-inspired-by-gordon-murray	http://giving.ucsf.edu/funds/neuroscience
+support.ucsf.edu/giving-areas/global-health	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Global%20Health
+support.ucsf.edu/giving-areas/head-and-neck-surgery	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Ear,%20Nose%20and%20Throat&ACode=B1290
+support.ucsf.edu/giving-areas/health-sciences-education-at-ucsf	http://giving.ucsf.edu/funds/student-faculty
+support.ucsf.edu/giving-areas/heart-disease	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Heart%20Disease
+support.ucsf.edu/giving-areas/honor-roll-of-donors-2011–2012	http://giving.ucsf.edu/explore
+support.ucsf.edu/giving-areas/how-to-support-neuro-oncology-gordon-murray-caregiver-program	http://giving.ucsf.edu/funds/neuroscience
+support.ucsf.edu/giving-areas/kidney-disease	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Kidney%20Disease
+support.ucsf.edu/giving-areas/liver-disease	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Liver%20Disease
+support.ucsf.edu/giving-areas/lung-disease	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Lung%20Disease
+support.ucsf.edu/giving-areas/medical-education	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Medical%20Education
+support.ucsf.edu/giving-areas/more-giving-areas	http://giving.ucsf.edu/explore
+support.ucsf.edu/giving-areas/murray-family	http://giving.ucsf.edu/funds/neuroscience
+support.ucsf.edu/giving-areas/neurosciences	http://giving.ucsf.edu/funds/neuroscience
+support.ucsf.edu/giving-areas/orthopaedic-surgery	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Orthopaedics
+support.ucsf.edu/giving-areas/pharmacy	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Pharmacy
+support.ucsf.edu/giving-areas/psychiatry	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Psychiatry
+support.ucsf.edu/giving-areas/rosalind-russell-medical-research-center-arthritis	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Arthritis
+support.ucsf.edu/giving-areas/stem-cell-and-regeneration-medicine	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Stem%20Cell%20and%20Regeneration%20Medicine
+support.ucsf.edu/giving-areas/surgery	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Surgery&AppealCode=SD7WB
+support.ucsf.edu/giving-areas/uc-san-francisco-discovery-fellows-program	http://giving.ucsf.edu/stories/discovery-fellows-ambassadors
+support.ucsf.edu/giving-areas/ucsf-medical-center-hospitals	https://makeagift.ucsf.edu/site/SPageServer/?pagename=A1_API_GeneralGivingForm
+support.ucsf.edu/giving-areas/ucsf-neurosciences-initiative-campaign	http://giving.ucsf.edu/funds/neuroscience
+support.ucsf.edu/giving-areas/womens-health	https://makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Women%27s%20Health
+support.ucsf.edu/magazine	http://giving.ucsf.edu/magazine
+support.ucsf.edu/news	http://giving.ucsf.edu/stories
+support.ucsf.edu/news/2016-gbch	http://giving.ucsf.edu/events/give-breast-cancer-boot
+support.ucsf.edu/news/3-d-virtual-reality-colonoscopy	http://giving.ucsf.edu/stories
+support.ucsf.edu/news/battle-against-prostate-cancer-its-beard	http://giving.ucsf.edu/stories
+support.ucsf.edu/news/bold-innovation-program-fast-tracks-precision-medicine-research	http://giving.ucsf.edu/stories
+support.ucsf.edu/news/chancellor-and-husband’s-historic-gift-student-support-inspires-bernadetts	http://giving.ucsf.edu/stories
+support.ucsf.edu/news/channeling-grief-to-find-cure	http://giving.ucsf.edu/stories
+support.ucsf.edu/news/concert-ucsf-benioff-childrens-hospital-alanis-morissette-and-jay-leno	http://giving.ucsf.edu/stories
+support.ucsf.edu/news/friends-establish-neurohospitalist-distinguished-professorship	http://giving.ucsf.edu/stories
+support.ucsf.edu/news/medicine-alumnus-bernadett-establishes-education-chair	http://giving.ucsf.edu/stories
+support.ucsf.edu/news/passion-urban-underserved	http://giving.ucsf.edu/stories
+support.ucsf.edu/news/publications	http://giving.ucsf.edu/stories
+support.ucsf.edu/news/susan-desmond-hellmann-and-nicholas-hellmann-make-historic-gift-health-sciences-education-0	http://giving.ucsf.edu/stories
+support.ucsf.edu/ucsf-foundation	http://giving.ucsf.edu/about
+support.ucsf.edu/ucsf-foundation/about	http://giving.ucsf.edu/about
+support.ucsf.edu/ucsf-foundation/annual-report	http://giving.ucsf.edu/about
+support.ucsf.edu/ucsf-foundation/board-overseers	http://giving.ucsf.edu/about
+support.ucsf.edu/ucsf-foundation/committees	http://giving.ucsf.edu/about
+support.ucsf.edu/ways-to-give	http://giving.ucsf.edu/ways-to-give
+support.ucsf.edu/ways-to-give/annual-employee-giving-program	http://giving.ucsf.edu/employee-giving
+support.ucsf.edu/ways-to-give/annual-giving	http://giving.ucsf.edu/ways-to-give
+support.ucsf.edu/ways-to-give/chancellors-circle	http://giving.ucsf.edu/giving-societies/chancellors-circle
+support.ucsf.edu/ways-to-give/compounding-makes-comeback	http://giving.ucsf.edu/ways-to-give
+support.ucsf.edu/ways-to-give/corporate-partners	http://giving.ucsf.edu/corporate-foundation
+support.ucsf.edu/ways-to-give/corporate-support	http://giving.ucsf.edu/corporate-foundation
+support.ucsf.edu/ways-to-give/corporate-collaborations	http://giving.ucsf.edu/corporate-foundation
+support.ucsf.edu/ways-to-give/corporations-and-foundations-for-faculty-and-staff	http://giving.ucsf.edu/corporate-foundation
+support.ucsf.edu/ways-to-give/employee-giving-donor-testimonials	http://giving.ucsf.edu/employee-giving
+support.ucsf.edu/ways-to-give/employee-giving-faqs	http://giving.ucsf.edu/employee-giving
+support.ucsf.edu/ways-to-give/foundation-partners	http://giving.ucsf.edu/corporate-foundation
+support.ucsf.edu/ways-to-give/host-community-fundraiser	http://giving.ucsf.edu/fundraise
+support.ucsf.edu/ways-to-give/monthly-giving	http://giving.ucsf.edu/payment-faq
+support.ucsf.edu/ways-to-give/named-endowments-and-facilities	http://giving.ucsf.edu/endowments
+support.ucsf.edu/ways-to-give/office-of-corporate-and-foundation-relations	http://giving.ucsf.edu/corporate-foundation
+support.ucsf.edu/ways-to-give/people-who-give	http://giving.ucsf.edu/stories
+support.ucsf.edu/ways-to-give/playing-hivaids-prevention-game	http://giving.ucsf.edu/explore
+support.ucsf.edu/ways-to-give/societies	http://giving.ucsf.edu/societies
+support.ucsf.edu/ways-to-give/tribute-giving	http://giving.ucsf.edu/honor-memorial
+support.ucsf.edu/ways-to-give/ucsf-giving-societies-and-academies	http://giving.ucsf.edu/societies
+support.ucsf.edu/ways-to-give/volunteer-leadership	http://giving.ucsf.edu/involved
+support.ucsf.edu/ways-to-givesupport.ucsf.edu/ways-to-give-faq	http://giving.ucsf.edu/payment-faq
+support.ucsf.edu/giving-areas/prevent-skin-cancer-0	http://giving.ucsf.edu/skin-cancer-prevention
+support.ucsf.edu/ways-to-give/class-1961-scholarship-fund	http://giving.ucsf.edu/class-giving
+#continue non support.ucsf.edu domains	Destination
+giftplanning.ucsf.edu	http://ucsf.giftplans.org/

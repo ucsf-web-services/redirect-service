@@ -107,10 +107,12 @@ class redirectToRule {
 				$start 	= 1;
 				$end 	= strrpos($rule,')');
 				$domains = substr($rule,$start,$end-1);
-				$domains = explode('|',$domains);
+				$domains = explode("|",$domains);
+				//this should be the path after the (domain|domain) part
+				$pair = substr($rule, $end+1);  
 
-				$pair = substr($rule, $end+1);
-				list($path, $redirect) = explode('|', $pair);
+
+				list($path, $redirect) = explode("\t", $pair);
 
 				//we should never reach here, cause technically we check above.
 				if (!in_array($this->request['host'], $domains)) {
@@ -120,7 +122,7 @@ class redirectToRule {
 				$match = parse_url('http://'.$this->request['host'].$path);
 
 			} else {
-				list($path, $redirect) = explode('|', $rule);
+				list($path, $redirect) = explode("\t", $rule);
 				$match = parse_url('http://'.$path);
 			}
 
