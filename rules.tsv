@@ -481,6 +481,7 @@ support.ucsf.edu/giving-areas/prevent-skin-cancer-0	http://giving.ucsf.edu/skin-
 support.ucsf.edu/ways-to-give/class-1961-scholarship-fund	http://giving.ucsf.edu/class-giving
 support.ucsf.edu/reunions	http://giving.ucsf.edu/reunions
 #continue non support.ucsf.edu domains	Destination
+giftplanning.ucsf.edu/magazine	http://ucsf.giftplans.org/?utm_source=magazine&utm_medium=envelope
 giftplanning.ucsf.edu	http://ucsf.giftplans.org/
 thepositiveproject.ucsf.edu	http://prevention.ucsf.edu
 sugarscience.ucsf.edu	http://www.sugarscience.org
@@ -497,4 +498,10 @@ consult.ucsf.edu	http://accelerate.ucsf.edu/consult
 dawn.ucsf.edu	http://pnelab.ucsf.edu
 www.cort.ucsf.edu	http://cort.ucsf.edu
 www.cind.ucsf.edu	http://cind.ucsf.edu
+<<<<<<< HEAD
 rtog.ucsf.edu	http://nrgbb.ucsf.edu
+=======
+globalhealthnursing.ucsf.edu	http://nursing.ucsf.edu/global-health
+hhp.ucsf.edu	https://www.sanfrancisco.va.gov/services/HealthyHeart_.asp
+molofskyimmunolab.ucsf.edu	https://www.arimolofskylab.org/
+>>>>>>> 99810e785a714bec97c8b43afe7951a58e8aadee
