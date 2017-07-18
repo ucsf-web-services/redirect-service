@@ -4,9 +4,128 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "253a2c1fb11839e5b6dc782d78487ea4",
-    "content-hash": "f80ac4cfe810432a2fd800d043e2bffc",
+    "content-hash": "5c3b294a44fc80e9b37abe006a97da6b",
     "packages": [
+        {
+            "name": "bvanhoekelen/performance",
+            "version": "V2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bvanhoekelen/performance.git",
+                "reference": "4a6c886940996ee1bf5f4a8db994c5dc6f53bcde"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bvanhoekelen/performance/zipball/4a6c886940996ee1bf5f4a8db994c5dc6f53bcde",
+                "reference": "4a6c886940996ee1bf5f4a8db994c5dc6f53bcde",
+                "shasum": ""
+            },
+            "require": {
+                "bvanhoekelen/terminal-style": "^1.0",
+                "larapack/dd": "1.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "illuminate/database": "^5.4",
+                "illuminate/events": "^5.4",
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Performance\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache License 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "B. van Hoekelen",
+                    "homepage": "https://github.com/bvanhoekelen/performance"
+                }
+            ],
+            "description": "PHP performance tool analyser your script on time, memory usage and db query. Support Laravel and Composer for web, web console and command line interfaces.",
+            "keywords": [
+                "analyser",
+                "command line",
+                "compressor",
+                "database",
+                "database query log",
+                "export",
+                "laravel",
+                "memory",
+                "performance",
+                "performance tool",
+                "php",
+                "php performance analyser",
+                "php performance tool",
+                "php-performance",
+                "query",
+                "query analyser",
+                "query log",
+                "terminal",
+                "time",
+                "web"
+            ],
+            "time": "2017-07-17T21:47:20+00:00"
+        },
+        {
+            "name": "bvanhoekelen/terminal-style",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bvanhoekelen/terminal-style.git",
+                "reference": "a24ce9da01918cd56b0ac8971ff7542b40079f73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bvanhoekelen/terminal-style/zipball/a24ce9da01918cd56b0ac8971ff7542b40079f73",
+                "reference": "a24ce9da01918cd56b0ac8971ff7542b40079f73",
+                "shasum": ""
+            },
+            "require": {
+                "larapack/dd": "1.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/terminal-style.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache License 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "B. van Hoekelen",
+                    "homepage": "https://github.com/bvanhoekelen/terminal-style"
+                }
+            ],
+            "description": "Return your terminal message in style! Change the text style, text color and text background color form the terminal interface with ANSI color codes. The terminal style tool support Laravel and Composer.",
+            "keywords": [
+                "8-bits background color",
+                "ANSI color codes",
+                "ansi",
+                "bash",
+                "colors",
+                "command line",
+                "command line colors",
+                "command line style",
+                "php",
+                "php terminal colors",
+                "php terminal style",
+                "terminal",
+                "terminal colors"
+            ],
+            "time": "2017-05-18T16:27:07+00:00"
+        },
         {
             "name": "katzgrau/klogger",
             "version": "dev-master",
@@ -55,7 +174,43 @@
             "keywords": [
                 "logging"
             ],
-            "time": "2015-11-04 22:43:22"
+            "time": "2015-11-04T22:43:22+00:00"
+        },
+        {
+            "name": "larapack/dd",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/larapack/dd.git",
+                "reference": "561b5111a13d0094b59b5c81b1572489485fb948"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/larapack/dd/zipball/561b5111a13d0094b59b5c81b1572489485fb948",
+                "reference": "561b5111a13d0094b59b5c81b1572489485fb948",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/var-dumper": "*"
+            },
+            "type": "package",
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Topper",
+                    "email": "hi@webman.io"
+                }
+            ],
+            "description": "`dd` is a helper method in Laravel. This package will add the `dd` to your application.",
+            "time": "2016-12-15T09:34:34+00:00"
         },
         {
             "name": "psr/log",
@@ -93,7 +248,134 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2012-12-21T11:40:51+00:00"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "f29dca382a6485c3cbe6379f0c61230167681937"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f29dca382a6485c3cbe6379f0c61230167681937",
+                "reference": "f29dca382a6485c3cbe6379f0c61230167681937",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2017-06-09T14:24:12+00:00"
+        },
+        {
+            "name": "symfony/var-dumper",
+            "version": "v3.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-dumper.git",
+                "reference": "0f32b62d21991700250fed5109b092949007c5b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/0f32b62d21991700250fed5109b092949007c5b3",
+                "reference": "0f32b62d21991700250fed5109b092949007c5b3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "conflict": {
+                "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
+            },
+            "require-dev": {
+                "ext-iconv": "*",
+                "twig/twig": "~1.34|~2.4"
+            },
+            "suggest": {
+                "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
+                "ext-symfony_debug": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "Resources/functions/dump.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Component\\VarDumper\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony mechanism for exploring and dumping PHP variables",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "debug",
+                "dump"
+            ],
+            "time": "2017-07-10T14:18:27+00:00"
         }
     ],
     "packages-dev": [],

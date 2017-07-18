@@ -1,9 +1,3 @@
-# Source	Destination
-genetics.ucsf.local/main/networking/g1/wireless	http://it.ucsf.edu/services/wireless-service
-(genetics.ucsf.local|genes.ucsf.local)/main/service_catalog/email.html	http://it.ucsf.edu/services/email-online
-fastpay.ucsf.local	http://nutrition.ucsfmedicalcenter.org/fastpay/
-smartchoice.ucsf.local	http://nutrition.ucsfmedicalcenter.org/smartchoice/
-gnome.ucsf.local	https://btrctissuecore.ucsf.edu/tbank/index.html
 # its.ucsf.edu redirects	Destination
 (its.ucsf.edu|oaais.ucsf.edu)/main/networking/g1/wireless	http://it.ucsf.edu/services/wireless-service
 (its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/email.html	http://it.ucsf.edu/services/email
@@ -480,7 +474,7 @@ support.ucsf.edu/ways-to-givesupport.ucsf.edu/ways-to-give-faq	http://giving.ucs
 support.ucsf.edu/giving-areas/prevent-skin-cancer-0	http://giving.ucsf.edu/skin-cancer-prevention
 support.ucsf.edu/ways-to-give/class-1961-scholarship-fund	http://giving.ucsf.edu/class-giving
 support.ucsf.edu/reunions	http://giving.ucsf.edu/reunions
-#continue non support.ucsf.edu domains	Destination
+# source	Destination
 giftplanning.ucsf.edu/magazine	http://ucsf.giftplans.org/?utm_source=magazine&utm_medium=envelope
 giftplanning.ucsf.edu	http://ucsf.giftplans.org/
 thepositiveproject.ucsf.edu	https://prevention.ucsf.edu
@@ -510,3 +504,9 @@ dermatology.medschool.ucsf.edu	http://www.dermatology.ucsf.edu
 zsfganes.ucsf.edu	https://anesthesia.ucsf.edu/divisions/zuckerberg-san-francisco-general-hospital-and-trauma-center
 coe.ucsf.edu/rinaudolab	https://rinaudolab.ucsf.edu
 globalcancer.ucsf.edu	http://cancer.ucsf.edu/global-cancer
+# Source	Destination
+genetics.ucsf.local/main/networking/g1/wireless	http://it.ucsf.edu/services/wireless-service
+(genetics.ucsf.local|genes.ucsf.local)/main/service_catalog/email.html	http://it.ucsf.edu/services/email-online
+fastpay.ucsf.local	http://nutrition.ucsfmedicalcenter.org/fastpay/
+smartchoice.ucsf.local	http://nutrition.ucsfmedicalcenter.org/smartchoice/
+gnome.ucsf.local	https://btrctissuecore.ucsf.edu/tbank/index.html
