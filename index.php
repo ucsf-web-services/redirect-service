@@ -21,6 +21,7 @@
  */
 
 require 'vendor/autoload.php';
+use Performance\Performance;
 use Psr\Log\LogLevel;
 
 
@@ -39,8 +40,8 @@ class redirectToRule {
 	public $rulesFile		= 'rules.tsv';
 
 	//if enabled show log and errors on screen, don't redirect to destination
-	public $testMode		= false;
-	public $log					= array();
+	public $debug			= false;
+	public $log				= array();
 
 	//final destination from rules
 	public $redirectTo		= null;
@@ -48,34 +49,31 @@ class redirectToRule {
 	//pop or push potential routes here based on rule precident
 	public $potentials		= array();
 
-	public function __construct($request, $testmode, $rulesFile=null)
+	public function __construct($request, $debug=false, $rulesFile=null)
 	{
+		if ($debug) 	Performance::point( 'contructor' );
+		if ($debug) 	$this->enableDebugging();
+		$this->log[]	= 'REQUEST: '. $this->request;
 		$protocol		= (isset($request['HTTPS'])) ? 'https://' : 'http://';
 		$this->request 	= $protocol.$request['HTTP_HOST'].$request['REQUEST_URI'];
-
-		$this->log[]		= 'REQUEST: '. $this->request;
-
 		$this->request  = parse_url($this->request);
-		$this->testMode = $testmode;
-
-		if ($rulesFile!=null) {
-			$this->rulesFile = $rulesFile;
-		}
-
-		if ($testmode) {
-			$this->enableDebugging();
-		}
 
 		//do nothing with these sophos scanner requests, hundreds of these are happening per second?
 		if (stristr($this->request['path'],'/sophos/update/')) {
 			exit();
 		}
 
+		if ($rulesFile!=null) {
+			$this->rulesFile = $rulesFile;
+		}
+
 		$this->sortRulesFile();
 		$this->redirectTo = $this->determineRoute();
+		if ($debug) Performance::finish();
 	}
 
 	public function enableDebugging() {
+		$this->debug = true;
 		ini_set('display_errors',1);
 		error_reporting(E_ALL);
 	}
@@ -88,6 +86,7 @@ class redirectToRule {
 	 *
 	 */
 	public function sortRulesFile() {
+		if ($this->debug) Performance::point( 'sort rules' );
 
 		$rules 	= file($this->rulesFile, FILE_IGNORE_NEW_LINES);
 
@@ -110,8 +109,7 @@ class redirectToRule {
 				$domains = explode("|",$domains);
 				//this should be the path after the (domain|domain) part
 				$pair = substr($rule, $end+1);  
-
-
+				//print_r($domains);
 				list($path, $redirect) = explode("\t", $pair);
 
 				//we should never reach here, cause technically we check above.
@@ -120,6 +118,7 @@ class redirectToRule {
 				}
 				//we know the host exists, in the line, so just use the host and forget the possible domain options.
 				$match = parse_url('http://'.$this->request['host'].$path);
+				//echo 'match:'.print_r($match, true).PHP_EOL;
 
 			} else {
 				list($path, $redirect) = explode("\t", $rule);
@@ -127,7 +126,7 @@ class redirectToRule {
 			}
 
 			//anything thats a partial match but not at beginning of the rule is not a match
-			if ((strpos(trim($rule), $this->request['host']) > 0)) {
+			if ((strpos(trim($this->request['path']), $match['path']) > 0)) {
 				continue;
 			}
 
@@ -166,7 +165,7 @@ class redirectToRule {
 				array_push($this->potentials, array('rule'=>$rule,'match'=>$match,'complete'=>0));
 			}
 		}
-
+		if ($this->debug) Performance::finish();
 	}
 
 	/**
@@ -175,6 +174,7 @@ class redirectToRule {
 	 * @return string
 	 */
 	public function determineRoute() {
+		if ($this->debug) Performance::point('determine routes');
 
 		if (isset($this->potentials[0])) {
 
@@ -182,20 +182,23 @@ class redirectToRule {
 
 			if ($route['match']['include_path']!==false && $route['complete']==1) {
 				//$this->log[] 		= 'Include_path: true   Path: '.$route['match']['path'].' Complete: true';
+				if ($this->debug) Performance::finish();
 				return $route['match']['redirect'].$route['match']['path'];
 			}
 			else {
 				if ($route['complete']==1) {
+					if ($this->debug) Performance::finish();
 					return $route['match']['redirect'];
 				} else {
 					$root = parse_url($route['match']['redirect']);
+					if ($this->debug) Performance::finish();
 					return 'http://'.$root['host'];
 				}
 			}
 		} else {
+			if ($this->debug) Performance::finish();
 			return 'https://www.ucsf.edu/404';
 		}
-
 	}
 
 	/**
@@ -207,7 +210,7 @@ class redirectToRule {
 	 * @return bool|mixed
 	 */
 	public function subpathMatch($request, $match, $redirect) {
-
+		if ($this->debug) Performance::point( 'match routes' );
 		$match['path'] 		= (isset($match['path'])) ?  str_replace('*','',$match['path']) : '/';
 
 		//$this->log[]		= $match['path'] .' should match '.$request['path'];
@@ -220,52 +223,60 @@ class redirectToRule {
 
 			//if empty path matches exactly, return true.
 			if (empty($request_subpath)) {
-
+				if ($this->debug) Performance::finish();
 				return true;
 			}
 			if (strpos($request_subpath, $match['path'])!==0) $request_subpath = '/'.$request_subpath;
+
+			if ($this->debug) Performance::finish();
 			return $request_subpath;
 		} else {
+			if ($this->debug) Performance::finish();
 			return false;
 		}
-
-
 	}
 
 	public function outputLog() {
-		if ($this->testMode) {
+
+		if ($this->debug) {
+			Performance::point( 'logger' );
 			echo '<pre>';
 			echo implode("\n\n", $this->log);
 			echo '</pre>';
-		} else {
-			$logger = new Katzgrau\KLogger\Logger(__DIR__.'/logs', Psr\Log\LogLevel::INFO, array('extension'=>'log','prefix'=>'redirect_'));
-
-			//log the results to KLogger class
-			foreach($this->log as $l) {
-				$logger->info($l);
-			}
 		}
+
+		$logger = new Katzgrau\KLogger\Logger(__DIR__.'/logs', Psr\Log\LogLevel::INFO, array('extension'=>'log','prefix'=>'redirect_'));
+		//log the results to KLogger class
+		foreach($this->log as $l) {
+			$logger->info($l);
+		}
+
+		if ($this->debug) 	Performance::finish();
 		return true;
 	}
 
 
 	public function redirect() {
-		//$this->log[] = 	print_r($this->potentials,true);
+		if ($this->debug) 	Performance::point( 'redirect' );
+		if ($this->debug)	$this->log[] = print_r($this->potentials,true);
 		$this->log[] =  'REDIRECT: '.$this->redirectTo;
 		$this->outputLog();
 
-		if ($this->testMode==false) {
+		if (!$this->debug) {
 			header('HTTP/1.1 301 Moved Permanently');
 			header('Location:'.$this->redirectTo);
 			exit;
+		} else {
+			Performance::finish();
+			Performance::results();
 		}
 	}
-
 }
 
 
 /**
- * Pass $_SERVER to the class constructor, pass testmode as second arg and rules file if not default filename as third.
+ * Pass $_SERVER to the class constructor, pass testmode as second arg and rules
+ * file if not default filename as third.
  *
  */
 $redirect = new redirectToRule($_SERVER, false);
