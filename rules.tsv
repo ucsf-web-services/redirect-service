@@ -505,11 +505,12 @@ zsfganes.ucsf.edu	https://anesthesia.ucsf.edu/divisions/zuckerberg-san-francisco
 coe.ucsf.edu/rinaudolab	https://rinaudolab.ucsf.edu
 grosslab.ucsf.edu	https://pharm.ucsf.edu/gross
 globalcancer.ucsf.edu	http://cancer.ucsf.edu/global-cancer
-www.smokefreemovies.ucsf.edu/*	https://smokefreemovies.ucsf.edu
 # Source	Destination
 genetics.ucsf.local/main/networking/g1/wireless	http://it.ucsf.edu/services/wireless-service
 (genetics.ucsf.local|genes.ucsf.local)/main/service_catalog/email.html	http://it.ucsf.edu/services/email-online
 fastpay.ucsf.local	http://nutrition.ucsfmedicalcenter.org/fastpay/
 smartchoice.ucsf.local	http://nutrition.ucsfmedicalcenter.org/smartchoice/
 gnome.ucsf.local	https://btrctissuecore.ucsf.edu/tbank/index.html
+# Source	Destination
 coast.ucsf.edu	https://www.coastcenter.org
+www.smokefreemovies.ucsf.edu/*	https://smokefreemovies.ucsf.edu
