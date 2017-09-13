@@ -125,9 +125,11 @@ class redirectToRule {
 				$match = parse_url('http://'.$path);
 			}
 
-			//anything thats a partial match but not at beginning of the rule is not a match
-			if ((strpos(trim($this->request['path']), $match['path']) > 0)) {
-				continue;
+			if (isset($this->request['path']) && isset($match['path'])) {
+				//anything thats a partial match but not at beginning of the rule is not a match
+				if ((strpos(trim($this->request['path']), $match['path']) > 0)) {
+					continue;
+				}
 			}
 
 			$match['path'] 			= (!isset($match['path'])) ?  '/' : $match['path'];
