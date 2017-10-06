@@ -53,7 +53,7 @@ class redirectToRule {
 	{
 		if ($debug) 	Performance::point( 'contructor' );
 		if ($debug) 	$this->enableDebugging();
-		$this->log[]	= 'REQUEST: '. $this->request;
+		$this->log[]	= 'REQUEST: '. $request;
 		$protocol		= (isset($request['HTTPS'])) ? 'https://' : 'http://';
 		$this->request 	= $protocol.$request['HTTP_HOST'].$request['REQUEST_URI'];
 		$this->request  = parse_url($this->request);
@@ -194,7 +194,11 @@ class redirectToRule {
 				} else {
 					$root = parse_url($route['match']['redirect']);
 					if ($this->debug) Performance::finish();
-					return 'http://'.$root['host'];
+					if (strlen($root['path']) > 1) {
+						return 'http://'.$root['host'].$root['path'];
+					} else {
+						return 'http://'.$root['host'];
+					}
 				}
 			}
 		} else {
