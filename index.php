@@ -53,10 +53,11 @@ class redirectToRule {
 	{
 		if ($debug) 	Performance::point( 'contructor' );
 		if ($debug) 	$this->enableDebugging();
-		$this->log[]	= 'REQUEST: '. $request;
-		$protocol		= (isset($request['HTTPS'])) ? 'https://' : 'http://';
-		$this->request 	= $protocol.$request['HTTP_HOST'].$request['REQUEST_URI'];
-		$this->request  = parse_url($this->request);
+
+		$protocol		= 	(isset($request['HTTPS'])) ? 'https://' : 'http://';
+		$this->request 	= 	$protocol.$request['HTTP_HOST'].$request['REQUEST_URI'];
+		$this->log[]	=  	$this->request;
+		$this->request  = 	parse_url($this->request);
 
 		//do nothing with these sophos scanner requests, hundreds of these are happening per second?
 		if (stristr($this->request['path'],'/sophos/update/')) {
