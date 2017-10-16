@@ -499,7 +499,6 @@ molofskyimmunolab.ucsf.edu	https://www.arimolofskylab.org
 www.prhe.ucsf.edu	https://prhe.ucsf.edu
 statelab.ucsf.edu	http://statelab.weebly.com
 campaign.ucsf.edu/register	https://www.regonline.com/registration/Checkin.aspx?EventID=2028946
-campaign.ucsf.edu/DOlaunch	https://www.regonline.com/registration/checkin.aspx?EventId=2034515&RegTypeID=722450
 campaign.ucsf.edu	http://giving.ucsf.edu
 precisionpublichealth.ucsf.edu	https://precisionmedicine.ucsf.edu/programs/precision-public-health
 dermatology.medschool.ucsf.edu	http://www.dermatology.ucsf.edu
@@ -532,4 +531,11 @@ ip3.ucsf.edu/*	https://ait.ucsf.edu/redirect.html
 pando.ucsf.edu/*	https://ait.ucsf.edu/redirect.html
 webapps.ucsf.edu/*	https://ait.ucsf.edu/redirect.html
 avm.ucsf.edu/*	https://anesthesia.ucsf.edu/research-group/center-cerebrovascular-research
-isu.ucsf.edu	https://tech.ucsf.edu
+alumni.ucsf.edu/benefits	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=321
+alumni.ucsf.edu/membershipcard	https://securelb.imodules.com/s/1420/index.aspx?sid=1420&gid=1001&pgid=3
+alumni.ucsf.edu/register	https://securelb.imodules.com/s/1420/index.aspx?sid=1420&gid=1001&pgid=8&cid=46
+alumni.ucsf.edu/events	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=13&cid=664
+candstudy.ucsf.edu	http://pnelab.ucsf.edu/cellular-aging-and-neurobiology-depression-can-d-study
+cand.ucsf.edu	http://pnelab.ucsf.edu/cellular-aging-and-neurobiology-depression-can-d-study
+somtech.ucsf.edu	https://tech.ucsf.edu
+isu.ucsf.edu    https://tech.ucsf.edu
