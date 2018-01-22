@@ -514,7 +514,7 @@ smartchoice.ucsf.local	http://nutrition.ucsfmedicalcenter.org/smartchoice/
 gnome.ucsf.local	https://btrctissuecore.ucsf.edu/tbank/index.html
 # Source	Destination
 coast.ucsf.edu	https://www.coastcenter.org
-alumni.ucsf.edu/aw	http://www.ucsfalumni.org/s/1420/start2.aspx?sid=1420&gid=1001&pgid=2482
+alumni.ucsf.edu/aw	https://ucsfalumniweekend2018.sched.com/	
 alumni.ucsf.edu	http://www.ucsfalumni.org
 som.ucsf.edu	http://medschool.ucsf.edu
 www.smokefreemovies.ucsf.edu/*	https://smokefreemovies.ucsf.edu
@@ -533,7 +533,7 @@ webapps.ucsf.edu/*	https://ait.ucsf.edu/redirect.html
 avm.ucsf.edu/*	https://anesthesia.ucsf.edu/research-group/center-cerebrovascular-research
 avm.ucsf.edu	https://anesthesia.ucsf.edu/research-group/center-cerebrovascular-research
 alumni.ucsf.edu/benefits	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=321
-alumni.ucsf.edu/membershipcard	https://securelb.imodules.com/s/1420/index.aspx?sid=1420&gid=1001&pgid=3
+alumni.ucsf.edu/membershipcard	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=464	
 alumni.ucsf.edu/register	https://securelb.imodules.com/s/1420/index.aspx?sid=1420&gid=1001&pgid=8&cid=46
 alumni.ucsf.edu/events	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=13&cid=664
 candstudy.ucsf.edu	http://pnelab.ucsf.edu/cellular-aging-and-neurobiology-depression-can-d-study
