@@ -1,8 +1,8 @@
-#REDIRECT SERVER SCRIPT#
+# REDIRECT SERVER SCRIPT #
  
 Purpose of this file is to manage redirection of traffic to the new host location.
 
-##RULES##
+## RULES ##
 * Each line of the rules.csv file contains a redirect route.  The original path is on the left, seperated by a pipe and then followed by the redirect path.   The application tries exact matches before attempting wild cards etc.
 
 * The original path should not contain http:// or https:// but just the domain name and any path information.
@@ -27,5 +27,6 @@ Purpose of this file is to manage redirection of traffic to the new host locatio
 @todo - we need to add HTTPS/SSL support to the redirect.ucsf.edu server so we can handle redirects that originally came form a secure link.
 
 __Help contribute to this project__
-https://github.com/ucsf-web-services/redirect-service
-https://github.com/ucsf-web-services/redirect-service.git
+
+* https://github.com/ucsf-web-services/redirect-service
+* https://github.com/ucsf-web-services/redirect-service.git
