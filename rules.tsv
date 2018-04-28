@@ -513,8 +513,6 @@ smartchoice.ucsf.local	http://nutrition.ucsfmedicalcenter.org/smartchoice/
 gnome.ucsf.local	https://btrctissuecore.ucsf.edu/tbank/index.html
 # Source	Destination
 coast.ucsf.edu	https://www.coastcenter.org
-alumni.ucsf.edu/aw	https://ucsfalumniweekend2018.sched.com/	
-alumni.ucsf.edu	http://www.ucsfalumni.org
 som.ucsf.edu	http://medschool.ucsf.edu
 www.smokefreemovies.ucsf.edu/*	https://smokefreemovies.ucsf.edu
 www.tobacco.ucsf.edu/*	https://tobacco.ucsf.edu
@@ -531,10 +529,6 @@ pando.ucsf.edu/*	https://ait.ucsf.edu/redirect.html
 webapps.ucsf.edu/*	https://ait.ucsf.edu/redirect.html
 avm.ucsf.edu/*	https://anesthesia.ucsf.edu/research-group/center-cerebrovascular-research
 avm.ucsf.edu	https://anesthesia.ucsf.edu/research-group/center-cerebrovascular-research
-alumni.ucsf.edu/benefits	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=321
-alumni.ucsf.edu/membershipcard	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=464	
-alumni.ucsf.edu/register	https://securelb.imodules.com/s/1420/index.aspx?sid=1420&gid=1001&pgid=8&cid=46
-alumni.ucsf.edu/events	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=13&cid=664
 candstudy.ucsf.edu	http://pnelab.ucsf.edu/cellular-aging-and-neurobiology-depression-can-d-study
 cand.ucsf.edu	http://pnelab.ucsf.edu/cellular-aging-and-neurobiology-depression-can-d-study
 somtech.ucsf.edu	https://tech.ucsf.edu
@@ -584,7 +578,6 @@ bicklerlab.ucsf.edu	https://anesthesia.ucsf.edu/research-group/bickler-lab
 abog.ucsf.edu	https://amp.ucsf.edu/
 basicneeds.ucsf.edu	https://finaid.ucsf.edu/types-of-aid/housing-food-and-transportation
 sfghlibrary.ucsf.edu/*	http://zsfglibrary.ucsf.edu
-alumni.ucsf.edu/GHC	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=1589
 faces-kenya.org	https://faces.ucsf.edu
 www.faces-kenya.org	https://faces.ucsf.edu
 rna.keck.ucsf.edu	https://rnakeck.ucsf.edu
@@ -594,3 +587,40 @@ btc.ucsf.edu	http://braintumorcenter.ucsf.edu/
 myfs.ucsf.edu	https://www.cpfm.ucsf.edu/myfs
 www.chc.ucsf.edu	https://chc.ucsf.edu/
 www.iacuc.ucsf.edu	https://iacuc.ucsf.edu/
+#begin for removal after DNS change
+alumni.ucsf.edu/aw	https://ucsfalumniweekend2018.sched.com/	
+alumni.ucsf.edu	http://www.ucsfalumni.org
+alumni.ucsf.edu/GHC	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=1589
+alumni.ucsf.edu/benefits	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=321
+alumni.ucsf.edu/membershipcard	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=464	
+alumni.ucsf.edu/register	https://securelb.imodules.com/s/1420/index.aspx?sid=1420&gid=1001&pgid=8&cid=46
+alumni.ucsf.edu/events	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=13&cid=664
+#end for removal after DNS change
+www.ucsfalumni.org/	https://alumni.ucsf.edu
+www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=13&cid=664	https://alumni.ucsf.edu/events-landing
+www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=371	https://alumni.ucsf.edu/alumni-association-dues
+www.ucsfalumni.org/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=351	https://alumni.ucsf.edu/medical-alumni-association
+www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=321	https://alumni.ucsf.edu/alumni-benefits
+www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=324	https://alumni.ucsf.edu/alumni-resources
+www.ucsfalumni.org/s/1420/index2.aspx?sid=1420&gid=1001&pgid=350	https://alumni.ucsf.edu/dental-alumni-association
+www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=327	https://alumni.ucsf.edu/travel-and-affiliate-programs
+www.ucsfalumni.org/s/1420/index2.aspx?sid=1420&gid=1001&pgid=349	https://alumni.ucsf.edu/pharmacy-alumni-association
+www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=965	https://alumni.ucsf.edu/ucsf-faculty-alumni-house
+www.ucsfalumni.org/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=2993	https://alumni.ucsf.edu/ucsf-retirees-association
+www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=393	https://ucsfconnect.com/
+www.ucsfalumni.org/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=835	https://alumni.ucsf.edu/libraries-and-journals
+www.ucsfalumni.org/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=352	https://alumni.ucsf.edu/school-nursing-alumni-association
+www.ucsfalumni.org/s/1420/index2.aspx?sid=1420&gid=1001&pgid=1028	https://alumni.ucsf.edu/graduate-division-alumni-association
+www.ucsfalumni.org/s/1420/index2.aspx?sid=1420&gid=1001&pgid=353	https://alumni.ucsf.edu/graduate-division-alumni-association
+www.ucsfalumni.org/s/1420/index2.aspx?sid=1420&gid=1001&pgid=953	https://alumni.ucsf.edu/emeriti-faculty-association
+www.ucsfalumni.org/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=365	https://alumni.ucsf.edu/aaucsf-board-directors
+www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=1589	https://alumni.ucsf.edu/gold-headed-cane-society
+www.ucsfalumni.org/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=2930	https://alumni.ucsf.edu/ucsf-social-media-ambassadors
+www.ucsfalumni.org/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=2786	https://alumni.ucsf.edu/ucsf-alumni-advocates
+www.ucsfalumni.org/benefits	https://alumni.ucsf.edu/alumni-benefits
+www.ucsfalumni.org/membershipcard	https://alumni.ucsf.edu/alumni-resources
+www.ucsfalumni.org/register	https://alumni.ucsf.edu/contact-us
+www.ucsfalumni.org/events	https://alumni.ucsf.edu/events
+www.ucsfalumni.org/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=1879	https://alumni.ucsf.edu/host-event
+www.ucsfalumni.org/aw	https://ucsfalumniweekend2018.sched.com/
+www.ucsfalumni.org/ucsfconnect	https://ucsfconnect.com/
