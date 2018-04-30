@@ -596,7 +596,7 @@ www.iacuc.ucsf.edu	https://iacuc.ucsf.edu/
 #alumni.ucsf.edu/register	https://securelb.imodules.com/s/1420/index.aspx?sid=1420&gid=1001&pgid=8&cid=46
 #alumni.ucsf.edu/events	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=13&cid=664
 #end for removal after DNS change
-www.ucsfalumni.org/	https://alumni.ucsf.edu
+www.ucsfalumni.org	https://alumni.ucsf.edu
 www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=13&cid=664	https://alumni.ucsf.edu/events-landing
 www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=371	https://alumni.ucsf.edu/alumni-association-dues
 www.ucsfalumni.org/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=351	https://alumni.ucsf.edu/medical-alumni-association
@@ -624,3 +624,4 @@ www.ucsfalumni.org/events	https://alumni.ucsf.edu/events
 www.ucsfalumni.org/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=1879	https://alumni.ucsf.edu/host-event
 www.ucsfalumni.org/aw	https://ucsfalumniweekend2018.sched.com/
 www.ucsfalumni.org/ucsfconnect	https://ucsfconnect.com/
+www.ucsfalumni.org/*	https://alumni.ucsf.edu
