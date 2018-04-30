@@ -588,13 +588,13 @@ myfs.ucsf.edu	https://www.cpfm.ucsf.edu/myfs
 www.chc.ucsf.edu	https://chc.ucsf.edu/
 www.iacuc.ucsf.edu	https://iacuc.ucsf.edu/
 #begin for removal after DNS change
-alumni.ucsf.edu/aw	https://ucsfalumniweekend2018.sched.com/	
-alumni.ucsf.edu	http://www.ucsfalumni.org
-alumni.ucsf.edu/GHC	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=1589
-alumni.ucsf.edu/benefits	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=321
-alumni.ucsf.edu/membershipcard	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=464	
-alumni.ucsf.edu/register	https://securelb.imodules.com/s/1420/index.aspx?sid=1420&gid=1001&pgid=8&cid=46
-alumni.ucsf.edu/events	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=13&cid=664
+#alumni.ucsf.edu/aw	https://ucsfalumniweekend2018.sched.com/	
+#alumni.ucsf.edu	http://www.ucsfalumni.org
+#alumni.ucsf.edu/GHC	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=1589
+#alumni.ucsf.edu/benefits	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=321
+#alumni.ucsf.edu/membershipcard	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=464	
+#alumni.ucsf.edu/register	https://securelb.imodules.com/s/1420/index.aspx?sid=1420&gid=1001&pgid=8&cid=46
+#alumni.ucsf.edu/events	http://www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=13&cid=664
 #end for removal after DNS change
 www.ucsfalumni.org/	https://alumni.ucsf.edu
 www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=13&cid=664	https://alumni.ucsf.edu/events-landing
