@@ -58,7 +58,7 @@ class redirectToRule {
 		$this->request 	= 	$protocol.$request['HTTP_HOST'].$request['REQUEST_URI'];
 		$this->log[]	=  	$this->request;
 		$this->request  = 	parse_url($this->request);
-
+		if ($this->debug) echo 'Request Array: <pre>' . print_r($this->request, true) .'</pre>';
 		//do nothing with these sophos scanner requests, hundreds of these are happening per second?
 		if (stristr($this->request['path'],'/sophos/update/')) {
 			exit();
@@ -90,7 +90,7 @@ class redirectToRule {
 		if ($this->debug) Performance::point( 'sort rules' );
 
 		$rules 	= file($this->rulesFile, FILE_IGNORE_NEW_LINES);
-
+		$querymatch = false;
 		//should only read the external file if we know we have a valid redirect...
 		foreach ($rules as $rule) {
 			//here we handle if the URL can come from 2 or more domains as in the httpd.conf example
@@ -119,7 +119,7 @@ class redirectToRule {
 				}
 				//we know the host exists, in the line, so just use the host and forget the possible domain options.
 				$match = parse_url('http://'.$this->request['host'].$path);
-				//echo 'match:'.print_r($match, true).PHP_EOL;
+				if ($this->debug) echo 'match: <pre>'.print_r($match, true).'</pre>'.PHP_EOL;
 
 			} else {
 				list($path, $redirect) = explode("\t", $rule);
@@ -135,33 +135,44 @@ class redirectToRule {
 
 			$match['path'] 			= (!isset($match['path'])) ?  '/' : $match['path'];
 			$match['redirect']		= $redirect;
-
-			if (strpos($match['path'],'*')) {
+			if ($this->debug) echo "<pre>RULE: {$rule} </pre>";
+			//match both the path and query
+			if ((isset($this->request['query']) && isset($match['query']) ) && strtolower($this->request['path'].'?'.$this->request['query']) == strtolower($match['path'].'?'.$match['query'])) {
+				//$this->log[] = 'Path matches: ' .$this->request['path'].'?'.$this->request['query'] . ' == ' .$match['path'].'?'.$match['query'];
+				$match['include_path'] = false;
+				$querymatch = true;
+				array_unshift($this->potentials, array('rule' => $rule, 'match' => $match,'complete'=>1));
+			}
+			//match just the path
+			elseif (strtolower(trim($this->request['path'],' /')) == strtolower(trim($match['path'],' /'))) {
+				//$this->log[] = 'Path matches: ' .$this->request['path'] . ' == ' .$match['path'];
+				$match['include_path'] = false;
+				$function =  ($querymatch) ? 'array_push' : 'array_unshift';
+				$function($this->potentials, array('rule' => $rule, 'match' => $match,'complete'=>1));
+			}
+			//really match anything after the slash and redirect to equivalent path
+			elseif (strpos($match['path'],'*')) {
 				$returnedPath = $this->subpathMatch($this->request, $match, $redirect);
 				if ($returnedPath) {
-
 					if ($returnedPath===true) {
 						//just empty the path since it matched exact and we don't want to route to it.
 						//$this->log[] = '(returnedPath==true) Delete the matching subpath, then append remaining path.';
 						$match['path'] = ''; //str_replace('*','',$match['path']);
 					} else {
-						//$this->log[] = 'Append the returned path.';
+						$this->log[] = 'Append the returned path.';
 						$match['path'] = $returnedPath;
 					}
 					$match['include_path'] 	= true;
-
-					array_unshift($this->potentials, array('rule'=>$rule,'match'=>$match,'complete'=>1));
+					$function =  ($querymatch) ? 'array_push' : 'array_unshift';
+					//this should get lower priority
+					$function($this->potentials, array('rule'=>$rule,'match'=>$match,'complete'=>1));
 				} else {
 					//$this->log[] = 'No return path with * rule: ' .$this->request['path'] . ' == ' .$match['path'];
 					$match['include_path'] = false;
 					array_push($this->potentials, array('rule'=>$rule,'match'=>$match,'complete'=>0));
 				}
 			}
-			elseif (strtolower(trim($this->request['path'],' /')) == strtolower(trim($match['path'],' /'))) {
-				//$this->log[] = 'Path matches: ' .$this->request['path'] . ' == ' .$match['path'];
-				$match['include_path'] = false;
-				array_unshift($this->potentials, array('rule' => $rule, 'match' => $match,'complete'=>1));
-			}
+			//match just the host
 			elseif ($match['host'] == $this->request['host']) {
 				//$this->log[] = 'Found only host: ' .$this->request['host'] . ' == ' .$match['host'];
 				$match['include_path'] = false;
@@ -195,7 +206,7 @@ class redirectToRule {
 				} else {
 					$root = parse_url($route['match']['redirect']);
 					if ($this->debug) Performance::finish();
-					if (strlen($root['path']) > 1) {
+					if (isset($root['path']) && strlen($root['path']) > 1) {
 						return 'http://'.$root['host'].$root['path'];
 					} else {
 						return 'http://'.$root['host'];

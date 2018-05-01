@@ -587,7 +587,7 @@ btc.ucsf.edu	http://braintumorcenter.ucsf.edu/
 myfs.ucsf.edu	https://www.cpfm.ucsf.edu/myfs
 www.chc.ucsf.edu	https://chc.ucsf.edu/
 www.iacuc.ucsf.edu	https://iacuc.ucsf.edu/
-# begin alumni redirects
+# begin alumni	redirects
 www.ucsfalumni.org	https://alumni.ucsf.edu
 www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=13&cid=664	https://alumni.ucsf.edu/events-landing
 www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=371	https://alumni.ucsf.edu/alumni-association-dues
@@ -616,3 +616,37 @@ www.ucsfalumni.org/events	https://alumni.ucsf.edu/events
 www.ucsfalumni.org/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=1879	https://alumni.ucsf.edu/host-event
 www.ucsfalumni.org/aw	https://ucsfalumniweekend2018.sched.com/
 www.ucsfalumni.org/ucsfconnect	https://ucsfconnect.com/
+# fix this	internet issue
+www.ucsfalumni.local	https://alumni.ucsf.edu
+www.ucsfalumni.local/s/1420/index.aspx?sid=1420&gid=1001&pgid=13&cid=664	https://alumni.ucsf.edu/events-landing
+www.ucsfalumni.local/s/1420/index.aspx?sid=1420&gid=1001&pgid=371	https://alumni.ucsf.edu/alumni-association-dues
+www.ucsfalumni.local/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=351	https://alumni.ucsf.edu/medical-alumni-association
+www.ucsfalumni.local/s/1420/index.aspx?sid=1420&gid=1001&pgid=321	https://alumni.ucsf.edu/alumni-benefits
+www.ucsfalumni.local/s/1420/index.aspx?sid=1420&gid=1001&pgid=324	https://alumni.ucsf.edu/alumni-resources
+www.ucsfalumni.local/s/1420/index2.aspx?sid=1420&gid=1001&pgid=350	https://alumni.ucsf.edu/dental-alumni-association
+www.ucsfalumni.local/s/1420/index.aspx?sid=1420&gid=1001&pgid=327	https://alumni.ucsf.edu/travel-and-affiliate-programs
+www.ucsfalumni.local/s/1420/index2.aspx?sid=1420&gid=1001&pgid=349	https://alumni.ucsf.edu/pharmacy-alumni-association
+www.ucsfalumni.local/s/1420/index.aspx?sid=1420&gid=1001&pgid=965	https://alumni.ucsf.edu/ucsf-faculty-alumni-house
+www.ucsfalumni.local/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=2993	https://alumni.ucsf.edu/ucsf-retirees-association
+www.ucsfalumni.local/s/1420/index.aspx?sid=1420&gid=1001&pgid=393	https://ucsfconnect.com/
+www.ucsfalumni.local/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=835	https://alumni.ucsf.edu/libraries-and-journals
+www.ucsfalumni.local/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=352	https://alumni.ucsf.edu/school-nursing-alumni-association
+www.ucsfalumni.org/*	https://alumni.ucsf.edu
+(its.ucsf.local|oaais.ucsf.local)/main/networking/g1/wireless	http://it.ucsf.edu/services/wireless-service
+(its.ucsf.local|oaais.ucsf.local)/main/service_catalog/email.html	http://it.ucsf.edu/services/email
+(its.ucsf.local|oaais.ucsf.local)/main/8810-DSY	http://it.ucsf.edu/services/hbs-timekeeping-system
+(its.ucsf.local|oaais.ucsf.local)/main/7-DSY/email/secured_com/Remote_Access/web_vpn	https://it.ucsf.edu/services/vpn
+www.ucsfalumni.local/s/1420/index2.aspx?sid=1420&gid=1001&pgid=1028	https://alumni.ucsf.edu/graduate-division-alumni-association
+www.ucsfalumni.local/s/1420/index2.aspx?sid=1420&gid=1001&pgid=353	https://alumni.ucsf.edu/graduate-division-alumni-association
+www.ucsfalumni.local/s/1420/index2.aspx?sid=1420&gid=1001&pgid=953	https://alumni.ucsf.edu/emeriti-faculty-association
+www.ucsfalumni.local/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=365	https://alumni.ucsf.edu/aaucsf-board-directors
+www.ucsfalumni.local/s/1420/index.aspx?sid=1420&gid=1001&pgid=1589	https://alumni.ucsf.edu/gold-headed-cane-society
+www.ucsfalumni.local/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=2930	https://alumni.ucsf.edu/ucsf-social-media-ambassadors
+www.ucsfalumni.local/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=2786	https://alumni.ucsf.edu/ucsf-alumni-advocates
+www.ucsfalumni.local/benefits	https://alumni.ucsf.edu/alumni-benefits
+www.ucsfalumni.local/membershipcard	https://alumni.ucsf.edu/alumni-resources
+www.ucsfalumni.local/register	https://alumni.ucsf.edu/contact-us
+www.ucsfalumni.local/events	https://alumni.ucsf.edu/events
+www.ucsfalumni.local/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=1879	https://alumni.ucsf.edu/host-event
+www.ucsfalumni.local/aw	https://ucsfalumniweekend2018.sched.com/
+www.ucsfalumni.local/ucsfconnect	https://ucsfconnect.com
