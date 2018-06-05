@@ -60,7 +60,7 @@ class redirectToRule {
 		$this->request  = 	parse_url($this->request);
 		if ($this->debug) echo 'Request Array: <pre>' . print_r($this->request, true) .'</pre>';
 		//do nothing with these sophos scanner requests, hundreds of these are happening per second?
-		if (stristr($this->request['path'],'/sophos/update/')) {
+		if (isset($this->request['path']) && stristr($this->request['path'],'/sophos/update/')) {
 			exit();
 		}
 
@@ -144,7 +144,7 @@ class redirectToRule {
 				array_unshift($this->potentials, array('rule' => $rule, 'match' => $match,'complete'=>1));
 			}
 			//match just the path
-			elseif (strtolower(trim($this->request['path'],' /')) == strtolower(trim($match['path'],' /'))) {
+			elseif (isset($this->request['path']) && strtolower(trim($this->request['path'],' /')) == strtolower(trim($match['path'],' /'))) {
 				//$this->log[] = 'Path matches: ' .$this->request['path'] . ' == ' .$match['path'];
 				$match['include_path'] = false;
 				$function =  ($querymatch) ? 'array_push' : 'array_unshift';
@@ -263,7 +263,7 @@ class redirectToRule {
 			echo '</pre>';
 		}
 
-		$logger = new Katzgrau\KLogger\Logger(__DIR__.'/logs', Psr\Log\LogLevel::INFO, array('extension'=>'log','prefix'=>'redirect_'));
+		$logger = new Katzgrau\KLogger\Logger(__DIR__.'/logs', LogLevel::INFO, array('extension'=>'log','prefix'=>'redirect_'));
 		//log the results to KLogger class
 		foreach($this->log as $l) {
 			$logger->info($l);
@@ -296,6 +296,13 @@ class redirectToRule {
  * Pass $_SERVER to the class constructor, pass testmode as second arg and rules
  * file if not default filename as third.
  *
- */
+ *
+$link = array();
+$link['HTTP_HOST'] = 'help.ucsf.edu';
+$link['HTTPS'] = false;
+$link['REQUEST_URI']='';
+print_r($_SERVER);
+
+ **/
 $redirect = new redirectToRule($_SERVER, false);
 $redirect->redirect();
