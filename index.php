@@ -159,7 +159,7 @@ class redirectToRule {
 						//$this->log[] = '(returnedPath==true) Delete the matching subpath, then append remaining path.';
 						$match['path'] = ''; //str_replace('*','',$match['path']);
 					} else {
-						$this->log[] = 'Append the returned path.';
+						//$this->log[] = 'Append the returned path.';
 						$match['path'] = $returnedPath;
 					}
 					$match['include_path'] 	= true;
@@ -281,6 +281,12 @@ class redirectToRule {
 		$this->outputLog();
 
 		if (!$this->debug) {
+			/**
+			 * @todo - Cache control on the day of release
+			 * If the redirect file is updated and the script runs then start sending out
+			 * header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+			 *
+			 */
 			header('HTTP/1.1 301 Moved Permanently');
 			header('Location:'.$this->redirectTo);
 			exit;
