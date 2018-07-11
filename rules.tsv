@@ -325,7 +325,6 @@ pulsatiletinnitus.ucsf.edu	https://radiology.ucsf.edu/patient-care/services/puls
 insideguide.ucsf.edu	http://success.ucsf.edu
 www.obgyn.ucsf.edu	http://obgyn.ucsf.edu
 id.ucsf.edu	https://infectiousdiseases.ucsf.edu
-food.ucsf.edu	http://finaid.ucsf.edu/food
 skeletaldysplasias.ucsf.edu	http://skeletaldysplasias.radiology.ucsf.edu
 strauss.ucsf.edu	http://sociology.ucsf.edu
 facialplastics.ucsf.edu	https://ohns.ucsf.edu/facialplastics
@@ -471,7 +470,7 @@ ct2g.ucsf.edu	http://www.ct2g.org
 (support.ucsf.edu|www.support.ucsf.edu)/ways-to-give/tribute-giving	http://giving.ucsf.edu/honor-memorial
 (support.ucsf.edu|www.support.ucsf.edu)/ways-to-give/ucsf-giving-societies-and-academies	http://giving.ucsf.edu/societies
 (support.ucsf.edu|www.support.ucsf.edu)/ways-to-give/volunteer-leadership	http://giving.ucsf.edu/involved
-(support.ucsf.edu|www.support.ucsf.edu)/ways-to-give(support.ucsf.edu|www.support.ucsf.edu)/ways-to-give-faq	http://giving.ucsf.edu/payment-faq
+(support.ucsf.edu|www.support.ucsf.edu)/ways-to-give/ways-to-give-faq	http://giving.ucsf.edu/payment-faq
 (support.ucsf.edu|www.support.ucsf.edu)/giving-areas/prevent-skin-cancer-0	http://giving.ucsf.edu/skin-cancer-prevention
 (support.ucsf.edu|www.support.ucsf.edu)/ways-to-give/class-1961-scholarship-fund	http://giving.ucsf.edu/class-giving
 (support.ucsf.edu|www.support.ucsf.edu)/reunions	http://giving.ucsf.edu/reunions
@@ -577,7 +576,6 @@ smdc.ucsf.edu	https://pharm.ucsf.edu/smdc
 medicalstaff.ucsf.edu	https://medicalaffairs.ucsf.edu/
 bicklerlab.ucsf.edu	https://anesthesia.ucsf.edu/research-group/bickler-lab
 abog.ucsf.edu	https://amp.ucsf.edu/
-basicneeds.ucsf.edu	https://finaid.ucsf.edu/types-of-aid/housing-food-and-transportation
 sfghlibrary.ucsf.edu/*	http://zsfglibrary.ucsf.edu
 faces-kenya.org	https://faces.ucsf.edu
 www.faces-kenya.org	https://faces.ucsf.edu
@@ -682,3 +680,4 @@ weaverlab.surgery.ucsf.edu	http://weaverlab.ucsf.edu/
 www.ucsfalumni.org/family	https://alumni.ucsf.edu/parents-and-families
 ita.ucsf.edu	https://innovation.ucsf.edu/
 block33.ucsf.edu	https://cvn.ucsf.edu/
+food.ucsf.edu	http://finaid.ucsf.edu/food
