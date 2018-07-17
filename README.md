@@ -5,7 +5,7 @@ Purpose of this file is to manage redirection of traffic to the new host locatio
 ## RULES ##
 * Each line of the rules.csv file contains a redirect route.  The original path is on the left, seperated by a pipe and then followed by the redirect path.   The application tries exact matches before attempting wild cards etc.
 
-* The original path should not contain http:// or https:// but just the domain name and any path information.
+* The original path SHOULD NOT contain http:// or https:// but just the domain name and any path information.
 
 * You can redirect the same path from different servers by using parentheses and pipe to seperate:
  (domain1.com|domain2.com), this was logic we needed to support cause the old Apache redirect rules did the same thing.
