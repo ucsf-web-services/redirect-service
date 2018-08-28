@@ -175,7 +175,7 @@ www.rmis.ucsf.edu	http://rmis.ucsf.edu
 cw.ucsf.edu	https://cwlite.ucsf.edu
 emergencymedicine.ucsf.edu	http://emergency.ucsf.edu/
 security.ucsf.edu	http://it.ucsf.edu/security
-cpbc.ucsf.edu/*	http://supplychain.ucsf.edu
+cpbc.ucsf.edu/sites/champion.ucsf.edu/files/Employer%20Letter%20of%20Support.doc	http://supplychain.ucsf.edu
 www.dahsm.ucsf.edu	http://dahsm.ucsf.edu
 discrimination.ucsf.edu	http://aaeo.ucsf.edu
 englandlab.ucsf.edu	http://pharm.ucsf.edu/england
@@ -691,5 +691,5 @@ prc.ucsf.edu	https://prevention.ucsf.edu/
 www.hospitalmedicine.ucsf.edu	https://hospitalmedicine.ucsf.edu
 sanderslab.ucsf.edu	https://sanderslab.github.io
 policy.ucsf.edu	https://policies.ucsf.edu
-champion.ucsf.edu	https://championprovider.ucsf.edu/
+champion.ucsf.edu/*	https://championprovider.ucsf.edu/
 smoking.ucsf.edu	https://tobacco.ucsf.edu/
