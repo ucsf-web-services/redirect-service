@@ -51,8 +51,8 @@
 (its.ucsf.edu|oaais.ucsf.edu)/faq/ActiveSync/13083-DSY.html	http://it.ucsf.edu/services/email-mobile-access/tutorial/activesync-settings-android
 (its.ucsf.edu|oaais.ucsf.edu)/main/1772-DSY.html	http://it.ucsf.edu/services/email-mobile-access/tutorial/blackberry-enterprise-activation
 (its.ucsf.edu|oaais.ucsf.edu)/main/service_catalog/	http://it.ucsf.edu/services
-(its.ucsf.edu|oaais.ucsf.edu)/main/	http://it.ucsf.edu/
-(its.ucsf.edu|oaais.ucsf.edu)	http://it.ucsf.edu/
+(its.ucsf.edu|oaais.ucsf.edu)/main/	http://it.ucsf.edu
+(its.ucsf.edu|oaais.ucsf.edu)	http://it.ucsf.edu
 # END its.ucsf.edu	Destination
 wireless.ucsf.edu	http://it.ucsf.edu/projects/expanding-wireless
 www.radiology.ucsf.edu	http://radiology.ucsf.edu
@@ -569,11 +569,11 @@ smdc.ucsf.edu/screening/scale.htm	https://pharm.ucsf.edu/smdc/tech-services/hts-
 smdc.ucsf.edu/sitemap.htm	https://pharm.ucsf.edu/smdc
 smdc.ucsf.edu/index.htm	https://pharm.ucsf.edu/smdc
 smdc.ucsf.edu	https://pharm.ucsf.edu/smdc
-dots.ucsf.edu	http://medschool2.ucsf.edu/jpdev/dots/
+dots.ucsf.edu	http://medschool2.ucsf.edu/jpdev/dots
 videovisits.ucsf.edu	https://videovisit.ucsf.edu
 neurohospitalist.ucsf.edu	http://neurology.ucsf.edu/neurohospitalist
 smdc.ucsf.edu	https://pharm.ucsf.edu/smdc
-medicalstaff.ucsf.edu	https://medicalaffairs.ucsf.edu/
+medicalstaff.ucsf.edu	https://medicalaffairs.ucsf.edu
 bicklerlab.ucsf.edu	https://anesthesia.ucsf.edu/research-group/bickler-lab
 abog.ucsf.edu	https://amp.ucsf.edu/
 sfghlibrary.ucsf.edu/*	http://zsfglibrary.ucsf.edu
@@ -582,10 +582,10 @@ www.faces-kenya.org	https://faces.ucsf.edu
 rna.keck.ucsf.edu	https://rnakeck.ucsf.edu
 eatingdisorderprogram.ucsf.edu/*	http://eatingdisorders.ucsf.edu
 nlp.ucsf.edu	https://wiki.library.ucsf.edu/display/NLPBiomed/NLP@UCSF+Home
-btc.ucsf.edu	http://braintumorcenter.ucsf.edu/
+btc.ucsf.edu	http://braintumorcenter.ucsf.edu
 myfs.ucsf.edu	https://www.cpfm.ucsf.edu/myfs
-www.chc.ucsf.edu	https://chc.ucsf.edu/
-www.iacuc.ucsf.edu	https://iacuc.ucsf.edu/
+www.chc.ucsf.edu	https://chc.ucsf.edu
+www.iacuc.ucsf.edu	https://iacuc.ucsf.edu
 # begin alumni	redirects
 www.ucsfalumni.org	https://alumni.ucsf.edu
 www.ucsfalumni.org/s/1420/index.aspx?sid=1420&gid=1001&pgid=13&cid=664	https://alumni.ucsf.edu/events-landing
@@ -613,8 +613,8 @@ www.ucsfalumni.org/membershipcard	https://alumni.ucsf.edu/alumni-resources
 www.ucsfalumni.org/register	https://alumni.ucsf.edu/contact-us
 www.ucsfalumni.org/events	https://alumni.ucsf.edu/events
 www.ucsfalumni.org/s/1420/index_1col.aspx?sid=1420&gid=1001&pgid=1879	https://alumni.ucsf.edu/host-event
-www.ucsfalumni.org/aw	https://ucsfalumniweekend2018.sched.com/
-www.ucsfalumni.org/ucsfconnect	https://ucsfconnect.com/
+www.ucsfalumni.org/aw	https://ucsfalumniweekend2018.sched.com
+www.ucsfalumni.org/ucsfconnect	https://ucsfconnect.com
 # fix this	internet issue
 www.ucsfalumni.local	https://alumni.ucsf.edu
 www.ucsfalumni.local/s/1420/index.aspx?sid=1420&gid=1001&pgid=13&cid=664	https://alumni.ucsf.edu/events-landing
@@ -675,7 +675,7 @@ sfgh.medicine.ucsf.edu	https://zsfgmedicine.ucsf.edu
 allergy.ucsf.edu	https://pulmonary.ucsf.edu
 immuno.ucsf.edu	https://pulmonary.ucsf.edu
 gi.ucsf.edu	https://gastroenterology.ucsf.edu
-weaverlab.surgery.ucsf.edu	http://weaverlab.ucsf.edu/
+weaverlab.surgery.ucsf.edu	http://weaverlab.ucsf.edu
 www.ucsfalumni.org/family	https://alumni.ucsf.edu/parents-and-families
 ita.ucsf.edu	https://innovation.ucsf.edu/
 block33.ucsf.edu	https://cvn.ucsf.edu/
@@ -685,11 +685,12 @@ mdi.ucsf.edu	https://pharmacy.ucsf.edu/qbi
 actnetwork.ucsf.edu	http://www.actnetwork.us/ucsf
 dbts.ucsf.edu/*	https://bts.ucsf.edu
 pegs.ucsf.edu	https://p3egs.ucsf.edu/
-officeofresearch.ucsf.edu	https://research.ucsf.edu/
+officeofresearch.ucsf.edu	https://research.ucsf.edu
 psc.ucsf.edu	https://pst.ucsf.edu
 prc.ucsf.edu	https://prevention.ucsf.edu/
 www.hospitalmedicine.ucsf.edu	https://hospitalmedicine.ucsf.edu
 sanderslab.ucsf.edu	https://sanderslab.github.io
 policy.ucsf.edu	https://policies.ucsf.edu
-champion.ucsf.edu/*	https://championprovider.ucsf.edu/
+champion.ucsf.edu/*	https://championprovider.ucsf.edu
 smoking.ucsf.edu	https://tobacco.ucsf.edu/
+dc.ucsfmedicalcenter.org	https://designandconstruction.ucsf.edu
