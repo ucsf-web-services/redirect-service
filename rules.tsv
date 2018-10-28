@@ -503,7 +503,6 @@ campaign.ucsf.edu	http://giving.ucsf.edu
 precisionpublichealth.ucsf.edu	https://precisionmedicine.ucsf.edu/programs/precision-public-health
 dermatology.medschool.ucsf.edu	http://www.dermatology.ucsf.edu
 zsfganes.ucsf.edu	https://anesthesia.ucsf.edu/divisions/zuckerberg-san-francisco-general-hospital-and-trauma-center
-coe.ucsf.edu/rinaudolab	https://rinaudolab.ucsf.edu
 grosslab.ucsf.edu	https://pharm.ucsf.edu/gross
 # Source	Destination
 genetics.ucsf.local/main/networking/g1/wireless	http://it.ucsf.edu/services/wireless-service
@@ -933,6 +932,7 @@ coe.ucsf.edu/whrc/pdf/CSPS%20Workshops_May-Aug_rev.pdf	https://womenshealth.ucsf
 coe.ucsf.edu/whrc/resref/index.html	https://womenshealth.ucsf.edu/whrc/patient-resources
 coe.ucsf.edu/whrc/resref/providers.html	https://ucsfhealth.org/clinics/womens_health_center/
 coe.ucsf.edu/whrc/store/index.html	https://womenshealth.ucsf.edu/whrc/breastfeeding-pregnancy-support-products
+coe.ucsf.edu/rinaudolab	https://rinaudolab.ucsf.edu
 whrc.ucsf.edu	https://womenshealth.ucsf.edu/whrc
 whrc.ucsf.edu/coe/about/accomplishments.html	https://womenshealth.ucsf.edu/coe/about-us
 whrc.ucsf.edu/coe/about/index.html	https://womenshealth.ucsf.edu/coe/about-us
