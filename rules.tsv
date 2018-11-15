@@ -170,7 +170,6 @@ spd.ucsf.edu	http://anp.ucsf.edu/overview/spd
 catalystawards.ucsf.edu	https://innovation.ucsf.edu/venture/catalyst-program
 preventkidney.ucsf.edu	http://khrc.ucsf.edu
 careweb.ucsf.edu	http://centerfordigitalhealthinnovation.org/CareWeb
-ccig.ucsf.edu	http://criticalcareinnovationsgroup.org
 www.rmis.ucsf.edu	http://rmis.ucsf.edu
 cw.ucsf.edu	https://cwlite.ucsf.edu
 emergencymedicine.ucsf.edu	http://emergency.ucsf.edu/
@@ -364,7 +363,6 @@ sshelpdesk.ucsf.edu	https://ucsf.service-now.com/fss/fss.do
 # Source	Destination
 cilia.ucsf.edu	https://webapps.ucsf.edu/cilia
 pando.ucsf.edu	https://webapps.ucsf.edu/pando
-tas.ucsf.edu	https://tashq.org
 championprovider.ucsf.edu	http://champion.ucsf.edu
 ct2g.ucsf.edu	http://www.ct2g.org
 #these are all redirects from the support.ucsf.edu website	Destination
