@@ -524,7 +524,6 @@ pando.ucsf.edu/*	https://ait.ucsf.edu/redirect.html
 webapps.ucsf.edu/*	https://ait.ucsf.edu/redirect.html
 avm.ucsf.edu/*	https://anesthesia.ucsf.edu/research-group/center-cerebrovascular-research
 avm.ucsf.edu	https://anesthesia.ucsf.edu/research-group/center-cerebrovascular-research
-candstudy.ucsf.edu	http://pnelab.ucsf.edu/cellular-aging-and-neurobiology-depression-can-d-study
 cand.ucsf.edu	http://pnelab.ucsf.edu/cellular-aging-and-neurobiology-depression-can-d-study
 somtech.ucsf.edu	https://tech.ucsf.edu
 isu.ucsf.edu	https://tech.ucsf.edu
@@ -1176,3 +1175,4 @@ zsfglibrary.ucsf.edu	https://www.library.ucsf.edu/about/zsfg/
 mbpacu.ucsf.edu/*	https://mbperiop.ucsf.edu
 chec.ucsf.edu	https://childhealthequity.ucsf.edu
 www.amecenter.ucsf.edu	https://amecenter.ucsf.edu
+candstudy.ucsf.edu	https://pnelab.ucsf.edu/
