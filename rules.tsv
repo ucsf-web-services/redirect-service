@@ -344,7 +344,6 @@ orthodash.ucsf.edu	https://bidashboards.ucsfmedicalcenter.org/QvAJAXZfc/opendoc.
 addiction.ucsf.edu	http://psych.ucsf.edu/substanceabuse
 ti.ucsf.edu	http://accelerate.ucsf.edu/research/informatics
 dashboard.ucsf.edu	https://ucsf.numerify.com:443/NumerifyWeb/servlet/mstrWeb?evt=3140&src=mstrWeb.3140&documentID=56E9D01311E697030F5B0080EF756339&server=10.0.1.199&Project=Numerify_BI_UCSF&port=0&share=1&uid=ch_shared@ucsf.edu&pwd=Numerify@2
-ocr.ucsf.edu	http://officeofclinicalresearch.ucsf.edu
 # help.ucsf.edu Source	Destination
 help.ucsf.edu	https://ucsf.service-now.com/ess/home.do
 help.ucsf.edu/custom/hbs_update.jsp	http://help.ucsf.edu/HelpApps/hbs_update.php
@@ -1784,3 +1783,6 @@ weillneurohub.org	https://weill.ucsf.edu/neurohub
 www.weillneurohub.org	https://weill.ucsf.edu/neurohub
 christinehsiehlab.ucsf.edu	https://hsiehlab.ucsf.edu
 www.ucsfmedicalcenter.org/medstaffoffice	https://medicalaffairs.ucsf.edu
+ocr.ucsf.edu	https://trialactivation.ucsf.edu/
+officeofclinicalresearch.ucsf.edu	https://trialactivation.ucsf.edu/
+phdi.ucsf.edu	https://redivis.com/PHDI
