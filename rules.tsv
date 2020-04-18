@@ -1793,8 +1793,6 @@ paymyvanpool.ucsf.edu	https://secure.touchnet.net/C20191_ustores/web/store_main.
 paymypermit.ucsf.edu	https://secure.touchnet.net/C20191_ustores/web/store_main.jsp?STOREID=6
 datashare.ucsf.edu	https://datadryad.org/stash
 prds.ucsf.edu	https://dentistry.ucsf.edu/about/academic-departments/prds
-# help.ucsf.edu
-help.ucsf.edu	https://ucsf.service-now.com/ucsfit
 help.ucsf.edu/custom/hbs_update.jsp	http://help.ucsf.edu/HelpApps/hbs_update.php
 help.ucsf.edu/custom/hbs_access.jsp	http://help.ucsf.edu/HelpApps/hbs_access.php
 help.ucsf.edu/software	http://software.ucsf.edu
@@ -1804,3 +1802,4 @@ help.ucsf.edu/HelpWebApps/Listserv/	https://ucsf.service-now.com/ess/catalog_det
 help.ucsf.edu/HelpWebApps/Pager/	https://ucsf.service-now.com/ess/catalog_detail.do?uri=com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=39024a54879dd0009b5428676d434d5e
 help.ucsf.edu/HelpWebApps/AD/RsrcAcctForm.jsp	https://ucsf.service-now.com/ess/catalog_detail.do?uri=com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=4615c1f7877850009b5428676d434d04
 help.ucsf.edu/HelpWebApps/EmailHelper/EmailHelper.jsp	http://help.ucsf.edu/HelpApps/EmailHelper.php
+help.ucsf.edu	https://ucsf.service-now.com/ucsfit
