@@ -344,7 +344,6 @@ orthodash.ucsf.edu	https://bidashboards.ucsfmedicalcenter.org/QvAJAXZfc/opendoc.
 addiction.ucsf.edu	http://psych.ucsf.edu/substanceabuse
 ti.ucsf.edu	http://accelerate.ucsf.edu/research/informatics
 dashboard.ucsf.edu	https://ucsf.numerify.com:443/NumerifyWeb/servlet/mstrWeb?evt=3140&src=mstrWeb.3140&documentID=56E9D01311E697030F5B0080EF756339&server=10.0.1.199&Project=Numerify_BI_UCSF&port=0&share=1&uid=ch_shared@ucsf.edu&pwd=Numerify@2
-sshelp.ucsf.edu	https://ucsf.service-now.com/fss/fss.do
 sshelpdesk.ucsf.edu	https://ucsf.service-now.com/fss/fss.do
 # Source	Destination
 cilia.ucsf.edu	https://webapps.ucsf.edu/cilia
@@ -1804,3 +1803,4 @@ help.ucsf.edu/HelpWebApps/EmailHelper/EmailHelper.jsp	http://help.ucsf.edu/HelpA
 help.ucsf.edu	https://ucsf.service-now.com/ucsfit
 cleanhands.ucsfmedicalcenter.org	https://infectioncontrol.ucsfmedicalcenter.org/clean-hands
 bchowellness.ucsf.edu	https://chonet.ucsf.edu/emotional-health-wellbeing-resources
+sshelp.ucsf.edu	https://ucsf.service-now.com/mcss
