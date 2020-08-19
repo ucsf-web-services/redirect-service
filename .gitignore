@@ -21,3 +21,4 @@ sites/all/modules/README.txt
 sites/all/themes/README.txt
 /nbproject/private/
 rules-test.tsv
+rules_original.tsv
