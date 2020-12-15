@@ -544,8 +544,6 @@ championprovider.ucsf.edu	http://champion.ucsf.edu
 chatter.ucsf.edu	https://ucsf.my.salesforce.com/_ui/core/chatter/ui/ChatterPage
 chec.ucsf.edu	https://childhealthequity.ucsf.edu
 christinehsiehlab.ucsf.edu	https://hsiehlab.ucsf.edu
-cilia.ucsf.edu	https://webapps.ucsf.edu/cilia
-cilia.ucsf.edu/*	https://ait.ucsf.edu/redirect.html
 citywide.ucsf.edu	http://psych.ucsf.edu/sfgh/citywide
 cleanhands.ucsfmedicalcenter.org	https://infectioncontrol.ucsfmedicalcenter.org/clean-hands
 clinicaldata.ucsf.edu	http://ctsi.ucsf.edu/clinical-data-colloquium
@@ -838,7 +836,6 @@ industry.ucsf.edu	http://ita.ucsf.edu
 insideguide.ucsf.edu	http://success.ucsf.edu
 intellectualdisability.ucsf.edu	http://star.ucsf.edu
 intranet.ucsfmedicalcenter.org	http://it.ucsf.edu/sites-retired
-ip3.ucsf.edu/*	https://ait.ucsf.edu/redirect.html
 irm.ucsf.edu	http://stemcell.ucsf.edu
 isu.ucsf.edu	https://tech.ucsf.edu
 it.ucsfmedicalcenter.org	http://it.ucsf.edu/sites-retired
@@ -954,8 +951,6 @@ osherminimedicalschool.ucsf.edu	http://osherminimed.ucsf.edu
 otology-neurotology.ucsf.edu	https://ohns.ucsf.edu/otology-neurotology
 pain.ucsf.edu	https://anesthesia.ucsf.edu/divisions/pain-medicine
 palliativeipe.ucsf.edu	http://nursing.ucsf.edu/palliative-care
-pando.ucsf.edu	https://webapps.ucsf.edu/pando
-pando.ucsf.edu/*	https://ait.ucsf.edu/redirect.html
 passport.ucsf.edu	http://studentlife.ucsf.edu
 password.ucsfmedicalcenter.org	https://pwmanage.ucsf.edu/pm
 passwords.ucsfmedicalcenter.org	https://pwmanage.ucsf.edu/pm
@@ -1158,7 +1153,6 @@ vp.ucsf.edu	https://caps.ucsf.edu/vp
 vr.ucsf.edu	http://vr.rbvi.ucsf.edu
 w2w.ucsf.edu	https://www.ucsf.edu
 weaverlab.surgery.ucsf.edu	http://weaverlab.ucsf.edu
-webapps.ucsf.edu/*	https://ait.ucsf.edu/redirect.html
 webmeeting.ucsf.edu	https://it.ucsf.edu/services/web-conferencing-webex
 weillneurohub.org	https://weill.ucsf.edu/neurohub
 whatdoyouthink.ucsf.edu	https://www.applyweb.com/eval/shibboleth/ucsf/37163
@@ -1552,4 +1546,9 @@ www.cin.ucsf.edu	https://cin.ucsf.edu
 clues.ucsf.edu	https://premier.ucsf.edu/clues
 chesa.ucsf.edu	http://www.globalsurgery.org/
 nic.ucsf.edu	https://calm.ucsf.edu/
-smokefreemovies.ucsf.edu	https://smokefreemedia.ucsf.edu/
+ait.ucsf.edu	https://a.ucsf.edu/redirect/
+anesweb.ucsf.edu	https://a.ucsf.edu/redirect/
+webapps.ucsf.edu	https://a.ucsf.edu/redirect/
+ip3.ucsf.edu	https://a.ucsf.edu/redirect/
+pando.ucsf.edu	https://a.ucsf.edu/redirect/
+cilia.ucsf.edu	https://a.ucsf.edu/cilia/
