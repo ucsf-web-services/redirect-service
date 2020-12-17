@@ -1546,9 +1546,9 @@ www.cin.ucsf.edu	https://cin.ucsf.edu
 clues.ucsf.edu	https://premier.ucsf.edu/clues
 chesa.ucsf.edu	http://www.globalsurgery.org/
 nic.ucsf.edu	https://calm.ucsf.edu/
-ait.ucsf.edu	https://a.ucsf.edu/redirect/
 anesweb.ucsf.edu	https://a.ucsf.edu/redirect/
 webapps.ucsf.edu	https://a.ucsf.edu/redirect/
 ip3.ucsf.edu	https://a.ucsf.edu/redirect/
 pando.ucsf.edu	https://a.ucsf.edu/redirect/
 cilia.ucsf.edu	https://a.ucsf.edu/cilia/
+ait.ucsf.edu/*	https://a.ucsf.edu/redirect/
