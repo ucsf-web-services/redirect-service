@@ -1551,4 +1551,5 @@ webapps.ucsf.edu	https://a.ucsf.edu/redirect/
 ip3.ucsf.edu	https://a.ucsf.edu/redirect/
 pando.ucsf.edu	https://a.ucsf.edu/redirect/
 cilia.ucsf.edu	https://a.ucsf.edu/cilia/
-ait.ucsf.edu/*	https://a.ucsf.edu/redirect/
+ait.ucsf.edu/cilia/chartstrings_list.php	https://a.ucsf.edu/redirect/
+ait.ucsf.edu	https://a.ucsf.edu/redirect/
