@@ -21,7 +21,7 @@
  * @todo - this whole thing is do for a rewrite and audit now, recommend integrating into a single service with tiny.ucsf.edu
  */
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 use Performance\Performance;
 use Psr\Log\LogLevel;
 
@@ -38,7 +38,7 @@ class redirectToRule {
 	public $pathRemap	 	= false;
 	public $pathRemapUrl	= null;
 	//the file that contains the rule set
-	public $rulesFile		= 'rules.tsv';
+	public $rulesFile		= '../rules.tsv';
 
 	//if enabled show log and errors on screen, don't redirect to destination
 	public $debug			= false;
@@ -113,7 +113,7 @@ class redirectToRule {
 				$domains = substr($rule,$start,$end-1);
 				$domains = explode("|",$domains);
 				//this should be the path after the (domain|domain) part
-				$pair = substr($rule, $end+1);  
+				$pair = substr($rule, $end+1);
 
 				list($path, $redirect) = explode("\t", $pair);
 
@@ -129,7 +129,7 @@ class redirectToRule {
 
 			} else {
 				list($path, $redirect) = explode("\t", $rule);
-				//echo 'http://'.$path.PHP_EOL;
+
 				$match = parse_url('http://'.$path);
 
 				//need to check if the domain is in the $path
@@ -284,7 +284,7 @@ class redirectToRule {
 			echo '</pre>';
 		}
 		else {
-			$logger = new Katzgrau\KLogger\Logger(__DIR__.'/logs', LogLevel::INFO, array('extension'=>'log','prefix'=>'redirect_'));
+			$logger = new Katzgrau\KLogger\Logger(dirname(__DIR__).'/logs', LogLevel::INFO, array('extension'=>'log','prefix'=>'redirect_'));
 			//log the results to KLogger class
 			foreach($this->log as $l) {
 				$logger->info($l);
@@ -325,7 +325,7 @@ class redirectToRule {
  * Pass $_SERVER to the class constructor, pass testmode as second arg and rules
  * file if not default filename as third.
  *
-
+ *
 $_SERVER = array();
 $_SERVER['HTTP_HOST'] = 'oaais.ucsf.edu';
 $_SERVER['HTTPS'] = true;
