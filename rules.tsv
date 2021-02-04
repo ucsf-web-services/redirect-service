@@ -968,8 +968,6 @@ peopleconnect.ucsf.edu	https://peopleconnect.force.com
 pgd.ucsf.edu	https://pghd.ucsf.edu
 phcreferral.ucsf.edu	http://phcext.ucsf.edu
 phdi.ucsf.edu	https://redivis.com/PHDI
-physio.ucsf.edu	https://physiology.ucsf.edu/
-physio.ucsf.edu/Morgan/*	https://morganlab.ucsf.edu/
 pirracchiolab.ucsf.edu	https://anesthesia.ucsf.edu/research-group/pirracchio-data-science-lab#home
 policy.ucsf.edu	https://policies.ucsf.edu
 policychampions.ucsf.edu	https://pophealth.ucsf.edu/champions/home
@@ -1555,3 +1553,7 @@ ait.ucsf.edu	https://a.ucsf.edu/redirect/
 solidstart.ucsf.edu	https://solidstartsf.org
 precisionpublichealth.ucsf.edu	https://precisionmedicine.ucsf.edu/programs/precision-population-health
 marsonlab.ucsf.edu	https://marsonlab.org/
+physio.ucsf.edu	physiology.ucsf.edu
+www.biostat.ucsf.edu/vgsm	regression.ucsf.edu
+www.biostat.ucsf.edu	regression.ucsf.edu
+biostat.ucsf.edu	regression.ucsf.edu
