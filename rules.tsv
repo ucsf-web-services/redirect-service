@@ -1553,7 +1553,7 @@ ait.ucsf.edu	https://a.ucsf.edu/redirect/
 solidstart.ucsf.edu	https://solidstartsf.org
 precisionpublichealth.ucsf.edu	https://precisionmedicine.ucsf.edu/programs/precision-population-health
 marsonlab.ucsf.edu	https://marsonlab.org/
-physio.ucsf.edu	physiology.ucsf.edu
-www.biostat.ucsf.edu/vgsm	regression.ucsf.edu
-www.biostat.ucsf.edu	regression.ucsf.edu
-biostat.ucsf.edu	regression.ucsf.edu
+physio.ucsf.edu	https://physiology.ucsf.edu
+www.biostat.ucsf.edu/vgsm	https://regression.ucsf.edu
+www.biostat.ucsf.edu	https://regression.ucsf.edu
+biostat.ucsf.edu	https://regression.ucsf.edu
