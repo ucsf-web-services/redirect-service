@@ -1,4 +1,4 @@
-# its.ucsf.edu redirects	Destination
+# DOMAIN TO REDIRECT 	DESTINATION
 (genetics.ucsf.local|genes.ucsf.local)/main/service_catalog/email.html	http://it.ucsf.edu/services/email-online
 (its.ucsf.edu|oaais.ucsf.edu)	http://it.ucsf.edu
 (its.ucsf.edu|oaais.ucsf.edu)/announcements/	http://it.ucsf.edu/status
@@ -1580,4 +1580,5 @@ campaign.ucsf.edu/stories/engineering-immune-cells-kill-cancer	https://giving.uc
 campaign.ucsf.edu/stories/bolstering-brain-improve-cognition	https://giving.ucsf.edu/stories/bolstering-brain-improve-cognition
 campaign.ucsf.edu/stories/using-3d-printing-improve-pediatric-heart-surgery	https://giving.ucsf.edu/stories/using-3-d-printing-improve-pediatric-heart-surgery
 campaign.ucsf.edu/stories/addressing-opioid-crisis-integrative-medicine-techniques	https://giving.ucsf.edu/stories/learning-help-doctors-curb-opioid-deaths
-campaign.ucsf.edu/* https://giving.ucsf.edu
+campaign.ucsf.edu/*	https://giving.ucsf.edu
+awareness.ucsf.edu	https://it.ucsf.edu/how-to/it-security-awareness-stay-sharp-stay-safe
