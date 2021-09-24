@@ -1614,7 +1614,7 @@ greencars.ucsf.edu	https://campuslifeservices.ucsf.edu/transportation/services/p
 hastings.ucsf.edu	https://uchastings.edu/about/admin-offices/business-center/
 healthybeverages.ucsf.edu	https://campuslifeservices.ucsf.edu/wellnesscommunity/services/initiatives/healthy_beverage_initiative
 housing.ucsf.edu	https://campuslifeservices.ucsf.edu/housing/
-HousingFeedback.ucsf.edu	https://ucsf.co1.qualtrics.com/SE/?SID=SV_8eHjsnpXoe1JiQZ&Source=Housing
+housingfeedback.ucsf.edu	https://ucsf.co1.qualtrics.com/SE/?SID=SV_8eHjsnpXoe1JiQZ&Source=Housing
 lactation.ucsf.edu	https://ucsf.co1.qualtrics.com/SE/?SID=SV_cJ6b89xc2GXCfat
 liveshuttle.ucsf.edu	https://campuslifeservices.ucsf.edu/liveshuttle
 livingwell.ucsf.edu	https://campuslifeservices.ucsf.edu/wellnesscommunity/?goto=start
@@ -1622,8 +1622,8 @@ livingwellfeedback.ucsf.edu	https://ucsf.co1.qualtrics.com/jfe/form/SV_8eHjsnpXo
 marketplace.ucsf.edu	https://secure.touchnet.net/C20191_ustores/web/index.jsp
 moffittcopycenter.ucsf.edu	https://experience.arcgis.com/experience/4bb34da1ab4c4370b24b655ddd5ba348
 mountzionhousing.ucsf.edu	https://pages.e2ma.net/pages/1812397/26717
-movementdisorder.ucsf.edu	https://surgicalmovementdisorders.ucsf.edu/
-movementdisorders.ucsf.edu	https://surgicalmovementdisorders.ucsf.edu/
+movementdisorder.ucsf.edu	https://movementdisorders.ucsf.edu/
+surgicalmovementdisorders.ucsf.edu	https://movementdisorders.ucsf.edu/
 mscenter.ucsf.edu	https://multiplesclerosis.ucsf.edu/
 myvehicles.ucsf.edu	https://clsfmp2.ucsf.edu/fmi/webd/TS_VehicleRegistration
 mywellness.ucsf.edu	https://campuslifeservices.ucsf.edu/wellnesscommunity/services/wellness_resources
@@ -1647,7 +1647,7 @@ ucsfmobilefeedback.ucsf.edu	https://ucsf.co1.qualtrics.com/jfe/form/SV_cI0BW9CJH
 vanpool.ucsf.edu	https://clsfmp2.ucsf.edu/fmi/webd/TS%20Vanpool
 volunteer.ucsf.edu	https://campuslifeservices.ucsf.edu/wellnesscommunity/services/volunteers
 volunteers.ucsf.edu	https://campuslifeservices.ucsf.edu/wellnesscommunity/services/volunteers
-wellnessandcomunity.ucsf.edu	https://campuslifeservices.ucsf.edu/wellnessandcommunity
+wellnessandcomunity.ucsf.edu	https://campuslifeservices.ucsf.edu/wellnesscommunity/?goto=start
 zoo.ucsf.edu	https://ucsf.co1.qualtrics.com/jfe/form/SV_269JPT1YzNEBMQR
 epilepsy.ucsf.edu	https://epilepsycenter.ucsf.edu
 teleneurology.ucsf.edu	https://neurology.ucsf.edu/gts
