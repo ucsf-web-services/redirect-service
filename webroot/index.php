@@ -332,6 +332,11 @@ $_SERVER['HTTPS'] = true;
 $_SERVER['REQUEST_URI']='/students/student_email/287-DSY/spam/g1/966-DSY.html';
  */
 
-
-$redirect = new redirectToRule($_SERVER, false);
+if ($_GET['domain']) {
+	$_SERVER['HTTP_HOST'] = $_GET['domain'];
+}
+if ($_GET['path']) {
+	$_SERVER['REQUEST_URI'] = $_GET['path'];
+}
+$redirect = new redirectToRule($_SERVER, true);
 $redirect->redirect();
