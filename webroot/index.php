@@ -300,8 +300,8 @@ class redirectToRule {
 	public function redirect() {
 		if ($this->debug)  Performance::point( 'redirect' );
 		if ($this->debug)  $this->log[] = print_r($this->potentials,true);
-		$this->log[] =  'REDIRECT: '.$this->request_string.' TO: '.$this->redirectTo;
-		$this->outputLog();
+		if ($this->debug)  $this->log[] =  'REDIRECT: '.$this->request_string.' TO: '.$this->redirectTo;
+		if ($this->debug)  $this->outputLog();
 
 		if (!$this->debug) {
 			/**
