@@ -243,7 +243,8 @@ class redirectToRule {
 			}
 		} else {
 			if ($this->debug) Performance::finish();
-			echo "Could not find redirect path for give domain.";
+			header('HTTP/1.1 404 Not Found');
+			echo "Could not find redirect path for given domain.";
 			die();
 		}
 	}
