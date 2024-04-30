@@ -49,14 +49,17 @@ class redirectToRule {
 
 	//pop or push potential routes here based on rule precident
 	public $potentials		= array();
-
+	// $_SERVER['HTTPS'] = true;
+	// $_SERVER['HTTP_HOST'] = parse_url($url, PHP_URL_HOST);
+	// $_SERVER['REQUEST_URI']= parse_url($url, PHP_URL_PATH);
+	// $_SERVER['QUERY_STRING']= parse_url($url, PHP_URL_QUERY);
 	public function __construct($request, $debug=false, $rulesFile=null)
 	{
 		if ($debug) 	Performance::point( 'contructor' );
 		if ($debug) 	$this->enableDebugging();
 
-		$protocol 				= (isset($request['HTTPS'])) ? 'https://' : 'http://';
-		$this->request_string 	= $protocol.$request['HTTP_HOST'].$request['REQUEST_URI'];
+		$protocol 				= (isset($request['HTTPS'])) ? 'http://' : 'http://';
+		$this->request_string 	= $protocol.$request['HTTP_HOST'].$request['REQUEST_URI'].'?'.$_SERVER['QUERY_STRING'];
 		$this->request  		= parse_url($this->request_string);
 
 		if ($this->debug) echo '<pre>';
@@ -97,7 +100,8 @@ class redirectToRule {
 		foreach ($rules as $rule) {
 			//here we handle if the URL can come from 2 or more domains as in the httpd.conf example
 			//this just checks whether or not the string is within the line
-			$has 	= strpos(trim($rule), $this->request['host']);
+			list($path, $redirect) = explode("\t", $rule);
+			$has 	= strpos(trim($path), $this->request['host']);
 			$com	= strpos(trim($rule), '#');
 			$rule 	= trim($rule);
 
@@ -107,15 +111,13 @@ class redirectToRule {
 			}
 
 			if ($rule[0]=='(') {
-				if ($this->debug) $this->log[] = "Line contains multiple domains (domain1|domain2)".PHP_EOL;
+				if ($this->debug) $this->log[] = "[$rule] Line contains multiple domains (domain1|domain2)".PHP_EOL;
 				$start 	= 1;
 				$end 	= strrpos($rule,')');
 				$domains = substr($rule,$start,$end-1);
 				$domains = explode("|",$domains);
 				//this should be the path after the (domain|domain) part
 				$pair = substr($rule, $end+1);
-
-				list($path, $redirect) = explode("\t", $pair);
 
 				//we need to check if the path is within the domain list
 				if (!in_array($this->request['host'], $domains)) {
@@ -139,27 +141,19 @@ class redirectToRule {
 				}
 			}
 
-			//if not wildcard rule, if the paths don't match then skip it.
-			if (isset($match['path']) && !strpos($match['path'],'/*')===false) {
-				//check if the path after the domain is matching, if not skip.
-				//echo 'MATCH PATH:  '.$match['path'].PHP_EOL;
-				//echo 'REQUEST PATH:'.$this->request['path'].PHP_EOL;
-
-				if (isset($this->request['path']) && isset($match['path'])) {
-					if (!strpos(trim($this->request['path']), $match['path'] > 0)) {
-						continue;
-					}
-				}
-			}
-
-
 			$match['path'] 			= (!isset($match['path'])) ?  '/' : $match['path'];
 			$match['redirect']		= $redirect;
 
 			if ($this->debug) $this->log[] =  "RULE: {$rule}";
-
+			//echo "--------------------- REQUEST ---------------------------------";
+			//print_r($this->request);
+			//echo "--------------------- MATCH ---------------------------------";
+			//print_r($match);
 			//match both the path and query
-			if ((isset($this->request['query']) && isset($match['query']) ) && strtolower($this->request['path'].'?'.$this->request['query']) == strtolower($match['path'].'?'.$match['query'])) {
+			if (
+				(isset($this->request['query']) && isset($match['query'])) 
+				&& strtolower($this->request['path'].'?'.$this->request['query']) == strtolower($match['path'].'?'.strtolower($match['query']))
+				) {
 				if ($this->debug) $this->log[] = 'Path matches: ' .$this->request['path'].'?'.$this->request['query'] . ' == ' .$match['path'].'?'.$match['query'];
 				$match['include_path'] = 0;
 				$querymatch = true;
@@ -203,6 +197,19 @@ class redirectToRule {
 				$match['include_path'] = 0;
 				array_push($this->potentials, array('rule'=>$rule,'match'=>$match,'complete'=>0));
 			}
+
+			//if not wildcard rule, if the paths don't match then skip it.
+			if (isset($match['path']) && !strpos($match['path'],'/*')===false) {
+				//check if the path after the domain is matching, if not skip.
+				//echo 'MATCH PATH:  '.$match['path'].PHP_EOL;
+				//echo 'REQUEST PATH:'.$this->request['path'].PHP_EOL;
+
+				if (isset($this->request['path']) && isset($match['path'])) {
+					if (!strpos(trim($this->request['path']), $match['path'] > 0)) {
+						continue;
+					}
+				}
+			}
 		}
 		if ($this->debug) Performance::finish();
 	}
@@ -236,7 +243,8 @@ class redirectToRule {
 			}
 		} else {
 			if ($this->debug) Performance::finish();
-			return 'https://www.ucsf.edu/404';
+			echo "Could not find redirect path for give domain.";
+			die();
 		}
 	}
 
@@ -332,6 +340,14 @@ $_SERVER['HTTPS'] = true;
 $_SERVER['REQUEST_URI']='/students/student_email/287-DSY/spam/g1/966-DSY.html';
  */
 
+// $url = "http://";
+// $url .= "makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHGivingForm&ACode=ZZZZZ&Other=Oakland Music Therapy";
+// $_SERVER = array();
+
+// $_SERVER['HTTPS'] = false;
+// $_SERVER['HTTP_HOST'] = parse_url($url, PHP_URL_HOST);
+// $_SERVER['REQUEST_URI']= parse_url($url, PHP_URL_PATH);
+// $_SERVER['QUERY_STRING']= parse_url($url, PHP_URL_QUERY);
 
 $redirect = new redirectToRule($_SERVER, false);
 $redirect->redirect();
