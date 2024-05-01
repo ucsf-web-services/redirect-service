@@ -55,13 +55,23 @@ class redirectToRule {
 	// $_SERVER['QUERY_STRING']= parse_url($url, PHP_URL_QUERY);
 	public function __construct($request, $debug=false, $rulesFile=null)
 	{
-		if ($debug) 	Performance::point( 'contructor' );
-		if ($debug) 	$this->enableDebugging();
+		
+		
 
 		$protocol 				= (isset($request['HTTPS'])) ? 'http://' : 'http://';
 		$this->request_string 	= $protocol.$request['HTTP_HOST'].$request['REQUEST_URI'].'?'.$_SERVER['QUERY_STRING'];
+		if (stripos($this->request_string, '&debug')) {
+			$this->request_string = str_replace('&debug', '', $this->request_string);
+			Performance::point( 'contructor' );
+			$this->enableDebugging();
+		}
 		$this->request  		= parse_url($this->request_string);
-
+		
+		if ($debug) {
+			Performance::point( 'contructor' );
+			$this->enableDebugging();
+		}
+		
 		if ($this->debug) echo '<pre>';
 		if ($this->debug) echo 'Request Array: ' . print_r($this->request, true);
 		//do nothing with these sophos scanner requests, hundreds of these are happening per second?
