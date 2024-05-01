@@ -319,6 +319,7 @@ class redirectToRule {
 			 * header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
 			 *
 			 */
+			header('Cache-Control: no-cache');
 			header('HTTP/1.1 301 Moved Permanently');
 			header('Location:'.$this->redirectTo);
 			exit;
