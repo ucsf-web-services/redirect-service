@@ -320,7 +320,7 @@ class redirectToRule {
 			 *
 			 */
 		
-			header('HTTP/1.1 301 Moved Permanently');
+			//header('HTTP/1.1 301 Moved Permanently');
 			header('Location:'.$this->redirectTo);
 			header('Cache-Control: no-store');
 			exit;
