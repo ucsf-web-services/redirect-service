@@ -319,9 +319,10 @@ class redirectToRule {
 			 * header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
 			 *
 			 */
-			header('Cache-Control: no-cache');
+		
 			header('HTTP/1.1 301 Moved Permanently');
 			header('Location:'.$this->redirectTo);
+			header('Cache-Control: no-store');
 			exit;
 		} else {
 			Performance::finish();
@@ -341,15 +342,15 @@ $_SERVER['HTTP_HOST'] = 'oaais.ucsf.edu';
 $_SERVER['HTTPS'] = true;
 $_SERVER['REQUEST_URI']='/students/student_email/287-DSY/spam/g1/966-DSY.html';
  */
+/* 
+$url = "http://";
+$url .= "makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Other=Benioff%20Center%20for%20Microbiome%20Medicine%20%28B8092%29";
+$_SERVER = array();
 
-// $url = "http://";
-// $url .= "makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHGivingForm&ACode=ZZZZZ&Other=Oakland Music Therapy";
-// $_SERVER = array();
-
-// $_SERVER['HTTPS'] = false;
-// $_SERVER['HTTP_HOST'] = parse_url($url, PHP_URL_HOST);
-// $_SERVER['REQUEST_URI']= parse_url($url, PHP_URL_PATH);
-// $_SERVER['QUERY_STRING']= parse_url($url, PHP_URL_QUERY);
-
+$_SERVER['HTTPS'] = false;
+$_SERVER['HTTP_HOST'] = parse_url($url, PHP_URL_HOST);
+$_SERVER['REQUEST_URI']= parse_url($url, PHP_URL_PATH);
+$_SERVER['QUERY_STRING']= parse_url($url, PHP_URL_QUERY);
+ */
 $redirect = new redirectToRule($_SERVER, false);
 $redirect->redirect();

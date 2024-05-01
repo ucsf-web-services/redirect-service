@@ -2602,8 +2602,8 @@ makeagift.ucsf.edu/stanley	https://giving.ucsf.edu
 makeagift.ucsf.edu/matteo	https://giving.ucsf.edu
 makeagift.ucsf.edu/walkpancreatic	https://giving.ucsf.edu
 makeagift.ucsf.edu/w4pc	https://giving.ucsf.edu
-makeagift.ucsf.edu/site/SPageServer/?pagename=A1_API_GeneralGivingForm	https://giving.ucsf.edu/fund/01t8Z00000BdU7LQAV
-makeagift.ucsf.edu/SPageServerpagenameA1_API_GeneralGivingFormOtherStudent20AwardszzzB7951	https://giving.ucsf.edu/fund/other?giftComments=Student%20Awards%20B7951)
+makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm	https://giving.ucsf.edu/fund/01t8Z00000BdU7LQAV
+makeagift.ucsf.edu/SPageServer?pagename=A1_API_GeneralGivingFormOtherStudent20AwardszzzB7951	https://giving.ucsf.edu/fund/other?giftComments=Student%20Awards%20B7951)
 crowdfund.ucsf.edu/project/6481	https://givingtogether.ucsf.edu/fundraiser/2035694
 crowdfund.ucsf.edu/project/7040	https://together.ucsf.edu/
 crowdfund.ucsf.edu/project/7040	https://together.ucsf.edu/
@@ -2613,7 +2613,7 @@ makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_UCSFFoundationAnnualGivingFo
 makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_UCSFFundGivingForm&ACode=B0079	https://giving.ucsf.edu/fund/orthodontics-fund-for-excellence
 makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_UCSFFUNDGivingForm&ACode=B7059	https://giving.ucsf.edu/
 makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_UCSFFUNDGivingForm&ACode=B7060	https://giving.ucsf.edu/
-makeagift.ucsf.edu/site/SPageServer?jsessionid=00000000.app304a?pagename=A1_API_UCSFFUNDGivingForm&AppealCode=ANT15&NONCE_TOKEN=99300ECA59DC15A4BA3A3072C72B2C7D	https://giving.ucsf.edu/fund/other?appealCode=ANT15
+makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_UCSFFUNDGivingForm&AppealCode=ANT15&NONCE_TOKEN=99300ECA59DC15A4BA3A3072C72B2C7D	https://giving.ucsf.edu/fund/other?appealCode=ANT15
 makeagift.ucsf.edu/site/SPageServer?Primary=Department of Medicine&ACode=B7097	https://giving.ucsf.edu/fund/heal-initiative
 makeagift.ucsf.edu/site/SPageServer?Primary=Division of Pulmonary&ACode=B3168	https://giving.ucsf.edu/fund/the-nina-ireland-fund
 makeagift.ucsf.edu/site/SPageServer?Primary=Family and Community Medicine&ACode= B3126	https://giving.ucsf.edu/fund/clara-shen-teaching-fund
@@ -3430,9 +3430,9 @@ makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Ne
 makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Surgery&Other=Research%20of%20%20Rong%20Wang,%20Ph.D.,%20Professor%20of%20Surgery	https://giving.ucsf.edu/fund/other?giftComments=Research%20of%20%20Rong%20Wang,%20Ph.D.,%20Professor%20of%20Surgery
 makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Surgery&Other=Research%20of%20Amar%20Nijagal,%20M.D.,%20Assistant%20Professor%20of%20Surgery	https://giving.ucsf.edu/fund/other?giftComments=Research%20of%20Amar%20Nijagal,%20M.D.,%20Assistant%20Professor%20of%20Surgery
 makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Surgery&Other=Research%20of%20Robert%20Raffai,%20Ph.D.,%20Assistant%20Professor%20of%20Surgery	https://giving.ucsf.edu/fund/other?giftComments=Research%20of%20Robert%20Raffai,%20Ph.D.,%20Assistant%20Professor%20of%20Surgery
-makeagift.ucsf.edu/site/SPageServer/?pagename=A1_API_GeneralGivingForm&Primary=Dentistry&ACode=B3040	https://giving.ucsf.edu/fund/01t8Z00000BdU3dQAF
-makeagift.ucsf.edu/site/SPageServer/?pagename=A1_API_GeneralGivingForm&Primary=Dentistry&Other=Pediatric%20Dentistry%20Outreach%20(B7371)	https://giving.ucsf.edu/fund/other?giftComments=Pediatric%20Dentistry%20Outreach%20(B7371)
-makeagift.ucsf.edu/site/SPageServerpagename=A1_API_GeneralGivingForm&Primary=Surgery&Other=Research%20of%20Sonja%20Schrepfer,%20M.D.,%20Ph.D.,%20Associate%20Professor%20of%20Surgery	https://giving.ucsf.edu/fund/other?giftComments=Research%20of%20Sonja%20Schrepfer,%20M.D.,%20Ph.D.,%20Associate%20Professor%20of%20Surgery
+makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Dentistry&ACode=B3040	https://giving.ucsf.edu/fund/01t8Z00000BdU3dQAF
+makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Dentistry&Other=Pediatric%20Dentistry%20Outreach%20(B7371)	https://giving.ucsf.edu/fund/other?giftComments=Pediatric%20Dentistry%20Outreach%20(B7371)
+makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Surgery&Other=Research%20of%20Sonja%20Schrepfer,%20M.D.,%20Ph.D.,%20Associate%20Professor%20of%20Surgery	https://giving.ucsf.edu/fund/other?giftComments=Research%20of%20Sonja%20Schrepfer,%20M.D.,%20Ph.D.,%20Associate%20Professor%20of%20Surgery
 makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSGivingForm&utm_source=bch&ACode=C12.1647&Other=BCH Oakland Center for the Vulnerable Child(817832)	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000AdaAtQAJ
 makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSGivingForm&Other=Creative+Arts+Fund+(B2681)&utm_source=creative_arts&utm_medium=sharelink&utm_campaign=childlife	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000Ada9gQAB?utm_source=creative_arts&utm_medium=sharelink&utm_campaign=childlife
 makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSOAKGivingForm&Other=BCH Oakland NICU Operations ICN 7027915&source=bch	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000Ada9cQAB
@@ -3452,6 +3452,4 @@ makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHGivingForm&Other=Center fo
 makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSGivingForm&ACode=C10.2561&Other=Oakland Pediatric Sickle Cell Anemia (818161)	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000AdaAEQAZ
 makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSGivingForm&Other=Oakland Social Services (818135)&AppealCode=KDC24&utm_source=bch&utm_medium=do_outreach&utm_campaign=BCHO_Social_Services_2020	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000AdaQhQAJ?appealCode=KDC24&utm_source=bch&utm_medium=do_outreach&utm_campaign=BCHO_Social_Services_2020
 makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSOAKGivingForm&Other=Social Services Oakland (836050)	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000AdaAnQAJ
-# makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CH*	https://donate.ucsfbenioffchildrens.org/
-# makeagift.ucsf.edu/site/SPageServer?pagename=A1_API*	https://giving.ucsf.edu
-# makeagift.ucsf.edu/*	https://giving.ucsf.edu
+makeagift.ucsf.edu	htttps//giving.ucsf.edu
