@@ -3274,6 +3274,8 @@ makeagift.ucsf.edu/site/TR?pg=fund&fr_id=1095&pxfid=1170	https://giving.ucsf.edu
 makeagift.ucsf.edu/site/TR?pg=fund&fr_id=1095&pxfid=1210	https://giving.ucsf.edu
 makeagift.ucsf.edu/site/TR?pg=fund&fr_id=1110&pxfid=1090	https://giving.ucsf.edu
 makeagift.ucsf.edu/site/TR?pg=fund&fr_id=1110&pxfid=1250	https://giving.ucsf.edu
+makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_UCSFFundGivingForm&ACode=B0584&GiftChoice=500	https://giving.ucsf.edu/fund/01t8Z00000BdTvlQAF
+makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_UCSFFundGivingForm&ACode=S8204	https://giving.ucsf.edu/fund/other?giftComments=George+Harrison,+MD+Endowment
 makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHGivingForm&Primary=Center%20of%20Excellence&ACode=C0156	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000BdTp4QAF
 makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Graduate%20Education	https://giving.ucsf.edu/category/detail/0ZG8Z000000oYHXWA2
 makeagift.ucsf.edu/site/RedirectHandler?key=nursing	https://giving.ucsf.edu/category/detail/0ZG8Z000000oYI4WAM
@@ -3452,5 +3454,4 @@ makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHGivingForm&Other=Center fo
 makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSGivingForm&ACode=C10.2561&Other=Oakland Pediatric Sickle Cell Anemia (818161)	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000AdaAEQAZ
 makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSGivingForm&Other=Oakland Social Services (818135)&AppealCode=KDC24&utm_source=bch&utm_medium=do_outreach&utm_campaign=BCHO_Social_Services_2020	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000AdaQhQAJ?appealCode=KDC24&utm_source=bch&utm_medium=do_outreach&utm_campaign=BCHO_Social_Services_2020
 makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSOAKGivingForm&Other=Social Services Oakland (836050)	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000AdaAnQAJ
-makeagift.ucsf.edu	https://giving.ucsf.edu
-redirect-service.docksal.site/site/SPageServer?pagename=API_RD_CHFSGivingForm&Other=Creative+Arts+Fund+(B2681)&utm_source=creative_arts&utm_medium=sharelink&utm_campaign=childlife	https://giving.ucsf.edu/fund/01t8Z00000BdU3dQAF
+makeagift.ucsf.edu/*	https://giving.ucsf.edu
