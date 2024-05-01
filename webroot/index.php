@@ -321,8 +321,8 @@ class redirectToRule {
 			 */
 		
 			//header('HTTP/1.1 301 Moved Permanently');
-			header('Location:'.$this->redirectTo);
 			header('Cache-Control: no-store');
+			header('Location:'.$this->redirectTo);
 			exit;
 		} else {
 			Performance::finish();
