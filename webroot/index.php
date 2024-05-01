@@ -100,8 +100,8 @@ class redirectToRule {
 		foreach ($rules as $rule) {
 			//here we handle if the URL can come from 2 or more domains as in the httpd.conf example
 			//this just checks whether or not the string is within the line
-			list($path, $redirect) = explode("\t", $rule);
-			$has 	= strpos(trim($path), $this->request['host']);
+			list($originpath, $redirect) = explode("\t", $rule);
+			$has 	= strpos(trim($originpath), $this->request['host']);
 			$com	= strpos(trim($rule), '#');
 			$rule 	= trim($rule);
 
@@ -126,17 +126,17 @@ class redirectToRule {
 
 				//we know the host exists, in the line, so just use the host and forget the possible domain options.
 				//echo 'http://'.$this->request['host'].$path.PHP_EOL;
-				$match = parse_url('http://'.$this->request['host'].$path);
+				$match = parse_url('http://'.$this->request['host'].$pair);
 				//if ($this->debug) echo  'match: '.print_r($match, true).PHP_EOL;
 
 			} else {
-				list($path, $redirect) = explode("\t", $rule);
+				list($originpath, $redirect) = explode("\t", $rule);
 
-				$match = parse_url('http://'.$path);
+				$match = parse_url('http://'.$originpath);
 
 				//need to check if the domain is in the $path
 				if (strrpos($this->request['host'], $match['host'])===false) {
-					if ($this->debug) $this->log[] = $this->request['host'].' !== '.$path.PHP_EOL;
+					if ($this->debug) $this->log[] = $this->request['host'].' !== '.$originpath.PHP_EOL;
 					continue;
 				}
 			}
@@ -193,7 +193,7 @@ class redirectToRule {
 
 			//match just the host
 			elseif ($match['host'] == $this->request['host']) {
-				if ($this->debug) $this->log[] = 'Found only host: ' .$this->request['host'] . ' == ' .$match['host'];
+				//if ($this->debug) $this->log[] = 'Found only host: ' .$this->request['host'] . ' == ' .$match['host'];
 				$match['include_path'] = 0;
 				array_push($this->potentials, array('rule'=>$rule,'match'=>$match,'complete'=>0));
 			}
@@ -344,10 +344,10 @@ $_SERVER['REQUEST_URI']='/students/student_email/287-DSY/spam/g1/966-DSY.html';
  */
 /* 
 $url = "http://";
-$url .= "makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Other=Benioff%20Center%20for%20Microbiome%20Medicine%20%28B8092%29";
+$url .= "makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSGivingForm&Other=Creative+Arts+Fund+(B2681)&utm_source=creative_arts&utm_medium=sharelink&utm_campaign=childlife";
 $_SERVER = array();
 
-$_SERVER['HTTPS'] = false;
+$_SERVER['HTTPS'] = true;
 $_SERVER['HTTP_HOST'] = parse_url($url, PHP_URL_HOST);
 $_SERVER['REQUEST_URI']= parse_url($url, PHP_URL_PATH);
 $_SERVER['QUERY_STRING']= parse_url($url, PHP_URL_QUERY);

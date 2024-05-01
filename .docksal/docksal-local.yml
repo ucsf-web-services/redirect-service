@@ -1,0 +1,5 @@
+version: "2.1"
+services:
+  web:
+    labels:
+      - io.docksal.virtual-host=makeagift.ucsf.edu,*.redirect.docksal.site
