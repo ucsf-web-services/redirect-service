@@ -2,4 +2,4 @@ version: "2.1"
 services:
   web:
     labels:
-      - io.docksal.virtual-host=redirect-service.docksal.site,*.redirect.docksal.site
+      - io.docksal.virtual-host=makeagift.ucsf.edu,redirect-service.docksal.site,*.redirect.docksal.site

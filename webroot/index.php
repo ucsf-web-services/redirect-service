@@ -49,17 +49,10 @@ class redirectToRule {
 
 	//pop or push potential routes here based on rule precident
 	public $potentials		= array();
-	// $_SERVER['HTTPS'] = true;
-	// $_SERVER['HTTP_HOST'] = parse_url($url, PHP_URL_HOST);
-	// $_SERVER['REQUEST_URI']= parse_url($url, PHP_URL_PATH);
-	// $_SERVER['QUERY_STRING']= parse_url($url, PHP_URL_QUERY);
+
 	public function __construct($request, $debug=false, $rulesFile=null)
 	{
-		
-		
-
-		$protocol 				= (isset($request['HTTPS'])) ? 'http://' : 'http://';
-		$this->request_string 	= $protocol.$request['HTTP_HOST'].$request['REQUEST_URI'].'?'.$_SERVER['QUERY_STRING'];
+		$this->request_string 	= 'http://'.$request['HTTP_HOST'].$request['REQUEST_URI'];
 		if (stripos($this->request_string, '&debug')) {
 			$this->request_string = str_replace('&debug', '', $this->request_string);
 			Performance::point( 'contructor' );
@@ -357,10 +350,9 @@ $url = "http://";
 $url .= "makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSGivingForm&Other=Creative+Arts+Fund+(B2681)&utm_source=creative_arts&utm_medium=sharelink&utm_campaign=childlife";
 $_SERVER = array();
 
-$_SERVER['HTTPS'] = true;
+$_SERVER['HTTPS'] = false;
 $_SERVER['HTTP_HOST'] = parse_url($url, PHP_URL_HOST);
 $_SERVER['REQUEST_URI']= parse_url($url, PHP_URL_PATH);
-$_SERVER['QUERY_STRING']= parse_url($url, PHP_URL_QUERY);
  */
 $redirect = new redirectToRule($_SERVER, false);
 $redirect->redirect();
