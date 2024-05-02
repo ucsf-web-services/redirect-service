@@ -1926,7 +1926,8 @@ drupal.ucsf.edu/content/how-publish-content	https://it.ucsf.edu/how-to/site-buil
 drupal.ucsf.edu/content/how-site-name-change	https://it.ucsf.edu/how-to/site-builder-website-name-change
 drupal.ucsf.edu/content/turn-logging-and-errors	https://it.ucsf.edu/service/web-hosting
 goodarzilab.ucsf.edu	https://arcinstitute.org/labs/goodarzilab
-giving.ucsf.eduh	ttps://giving-prod.ucsf.edu
+giving.ucsf.eduh	https://giving-prod.ucsf.edu
+makeagift.ucsf.edu	https://giving.ucsf.edu
 makeagift.ucsf.edu/notes-and-words	https://www.notesandwords.org
 makeagift.ucsf.edu/ballet	https://giving.ucsf.edu/fund/01t8Z00000BdU7LQAV
 makeagift.ucsf.edu/firstgen	https://giving.ucsf.edu/fund/other?giftComments=Student%20Awards%20B7951)
@@ -3001,8 +3002,8 @@ makeagift.ucsf.edu/site/SPageServer?Primary=Benioff Children's Hospital&Other=Am
 makeagift.ucsf.edu/site/SPageServer?Primary=Benioff Children's Hospital&Other=Stad Center for Pediatric Pain, Palliative and Integrative MedicinezzzB2200	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000BdTp8QAF
 makeagift.ucsf.edu/site/SPageServer?Primary=Benioff Children's Hospital&Other=UCSF Chronic Illness Center Fund (B7690)	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000AdaAzQAJ?giftComments=UCSF%20Chronic%20Illness%20Center%20Fund%20(B7690)
 makeagift.ucsf.edu/site/SPageServer?Primary=Benioff Children's Hospital&Other=Music Therapy Program (B2681)	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000Ada9gQAB
-makeagift.ucsf.edu/site/SPageServer?Primary=Biomedical Science	https://giving.ucsf.edu/fund/01t8Z00000BdTqKQAV
-makeagift.ucsf.edu/site/SPageServer?Primary=Biomedical Science	https://giving.ucsf.edu/fund/01t8Z00000BdTqKQAV
+makeagift.ucsf.edu/site/SPageServer?Primary=Biomedical+Science	https://giving.ucsf.edu/fund/01t8Z00000BdTqKQAV
+makeagift.ucsf.edu/site/SPageServer?Primary=Biomedical+Science	https://giving.ucsf.edu/fund/01t8Z00000BdTqKQAV
 makeagift.ucsf.edu/site/SPageServer?Primary=Biomedical Science&ACode=B7382	https://giving.ucsf.edu/fund/01t8Z00000BdU4dQAF
 makeagift.ucsf.edu/site/SPageServer?Primary=Campaign for UCSF Medical Center	https://giving.ucsf.edu/fund/01t8Z00000BdTqyQAF
 makeagift.ucsf.edu/site/SPageServer?Primary=Cancer&ACode=B0587	https://giving.ucsf.edu/fund/01t8Z00000BdU0OQAV
