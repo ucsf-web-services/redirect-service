@@ -1,1 +1,8 @@
 version: "3.9"
+
+services:
+  cli:
+    environment:
+      - XDEBUG_SESSION=0
+      - IS_DOCKSAL=1
+      - XDEBUG_ENABLED=0

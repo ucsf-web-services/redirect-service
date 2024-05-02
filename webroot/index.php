@@ -50,8 +50,15 @@ class redirectToRule {
 	//pop or push potential routes here based on rule precident
 	public $potentials		= array();
 
+	public $is_docksal 		= false;
+
 	public function __construct($request, $debug=false, $rulesFile=null)
 	{
+		$this->is_docksal		= getenv('IS_DOCKSAL') ? true : false;
+		if ($this->is_docksal) {
+			$request['HTTP_HOST'] = 'makeagift.ucsf.edu';
+		}
+		
 		$this->request_string 	= 'http://'.$request['HTTP_HOST'].$request['REQUEST_URI'];
 		if (stripos($this->request_string, '&debug')) {
 			$this->request_string = str_replace('&debug', '', $this->request_string);
@@ -63,6 +70,7 @@ class redirectToRule {
 		if ($debug) {
 			Performance::point( 'contructor' );
 			$this->enableDebugging();
+			if ($this->is_docksal) 	echo "THIS IS DOCKSAL!";
 		}
 		
 		if ($this->debug) echo '<pre>';
@@ -128,15 +136,18 @@ class redirectToRule {
 				}
 
 				//we know the host exists, in the line, so just use the host and forget the possible domain options.
-				//echo 'http://'.$this->request['host'].$path.PHP_EOL;
+				//echo 'http://'.$this->request['host'].$pair.PHP_EOL;
 				$match = parse_url('http://'.$this->request['host'].$pair);
-				//if ($this->debug) echo  'match: '.print_r($match, true).PHP_EOL;
 
 			} else {
 				list($originpath, $redirect) = explode("\t", $rule);
-
+			
 				$match = parse_url('http://'.$originpath);
-
+				if (isset($match['query'])) {
+					//comma's and parens are allowed [',','(',')'] ['%2C','%28','%29']
+					$match['query'] = str_replace([' ',"'"],['%20','%27'], $match['query']);
+				}
+			
 				//need to check if the domain is in the $path
 				if (strrpos($this->request['host'], $match['host'])===false) {
 					if ($this->debug) $this->log[] = $this->request['host'].' !== '.$originpath.PHP_EOL;
@@ -147,17 +158,14 @@ class redirectToRule {
 			$match['path'] 			= (!isset($match['path'])) ?  '/' : $match['path'];
 			$match['redirect']		= $redirect;
 
-			if ($this->debug) $this->log[] =  "RULE: {$rule}";
-			//echo "--------------------- REQUEST ---------------------------------";
-			//print_r($this->request);
-			//echo "--------------------- MATCH ---------------------------------";
-			//print_r($match);
+			//if ($this->debug) $this->log[] =  "RULE: {$rule}";
+			
 			//match both the path and query
 			if (
 				(isset($this->request['query']) && isset($match['query'])) 
 				&& strtolower($this->request['path'].'?'.$this->request['query']) == strtolower($match['path'].'?'.strtolower($match['query']))
 				) {
-				if ($this->debug) $this->log[] = 'Path matches: ' .$this->request['path'].'?'.$this->request['query'] . ' == ' .$match['path'].'?'.$match['query'];
+				//if ($this->debug) $this->log[] = 'Path matches: ' .$this->request['path'].'?'.$this->request['query'] . ' == ' .$match['path'].'?'.$match['query'];
 				$match['include_path'] = 0;
 				$querymatch = true;
 				array_unshift($this->potentials, array('rule' => $rule, 'match' => $match,'complete'=>1));
@@ -165,7 +173,7 @@ class redirectToRule {
 
 			//match just the path
 			elseif (isset($this->request['path']) && strtolower(trim($this->request['path'],' /')) == strtolower(trim($match['path'],' /'))) {
-				if ($this->debug) $this->log[] = 'Path matches: ' .$this->request['path'] . ' == ' .$match['path'];
+				//if ($this->debug) $this->log[] = 'Path matches: ' .$this->request['path'] . ' == ' .$match['path'];
 				$match['include_path'] = 0;
 				$function =  ($querymatch) ? 'array_push' : 'array_unshift';
 				$function($this->potentials, array('rule' => $rule, 'match' => $match,'complete'=>1));
@@ -177,8 +185,8 @@ class redirectToRule {
 				if ($returnedPath) {
 					if ($returnedPath===true) {
 						//just empty the path since it matched exact and we don't want to route to it.
-						if ($this->debug) $this->log[] = '(returnedPath==true) Delete the matching subpath, then append remaining path.';
-						$match['path'] = ''; //str_replace('*','',$match['path']);
+						if ($this->debug) $this->log[] = 'Delete the matching subpath, then append remaining path.';
+						$match['path'] = '';
 					} else {
 						if ($this->debug) $this->log[] = 'Append the returned path.';
 						$match['path'] = $returnedPath;
