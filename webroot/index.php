@@ -107,28 +107,30 @@ class redirectToRule {
 
 		$rules 	= file($this->rulesFile, FILE_IGNORE_NEW_LINES);
 		$querymatch = false;
+		//print_r($this->request);
+
 		//should only read the external file if we know we have a valid redirect...
-		foreach ($rules as $rule) {
+		foreach ($rules as $line) {
 			//here we handle if the URL can come from 2 or more domains as in the httpd.conf example
 			//this just checks whether or not the string is within the line
-			list($originpath, $redirect) = explode("\t", $rule);
+			list($originpath, $redirect) = explode("\t", $line);
 			$has 	= strpos(trim($originpath), $this->request['host']);
-			$com	= strpos(trim($rule), '#');
-			$rule 	= trim($rule);
+			$comment	= strpos(trim($line), '#');
+			$line 	= trim($line);
 
-			if ($has === false || $com===0) { //skip comment lines.
+			if ($has === false || $comment===0) { //skip comment lines.
 				//speed up the process by skipping all the tasks we don't need to check
 				continue;
 			}
 
-			if ($rule[0]=='(') {
-				if ($this->debug) $this->log[] = "[$rule] Line contains multiple domains (domain1|domain2)".PHP_EOL;
+			if ($line[0]=='(') {
+				if ($this->debug) $this->log[] = "[$line] Line contains multiple domains (domain1|domain2)".PHP_EOL;
 				$start 	= 1;
-				$end 	= strrpos($rule,')');
-				$domains = substr($rule,$start,$end-1);
+				$end 	= strrpos($line,')');
+				$domains = substr($line,$start,$end-1);
 				$domains = explode("|",$domains);
 				//this should be the path after the (domain|domain) part
-				$pair = substr($rule, $end+1);
+				$pair = substr($line, $end+1);
 
 				//we need to check if the path is within the domain list
 				if (!in_array($this->request['host'], $domains)) {
@@ -137,86 +139,106 @@ class redirectToRule {
 
 				//we know the host exists, in the line, so just use the host and forget the possible domain options.
 				//echo 'http://'.$this->request['host'].$pair.PHP_EOL;
-				$match = parse_url('http://'.$this->request['host'].$pair);
+				$rule = parse_url('http://'.$this->request['host'].$pair);
+				if (isset($rule['query'])) {
+					//comma's and parens are allowed [',','(',')'] ['%2C','%28','%29']
+					$rule['query'] = str_replace([' ',"'"],['%20','%27'], $rule['query']);
+				}
+				$domain = $this->request['host'];
 
 			} else {
-				list($originpath, $redirect) = explode("\t", $rule);
-			
-				$match = parse_url('http://'.$originpath);
-				if (isset($match['query'])) {
+				list($originpath, $redirect) = explode("\t", $line);
+				
+				$rule = parse_url('http://'.$originpath);
+				if (isset($rule['query'])) {
 					//comma's and parens are allowed [',','(',')'] ['%2C','%28','%29']
-					$match['query'] = str_replace([' ',"'"],['%20','%27'], $match['query']);
+					$rule['query'] = str_replace([' ',"'"],['%20','%27'], $rule['query']);
 				}
 			
 				//need to check if the domain is in the $path
-				if (strrpos($this->request['host'], $match['host'])===false) {
+				if (strrpos($this->request['host'], $rule['host'])===false) {
 					if ($this->debug) $this->log[] = $this->request['host'].' !== '.$originpath.PHP_EOL;
 					continue;
 				}
 			}
 
-			$match['path'] 			= (!isset($match['path'])) ?  '/' : $match['path'];
-			$match['redirect']		= $redirect;
-
-			//if ($this->debug) $this->log[] =  "RULE: {$rule}";
-			
+			$rule['path'] 			= (!isset($rule['path'])) ?  '/' : $rule['path'];
+			$rule['query']			= (!isset($rule['query'])) ? ''	: $rule['query'];
+			$rule['redirect']		= $redirect;
+		
 			//match both the path and query
 			if (
-				(isset($this->request['query']) && isset($match['query'])) 
-				&& strtolower($this->request['path'].'?'.$this->request['query']) == strtolower($match['path'].'?'.strtolower($match['query']))
+				(isset($this->request['query']) && isset($rule['query'])) 
+				&& strtolower($this->request['path'].'?'.$this->request['query']) == strtolower($rule['path'].'?'.strtolower($rule['query']))
 				) {
-				//if ($this->debug) $this->log[] = 'Path matches: ' .$this->request['path'].'?'.$this->request['query'] . ' == ' .$match['path'].'?'.$match['query'];
-				$match['include_path'] = 0;
+				// this means include the old path from the original string, not the redirect, only used in wildcards.
+				$rule['include_path'] = 0;
+				$rule['RULE_NAME'] = 'QUERY_AND_PATH_MATCH';
 				$querymatch = true;
-				array_unshift($this->potentials, array('rule' => $rule, 'match' => $match,'complete'=>1));
+				array_unshift($this->potentials, array('line' => $line, 'rule' => $rule,'complete'=>1));
 			}
-
-			//match just the path
-			elseif (isset($this->request['path']) && strtolower(trim($this->request['path'],' /')) == strtolower(trim($match['path'],' /'))) {
-				//if ($this->debug) $this->log[] = 'Path matches: ' .$this->request['path'] . ' == ' .$match['path'];
-				$match['include_path'] = 0;
+			elseif (isset($this->request['query']) && (stripos($rule['query'], 'rule_trigger_api_or_a1') > 0) &&
+			(stripos($this->request['query'],'api_rd')>0)) {
+				echo $path = strtolower($this->request['query']);
+				if (strpos($path,'api_rd')>0) {
+					$rule['redirect'] ='https://donate.ucsfbenioffchildrens.org';
+				} else {
+					$rule['redirect'] ='https://giving.ucsf.edu';
+				}
+				$rule['include_path'] = 0;
+				$rule['RULE_NAME'] = 'RULE_TRIGGER_API_OR_A1';
 				$function =  ($querymatch) ? 'array_push' : 'array_unshift';
-				$function($this->potentials, array('rule' => $rule, 'match' => $match,'complete'=>1));
+				
+				$function($this->potentials, array('line'=>$line,'rule'=>$rule,'complete'=>1));
 			}
+			//match just the path
+			elseif (isset($this->request['path']) && strtolower(trim($this->request['path'],' /')) == strtolower(trim($rule['path'],' /'))) {
+				//if ($this->debug) $this->log[] = 'Path matches: ' .$this->request['path'] . ' == ' .$rule['path'];
+				$rule['include_path'] = 0;
+				$rule['RULE_NAME'] = 'PATH_MATCH';
+				$function =  ($querymatch) ? 'array_push' : 'array_unshift';
+				$function($this->potentials, array('line' => $line, 'rule' => $rule,'complete'=>1));
+			}
+			
 
 			//really match anything after the slash and redirect to equivalent path
-			elseif (strpos($match['path'],'*')) {
-				$returnedPath = $this->subpathMatch($this->request, $match, $redirect);
+			elseif (strpos($rule['path'],'*')) {
+				$returnedPath = $this->subpathMatch($this->request, $rule, $redirect);
 				if ($returnedPath) {
 					if ($returnedPath===true) {
-						//just empty the path since it matched exact and we don't want to route to it.
 						if ($this->debug) $this->log[] = 'Delete the matching subpath, then append remaining path.';
-						$match['path'] = '';
+						$rule['path'] = '';
 					} else {
 						if ($this->debug) $this->log[] = 'Append the returned path.';
-						$match['path'] = $returnedPath;
+						$rule['path'] = $returnedPath;
 					}
-					$match['include_path'] 	= 1;
+					// this means include the old path from the original string, not the redirect, only used in wildcards.
+					$rule['include_path'] 	= 1;
+					$rule['RULE_NAME'] = 'WILDCARD_PATH_REDIRECT';
 					$function =  ($querymatch) ? 'array_push' : 'array_unshift';
 					//this should get lower priority
-					$function($this->potentials, array('rule'=>$rule,'match'=>$match,'complete'=>1));
+					$function($this->potentials, array('line'=>$line,'rule'=>$rule,'complete'=>1));
 				} else {
-					if ($this->debug) $this->log[] = 'No return path with * rule: ' .$this->request['path'] . ' == ' .$match['path'];
-					$match['include_path'] = 0;
-					array_push($this->potentials, array('rule'=>$rule,'match'=>$match,'complete'=>0));
+					if ($this->debug) $this->log[] = 'No return path with * rule: ' .$this->request['path'] . ' == ' .$rule['path'];
+					$rule['include_path'] = 0;
+					$rule['RULE_NAME'] = 'WILDCARD_REDIRECT_INCONCLUSIVE';
+					array_push($this->potentials, array('line'=>$line,'rule'=>$rule,'complete'=>0));
 				}
 			}
-
-			//match just the host
-			elseif ($match['host'] == $this->request['host']) {
-				//if ($this->debug) $this->log[] = 'Found only host: ' .$this->request['host'] . ' == ' .$match['host'];
-				$match['include_path'] = 0;
-				array_push($this->potentials, array('rule'=>$rule,'match'=>$match,'complete'=>0));
+		
+			elseif ($rule['host'] == $this->request['host']) {
+				$rule['include_path'] = 0;
+				$rule['RULE_NAME'] = 'ONLY_HOST_MATCHES';
+				array_push($this->potentials, array('line'=>$line,'rule'=>$rule,'complete'=>0));
 			}
 
 			//if not wildcard rule, if the paths don't match then skip it.
-			if (isset($match['path']) && !strpos($match['path'],'/*')===false) {
+			if (isset($rule['path']) && !strpos($rule['path'],'/*')===false) {
 				//check if the path after the domain is matching, if not skip.
 				//echo 'MATCH PATH:  '.$match['path'].PHP_EOL;
 				//echo 'REQUEST PATH:'.$this->request['path'].PHP_EOL;
-
-				if (isset($this->request['path']) && isset($match['path'])) {
-					if (!strpos(trim($this->request['path']), $match['path'] > 0)) {
+				if (isset($this->request['path']) && isset($rule['path'])) {
+					if (!strpos(trim($this->request['path']), $rule['path'] > 0)) {
 						continue;
 					}
 				}
@@ -237,17 +259,17 @@ class redirectToRule {
 
 			$route = $this->potentials[0];
 
-			if ($route['match']['include_path']!=false && $route['complete']==1) {
-				if ($this->debug) $this->log[] = 'Include_path: true  Path: '.$route['match']['path'].' Complete: true';
+			if ($route['rule']['include_path']!=false && $route['complete']==1) {
+				if ($this->debug) $this->log[] = 'Include_path: true  Path: '.$route['rule']['path'].' Complete: true';
 				if ($this->debug) Performance::finish();
-				return $route['match']['redirect'].$route['match']['path'];
+				return $route['rule']['redirect'].$route['rule']['path'];
 			}
 			else {
 				if ($route['complete']==1) {
 					if ($this->debug) Performance::finish();
-					return $route['match']['redirect'];
+					return $route['rule']['redirect'];
 				} else {
-					$root = parse_url($route['match']['redirect']);
+					$root = parse_url($route['rule']['redirect']);
 					if ($this->debug) Performance::finish();
 					return 'http://'.$root['host'];
 				}
