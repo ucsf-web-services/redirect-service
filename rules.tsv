@@ -2120,7 +2120,7 @@ makeagift.ucsf.edu/schools	https://giving.ucsf.edu/category/0ZG8Z000000oYJVWA2?a
 makeagift.ucsf.edu/education	https://giving.ucsf.edu/category/0ZG8Z000000oYJVWA2?appealCode=AEA19
 makeagift.ucsf.edu/studentsupport	https://giving.ucsf.edu/category/0ZG8Z000000oYJVWA2
 makeagift.ucsf.edu/alumni	https://giving.ucsf.edu/fund/01t8Z00000BdU7lQAF
-makeagift.ucsf.edu/supporter	https://giving.ucsf.edu/category/0ZG8Z000000oYKNWA2?appealCode=11YANNWQ&utm_medium=print&utm_source=ASGVANITY&utm_campaign=ASGGP
+makeagift.ucsf.edu/supporter	https://giving.ucsf.edu/fund/01t8Z00000BdU7lQAF
 makeagift.ucsf.edu/neurosciences	https://giving.ucsf.edu/fund/01t8Z00000BdTsWQAV
 makeagift.ucsf.edu/MIGS-UroGyn	https://giving.ucsf.edu/category/0ZG8Z000000oYJdWAM
 makeagift.ucsf.edu/directorscircle	https://giving.ucsf.edu/fund/01t8Z00000BdTyPQAV?appealCode=11XDIRW
@@ -3449,9 +3449,15 @@ makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSGivingForm&ACode=C10.256
 makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSGivingForm&Other=Oakland Social Services (818135)&AppealCode=KDC24&utm_source=bch&utm_medium=do_outreach&utm_campaign=BCHO_Social_Services_2020	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000AdaQhQAJ?appealCode=KDC24&utm_source=bch&utm_medium=do_outreach&utm_campaign=BCHO_Social_Services_2020
 makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSOAKGivingForm&Other=Social Services Oakland (836050)	https://donate.ucsfbenioffchildrens.org/fund/01t8Z00000AdaAnQAJ
 makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=Diabetes  https://giving.ucsf.edu/category/detail/0ZG8Z000000oYJAWA2
+makeagift.ucsf.edu/cancerfund	https://giving.ucsf.edu/fund/01t8Z00000BdTvwQAF?appealCode=11EWEB&utm_medium=print&utm_source=ASGVANITY&utm_campaign=ASGGP
+makeagift.ucsf.edu/giving	https://giving.ucsf.edu/fund/01t8Z00000BdU7LQAV?appealCode=11YANNWG&utm_medium=print&utm_source=ASGVANITY&utm_campaign=ASGGP
+makeagift.ucsf.edu/impact	https://giving.ucsf.edu/fund/01t8Z00000BdTvwQAF?appealCode=11YANNWE&utm_medium=print&utm_source=ASGVANITY&utm_campaign=ASGGP
+makeagift.ucsf.edu/cancer	https://giving.ucsf.edu/fund/cancer-centers-greatest-needs/01t8Z00000BdTvwQAF?appealCode=11EWEB&utm_medium=print&utm_source=ASGVANITY&utm_campaign=ASGGP
+makeagift.ucsf.edu/supporter	https://giving.ucsf.edu/category/0ZG8Z000000oYKNWA2?appealCode=11YANNWQ&utm_medium=print&utm_source=ASGVANITY&utm_campaign=ASGGP
+makeagift.ucsf.edu/sustaining	https://giving.ucsf.edu/fund/01t8Z00000BdU7LQAV?appealCode=11SWELS&donationType=monthly&utm_medium=print&utm_source=ASGVANITY&utm_campaign=ASGGP
+makeagift.ucsf.edu/grateful	https://giving.ucsf.edu/fund/01t8Z00000BdU7LQAV?appealCode=11SBRAND&utm_medium=print&utm_source=ASGVANITY&utm_campaign=ASGGP
 makeagift.ucsf.edu/site/SPageServer	https://giving.ucsf.edu
 makeagift.ucsf.edu/site/SPageServer?pagename=RULE_TRIGGER_API_OR_A1	https://giving.ucsf.edu
-orthodeskagent.ucsf.edu	https://ucsfortho.zendesk.com/agent/
+orthodeskagent.ucsf.edu	https://ucsfortho.zendesk.com/agent
 weissmanlab.ucsf.edu	http://weissman.wi.mit.edu
 analytics.ucsf.edu	https://scuba.ucsf.edu/
-eiaintake.ucsf.edu	https://ucsf.service-now.com/ucsfit?id=ucsf_sc_cat_item&sys_id=d90ac7fc1b6c0e50582aec27b04bcb2c&sysparm_category=7886c3cf2beab98019d7c71317da1598
