@@ -1925,7 +1925,22 @@ drupal.ucsf.edu/content/how-publish-content	https://it.ucsf.edu/how-to/site-buil
 drupal.ucsf.edu/content/how-site-name-change	https://it.ucsf.edu/how-to/site-builder-website-name-change
 drupal.ucsf.edu/content/turn-logging-and-errors	https://it.ucsf.edu/service/web-hosting
 goodarzilab.ucsf.edu	https://arcinstitute.org/labs/goodarzilab
-giving.ucsf.eduh	https://giving-prod.ucsf.edu
+orthodeskagent.ucsf.edu	https://ucsfortho.zendesk.com/agent
+weissmanlab.ucsf.edu	http://weissman.wi.mit.edu
+analytics.ucsf.edu	https://scuba.ucsf.edu/
+shpr.ucsf.edu	https://ophd.ucsf.edu/
+sexualviolence.ucsf.edu	https://ophd.ucsf.edu/
+sexualassault.ucsf.edu	https://ophd.ucsf.edu/
+eiaintake.ucsf.edu	https://ucsf.service-now.com/ucsfit?id=ucsf_sc_cat_item&sys_id=d90ac7fc1b6c0e50582aec27b04bcb2c&sysparm_category=7886c3cf2beab98019d7c71317da1598
+cpr.ucsf.edu	https://cbr.ucsf.edu/
+celldesign.ucsf.edu	https://www.celldesigninstitute.org/
+andersonlab.ucsf.edu	https://diabetes.ucsf.edu/lab/anderson-lab
+ambulatory.ucsfmedicalcenter.org	https://ambulatory.ucsf.edu
+sedgwick.ucsf.edu	https://login.ucsf.edu/home/uc-sf_sedgwick_1/0oafksvsswHQz25Cw5d7/alnfkt62tqTuihK8k5d7
+symplr.ucsf.edu	https://uocs1540.apihealthcare.com/apihc/tass/webportal/apihealthcare_uocs1540_live/
+#
+# Make a gift redirects
+giving.ucsf.edu	https://giving-prod.ucsf.edu
 makeagift.ucsf.edu	https://giving.ucsf.edu
 makeagift.ucsf.edu/notes-and-words	https://www.notesandwords.org
 makeagift.ucsf.edu/ballet	https://giving.ucsf.edu/fund/01t8Z00000BdU7LQAV
@@ -3457,16 +3472,5 @@ makeagift.ucsf.edu/supporter	https://giving.ucsf.edu/category/0ZG8Z000000oYKNWA2
 makeagift.ucsf.edu/sustaining	https://giving.ucsf.edu/fund/01t8Z00000BdU7LQAV?appealCode=11SWELS&donationType=monthly&utm_medium=print&utm_source=ASGVANITY&utm_campaign=ASGGP
 makeagift.ucsf.edu/grateful	https://giving.ucsf.edu/fund/01t8Z00000BdU7LQAV?appealCode=11SBRAND&utm_medium=print&utm_source=ASGVANITY&utm_campaign=ASGGP
 makeagift.ucsf.edu/site/SPageServer	https://giving.ucsf.edu
-makeagift.ucsf.edu/site/SPageServer?pagename=RULE_TRIGGER_API_OR_A1	https://giving.ucsf.edu
 makeagift.ucsf.edu/site/SPageServer?pagename=A1_API_GeneralGivingForm&Primary=AIDS&ACode=B2030	https://giving.ucsf.edu/category/0ZG8Z000000oYHWWA2
-orthodeskagent.ucsf.edu	https://ucsfortho.zendesk.com/agent
-weissmanlab.ucsf.edu	http://weissman.wi.mit.edu
-analytics.ucsf.edu	https://scuba.ucsf.edu/
-shpr.ucsf.edu	https://ophd.ucsf.edu/
-sexualviolence.ucsf.edu	https://ophd.ucsf.edu/
-sexualassault.ucsf.edu	https://ophd.ucsf.edu/
-eiaintake.ucsf.edu	https://ucsf.service-now.com/ucsfit?id=ucsf_sc_cat_item&sys_id=d90ac7fc1b6c0e50582aec27b04bcb2c&sysparm_category=7886c3cf2beab98019d7c71317da1598
-cpr.ucsf.edu	https://cbr.ucsf.edu/
-celldesign.ucsf.edu	https://www.celldesigninstitute.org/
-andersonlab.ucsf.edu	https://diabetes.ucsf.edu/lab/anderson-lab
-ambulatory.ucsfmedicalcenter.org	https://ambulatory.ucsf.edu
+makeagift.ucsf.edu/site/SPageServer?pagename=RULE_TRIGGER_API_OR_A1	https://giving.ucsf.edu
