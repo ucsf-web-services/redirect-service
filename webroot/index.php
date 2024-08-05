@@ -66,13 +66,17 @@ class redirectToRule {
 			$this->enableDebugging();
 		}
 		$this->request  		= parse_url($this->request_string);
-		
+	
 		if ($debug) {
 			Performance::point( 'contructor' );
 			$this->enableDebugging();
 			if ($this->is_docksal) 	echo "THIS IS DOCKSAL!";
 		}
-		
+
+		if ($request['HTTP_HOST']=='makeagift.ucsf.edu') {
+			$this->rulesFile = '../makeagift_rules.tsv';
+		}
+
 		if ($this->debug) echo '<pre>';
 		if ($this->debug) echo 'Request Array: ' . print_r($this->request, true);
 		//do nothing with these sophos scanner requests, hundreds of these are happening per second?
