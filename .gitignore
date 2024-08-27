@@ -22,3 +22,4 @@ sites/all/themes/README.txt
 /nbproject/private/
 rules-test.tsv
 rules_original.tsv
+.vscode
