@@ -23,3 +23,4 @@ sites/all/themes/README.txt
 rules-test.tsv
 rules_original.tsv
 .vscode
+.docksal/docksal-local.yml
