@@ -2043,4 +2043,10 @@ bariatricsurgery.ucsf.edu	https://generalsurgery.ucsf.edu/bariatric-and-metaboli
 cranesstudy.ucsf.edu	https://cranestudy.ucsf.edu/
 justice.ucsf.edu	https://propelscholars.org/matchmaking-event
 financesecure.ucsf.edu	https://finance.ucsf.edu/
-tech.ucsf.edu	https://medschool.ucsf.edu/faculty-staff/strategic-programs-digital-innovation
+tech.ucsf.edu/*	https://medschool.ucsf.edu/faculty-staff/strategic-programs-digital-innovation
+6to8weeks.ucsf.edu/*	https://orthosurgery.ucsf.edu/outreach/local/podcast--6-8-Weeks-Perspectives-on-Sports-Medicine
+docsf.ucsf.edu/*	https://orthosurgery.ucsf.edu/education/programs/docsf
+skeletalhealth.ucsf.edu/*	https://orthosurgery.ucsf.edu/patient-care/services/skeletal-health
+sportsmedicine.ucsf.edu/*	https://orthosurgery.ucsf.edu/patient-care/services/Sports-Medicine
+pamdashhelp.ucsf.edu/*	https://controller.ucsf.edu/software-system/proposal-award-metrics-dashboard-pamdash
+shirvalkarlab.ucsf.edu/*	https://www.shirvalkarlab.com/	
