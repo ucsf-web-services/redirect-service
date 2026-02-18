@@ -60,13 +60,14 @@ class redirectToRule {
 		}
 		
 		$this->request_string 	= 'http://'.$request['HTTP_HOST'].$request['REQUEST_URI'];
+	
 		if (stripos($this->request_string, '&debug')) {
 			$this->request_string = str_replace('&debug', '', $this->request_string);
 			Performance::point( 'contructor' );
 			$this->enableDebugging();
 		}
 		$this->request  		= parse_url($this->request_string);
-	
+
 		if ($debug) {
 			Performance::point( 'contructor' );
 			$this->enableDebugging();
@@ -78,7 +79,7 @@ class redirectToRule {
 		}
 
 		if ($this->debug) echo '<pre>';
-		if ($this->debug) echo 'Request Array: ' . print_r($this->request, true);
+		if ($this->debug) echo '$THIS->REQUEST: ' . print_r($this->request, true);
 		//do nothing with these sophos scanner requests, hundreds of these are happening per second?
 		if (isset($this->request['path']) && stristr($this->request['path'],'/sophos/update/')) {
 			exit();
@@ -111,7 +112,6 @@ class redirectToRule {
 
 		$rules 	= file($this->rulesFile, FILE_IGNORE_NEW_LINES);
 		$querymatch = false;
-		//print_r($this->request);
 
 		//should only read the external file if we know we have a valid redirect...
 		foreach ($rules as $line) {
@@ -154,6 +154,8 @@ class redirectToRule {
 				list($originpath, $redirect) = explode("\t", $line);
 				
 				$rule = parse_url('http://'.$originpath);
+				//echo "PRINT RULE: ";
+				//print_r($rule);
 				if (isset($rule['query'])) {
 					//comma's and parens are allowed [',','(',')'] ['%2C','%28','%29']
 					$rule['query'] = str_replace([' ',"'"],['%20','%27'], $rule['query']);
@@ -169,7 +171,7 @@ class redirectToRule {
 			$rule['path'] 			= (!isset($rule['path'])) ?  '/' : $rule['path'];
 			$rule['query']			= (!isset($rule['query'])) ? ''	: $rule['query'];
 			$rule['redirect']		= $redirect;
-		
+			
 			//match both the path and query
 			if (
 				(isset($this->request['query']) && isset($rule['query'])) 
@@ -183,7 +185,7 @@ class redirectToRule {
 			}
 			elseif (isset($this->request['query']) && (stripos($rule['query'], 'rule_trigger_api_or_a1') > 0) &&
 			(stripos($this->request['query'],'api_rd')>0)) {
-				echo $path = strtolower($this->request['query']);
+				$path = strtolower($this->request['query']);
 				if (strpos($path,'api_rd')>0) {
 					$rule['redirect'] ='https://donate.ucsfbenioffchildrens.org';
 				} else {
@@ -193,6 +195,17 @@ class redirectToRule {
 				$rule['RULE_NAME'] = 'RULE_TRIGGER_API_OR_A1';
 				$function =  ($querymatch) ? 'array_push' : 'array_unshift';
 				
+				$function($this->potentials, array('line'=>$line,'rule'=>$rule,'complete'=>1));
+			}
+			elseif (in_array($this->request['host'], ['tableau.ucsf.edu', 'tableauqa.ucsf.edu', 'tableaupublic.ucsf.edu']) && (stripos($rule['query'], 'RULE_TRIGGER_TABLEAU') > 0)) {
+				
+				$rule['include_path'] = 0;
+				$rule['RULE_NAME'] = 'RULE_TRIGGER_TABLEAU';
+				$function =  ($querymatch) ? 'array_push' : 'array_unshift';
+				$path = '';
+				//echo "FRAGMENT: "; 
+				//print_r($this->request['fragment']);
+				$rule['redirect'] .= str_ireplace(['/site/QA'], $path, $this->request['fragment']);
 				$function($this->potentials, array('line'=>$line,'rule'=>$rule,'complete'=>1));
 			}
 			//match just the path
@@ -379,14 +392,16 @@ $_SERVER['HTTP_HOST'] = 'oaais.ucsf.edu';
 $_SERVER['HTTPS'] = true;
 $_SERVER['REQUEST_URI']='/students/student_email/287-DSY/spam/g1/966-DSY.html';
  */
-/* 
+/*
 $url = "http://";
-$url .= "makeagift.ucsf.edu/site/SPageServer?pagename=API_RD_CHFSGivingForm&Other=Creative+Arts+Fund+(B2681)&utm_source=creative_arts&utm_medium=sharelink&utm_campaign=childlife";
+$url = "http://tableau.ucsf.edu/#/views/EnterpriseWebsiteAccessibilityComplianceDashboard/EnterpriseADACompliance?:iid=1";
+$url  = "https://tableaupublic.ucsf.edu/#/views/UCSFFacultyHeadcount/FacultyHeadcountbyEthnicity";
 $_SERVER = array();
 
 $_SERVER['HTTPS'] = false;
-$_SERVER['HTTP_HOST'] = parse_url($url, PHP_URL_HOST);
-$_SERVER['REQUEST_URI']= parse_url($url, PHP_URL_PATH);
- */
+$_SERVER['HTTP_HOST'] 	= parse_url($url, PHP_URL_HOST);
+$_SERVER['REQUEST_URI'] = parse_url($url, PHP_URL_PATH);
+$_SERVER['REQUEST_URI'] .= '#' . parse_url($url, PHP_URL_FRAGMENT);
+*/
 $redirect = new redirectToRule($_SERVER, false);
 $redirect->redirect();

@@ -1,2 +1,5 @@
 # DOMAIN TO REDIRECT 	DESTINATION
 makeagift.ucsf.edu/site/SPageServer?pagename=RULE_TRIGGER_API_OR_A1	https://giving.ucsf.edu
+tableau.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/site/ucsfprd
+tableauqa.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/site/ucsftst
+tableaupublic.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/site/ucsfpub

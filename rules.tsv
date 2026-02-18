@@ -2073,3 +2073,6 @@ software.ucsf.edu	https://it.ucsf.edu/software
 ucsffuture.ucsf.edu	https://www.ucsf.edu/parnassus-initiative
 diiannilab.ucsf.edu	https://diiannilab.org/*
 ucsfuture.ucsf.edu	https://www.ucsf.edu/parnassus-initiative
+tableau.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/site/ucsfprd
+tableauqa.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/site/ucsftst
+tableaupublic.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/site/ucsfpub
