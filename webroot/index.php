@@ -197,7 +197,7 @@ class redirectToRule {
 				
 				$function($this->potentials, array('line'=>$line,'rule'=>$rule,'complete'=>1));
 			}
-			elseif (in_array($this->request['host'], ['tableau.ucsf.edu', 'tableauqa.ucsf.edu', 'tableaupublic.ucsf.edu']) && (stripos($rule['query'], 'RULE_TRIGGER_TABLEAU') > 0)) {
+			elseif (in_array($this->request['host'], ['tableau.ucsf.edu', 'tableauqa.ucsf.edu', 'tableaupublic.ucsf.edu','tableau-snd.ucsf.edu']) && (stripos($rule['query'], 'RULE_TRIGGER_TABLEAU') > 0)) {
 				
 				$rule['include_path'] = 0;
 				$rule['RULE_NAME'] = 'RULE_TRIGGER_TABLEAU';
