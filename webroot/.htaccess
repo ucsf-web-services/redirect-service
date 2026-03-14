@@ -1,4 +1,8 @@
+DirectoryIndex tableau.php
+
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.php [L,QSA]
+RewriteRule ^(.*)$ tableau.php [NE,L,QSA]
+
+
