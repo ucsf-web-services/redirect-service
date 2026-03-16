@@ -1,0 +1,5 @@
+# DOMAIN TO REDIRECT 	DESTINATION
+tableau.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/site/ucsfprd
+tableauqa.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/site/ucsftst
+tableaupublic.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/site/ucsfpub
+tableau-snd.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/site/ucsfsnd

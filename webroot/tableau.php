@@ -38,7 +38,7 @@ class redirectToRule {
 	public $pathRemap	 	= false;
 	public $pathRemapUrl	= null;
 	//the file that contains the rule set
-	public $rulesFile		= '../rules.tsv';
+	public $rulesFile		= '../tableau.tsv';
 
 	//if enabled show log and errors on screen, don't redirect to destination
 	public $debug			= false;
@@ -60,7 +60,7 @@ class redirectToRule {
 		parse_str($this->request['query'], $query);
 		$this->request['host'] = parse_url($query['url'], PHP_URL_HOST);
 
-		echo "<pre>";
+		//echo "<pre>";
 		//print_r($this->request);
 		$this->is_docksal		= getenv('IS_DOCKSAL') ? true : false;
 		if ($this->is_docksal) {
@@ -80,10 +80,6 @@ class redirectToRule {
 			// Performance::point( 'contructor' );
 			$this->enableDebugging();
 			if ($this->is_docksal) 	echo "THIS IS DOCKSAL!";
-		}
-
-		if ($this->request['host']=='makeagift.ucsf.edu') {
-			//$this->rulesFile = '../makeagift_rules.tsv';
 		}
 
 		if ($this->debug) echo '<pre>';
@@ -281,9 +277,7 @@ class redirectToRule {
 		// if ($this->debug) Performance::point('determine routes');
 
 		if (isset($this->potentials[0])) {
-
 			$route = $this->potentials[0];
-
 			if ($route['rule']['include_path']!=false && $route['complete']==1) {
 				if ($this->debug) $this->log[] = 'Include_path: true  Path: '.$route['rule']['path'].' Complete: true';
 				// if ($this->debug) Performance::finish();
@@ -302,7 +296,7 @@ class redirectToRule {
 		} else {
 			// if ($this->debug) Performance::finish();
 			header('HTTP/1.1 404 Not Found');
-			echo "Could not find redirect path for given domain.";
+			echo '{ "error" : "Could not find redirect path for given domain." }';
 			die();
 		}
 	}
@@ -369,24 +363,17 @@ class redirectToRule {
 		if ($this->debug)  $this->log[] = print_r($this->potentials,true);
 		if ($this->debug)  $this->log[] =  'REDIRECT: '.$this->request_string.' TO: '.$this->redirectTo;
 		if ($this->debug)  $this->outputLog();
-
 		if (!$this->debug) {
-			/**
-			 * @todo - Cache control on the day of release
-			 * If the redirect file is updated and the script runs then start sending out
-			 * header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
-			 *
-			 */
-		
 			//header('HTTP/1.1 301 Moved Permanently');
 			header('Cache-Control: no-store, no-cache, must-revalidate');
 			header('Content-Type: application/json');
 			echo "{ 
-					\"href\" :  \"{$href}\", 
-					\"hash\" : \"{$hash}\" 
+					\"url\" :  \"{$this->redirectTo}\"
 					}";
 			exit;
 		} else {
+			
+			echo '{ "error" : "Debugging currently enabled." }';
 			//Performance::finish();
 			//Performance::results();
 		}
@@ -395,15 +382,51 @@ class redirectToRule {
 
 if (isset($_POST['url'])) {
 
-	$redirect = new redirectToRule($_POST['url'], true);
+	$redirect = new redirectToRule($_POST['url'], false);
 	$redirect->redirect();
 } else {
-
-
 ?>
-
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+	* {
+	margin: 0;
+	}
+	html, body { 
+		height: 100%;
+		font-size: 14px;
+	}
+	.waitblock {
+		position: relative;
+		top: 33%;
+		margin: 0 auto;
+		display:  block;
+		width: 20em;
+		height: 250px;
+		border: 0px solid grey;
+		text-align: center;
+		font-size: 1.3em;
+		color: #a8a8a8d8;
+		
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+	.waitblock p {
+		margin-top: 0.5em;
+	}
+	.hidden {
+		display: none;
+	}
+	.error {
+		color: #993333;
+	}
+</style>
+</head>
+<body>
+<div class="waitblock">
+	<img src="./images/wait.gif" width="175" height="175" alt="Waiting for process to complete." id="waiting" />
+	<p id="processtext" class="">Processing Tableau redirect...</p>
+</div>
 <script>
 	async function submitHash() {
 		const hashForm = new FormData();
@@ -412,16 +435,30 @@ if (isset($_POST['url'])) {
 			method: "POST",
 			body: hashForm
 		});
-		console.log(await response.json());
+		return response;
 	}
 
 	// Call start
 	(async() => {
-	await submitHash();
+		const response = await submitHash();
+		const data = await response.json();
+		console.log(data);
+		const hasURL = data.hasOwnProperty('url');
+		if (hasURL) {
+			console.log('Would redirect to: ' + data.url);
+			window.location.assign(data.url);
+		} else {
+			const hasError = data.hasOwnProperty('error');
+			const img = document.getElementById('waiting');
+			const text = document.getElementById('processtext');
+			img.classList.add('hidden');
+			text.classList.add('error');
+			//handle the error;
+			text.innerHTML = data.error;
+			console.log(data.error);
+		}
 	})();
-
 </script>
-
-
+</body>
 </html>
 <?php } 
