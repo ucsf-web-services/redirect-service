@@ -3,3 +3,6 @@ tableau.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/si
 tableauqa.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/site/ucsftst
 tableaupublic.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/site/ucsfpub
 tableau-snd.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/site/ucsfsnd
+# tableau.ucsf.edu  https://tableauprd.ucsf.edu/#/site/ucsfprd
+# tableauqa.ucsf.edu  https://tableautst.ucsf.edu/#/site/ucsftst
+# tableaupublic.ucsf.edu   https://tableaupub.ucsf.edu/#/site/ucsfpub
