@@ -37,7 +37,7 @@ class redirectToRule {
 	public $pathRemap	 	= false;
 	public $pathRemapUrl	= null;
 	//the file that contains the rule set
-	public $rulesFile		= '../tableau.tsv';
+	public $rulesFile		= './tableau.tsv';
 
 	//if enabled show log and errors on screen, don't redirect to destination
 	public $debug			= false;
