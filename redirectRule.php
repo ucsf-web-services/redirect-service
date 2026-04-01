@@ -37,7 +37,7 @@ class redirectToRule {
 	public $pathRemap	 	= false;
 	public $pathRemapUrl	= null;
 	//the file that contains the rule set
-	public $rulesFile		= './tableau.tsv';
+	public $rulesFile		= '../tableau.tsv';
 
 	//if enabled show log and errors on screen, don't redirect to destination
 	public $debug			= false;
@@ -57,7 +57,7 @@ class redirectToRule {
 		
 		$this->request = parse_url($request);
 		parse_str($this->request['query'], $query);
-		$this->request['host'] = parse_url($query['url'], PHP_URL_HOST);
+		//$this->request['host'] = parse_url($request, PHP_URL_HOST);
 
 		//echo "<pre>";
 		//print_r($this->request);
