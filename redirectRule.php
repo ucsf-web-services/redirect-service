@@ -23,13 +23,15 @@
 
 // use Performance\Performance;
 use Psr\Log\LogLevel;
-
+define("NEW_LINE", "<br>\n");
 
 class redirectToRule {
 
 	//should be the original server request array
 	public $request 		= null;
 	public $request_string 	= '';
+
+	public $queryArray = [];
 	//if no exact rule found we can route to defaultHost
 	public $defaultHost     = null; //host line found so use this line if all else fails.
 
@@ -41,8 +43,8 @@ class redirectToRule {
 
 	//if enabled show log and errors on screen, don't redirect to destination
 	public $debug			= false;
-	public $log				= array();
-
+	public $log				= [];
+	
 	//final destination from rules
 	public $redirectTo		= null;
 
@@ -53,11 +55,12 @@ class redirectToRule {
 
 	public function __construct($request, $debug=false, $rulesFile=null)
 	{
-		define("NEW_LINE", "<br>\n");
-		
+
+		$this->request_string = $request;
 		$this->request = parse_url($request);
-		parse_str($this->request['query'], $query);
-		//$this->request['host'] = parse_url($request, PHP_URL_HOST);
+		
+		parse_str($request, $query);
+		$this->queryArray = $query;
 
 		//echo "<pre>";
 		//print_r($this->request);
@@ -71,7 +74,7 @@ class redirectToRule {
 		if (stripos($this->request_string, '&debug')) {
 			$this->request_string = str_replace('&debug', '', $this->request_string);
 			// Performance::point( 'contructor' );
-			$this->enableDebugging();
+			$this->debug = true;
 		}
 	
 
@@ -81,8 +84,8 @@ class redirectToRule {
 			if ($this->is_docksal) 	echo "THIS IS DOCKSAL!";
 		}
 
-		if ($this->debug) echo '<pre>';
-		if ($this->debug) echo '$THIS->REQUEST: ' . print_r($this->request, true);
+		
+		if ($this->debug) $this->log[]  = print_r($this->request, true);
 		//do nothing with these sophos scanner requests, hundreds of these are happening per second?
 		if (isset($this->request['path']) && stristr($this->request['path'],'/sophos/update/')) {
 			exit();
@@ -157,8 +160,7 @@ class redirectToRule {
 				list($originpath, $redirect) = explode("\t", $line);
 				
 				$rule = parse_url('http://'.$originpath);
-				//echo "PRINT RULE: ";
-				//print_r($rule);
+			
 				if (isset($rule['query'])) {
 					//comma's and parens are allowed [',','(',')'] ['%2C','%28','%29']
 					$rule['query'] = str_replace([' ',"'"],['%20','%27'], $rule['query']);
@@ -181,8 +183,10 @@ class redirectToRule {
 				&& strtolower($this->request['path'].'?'.$this->request['query']) == strtolower($rule['path'].'?'.strtolower($rule['query']))
 				) {
 				// this means include the old path from the original string, not the redirect, only used in wildcards.
+
 				$rule['include_path'] = 0;
 				$rule['RULE_NAME'] = 'QUERY_AND_PATH_MATCH';
+				if ($this->debug) $this->log[] = 'QUERY_AND_PATH_MATCH Triggered.';
 				$querymatch = true;
 				array_unshift($this->potentials, array('line' => $line, 'rule' => $rule,'complete'=>1));
 			}
@@ -196,12 +200,13 @@ class redirectToRule {
 				}
 				$rule['include_path'] = 0;
 				$rule['RULE_NAME'] = 'RULE_TRIGGER_API_OR_A1';
+				if ($this->debug) $this->log[] = 'RULE_TRIGGER_API_OR_A1 Triggered.';
 				$function =  ($querymatch) ? 'array_push' : 'array_unshift';
 				
 				$function($this->potentials, array('line'=>$line,'rule'=>$rule,'complete'=>1));
 			}
 			elseif (in_array($this->request['host'], ['tableau.ucsf.edu', 'tableauqa.ucsf.edu', 'tableaupublic.ucsf.edu','tableau-snd.ucsf.edu']) && (stripos($rule['query'], 'RULE_TRIGGER_TABLEAU') > 0)) {
-				
+				if ($this->debug) $this->log[] = 'RULE_TRIGGER_TABLEAU Triggered.';
 				$rule['include_path'] = 0;
 				$rule['RULE_NAME'] = 'RULE_TRIGGER_TABLEAU';
 				$function =  ($querymatch) ? 'array_push' : 'array_unshift';
@@ -214,10 +219,12 @@ class redirectToRule {
 			//match just the path
 			elseif (isset($this->request['path']) && strtolower(trim($this->request['path'],' /')) == strtolower(trim($rule['path'],' /'))) {
 				if ($this->debug) $this->log[] = 'Path matches: ' .$this->request['path'] . ' == ' .$rule['path'];
+				if ($this->debug) $this->log[] = 'RULE_TRIGGER_TABLEAU Triggered.';
 				$rule['include_path'] = 0;
 				$rule['RULE_NAME'] = 'PATH_MATCH';
 				$function =  ($querymatch) ? 'array_push' : 'array_unshift';
 				$function($this->potentials, array('line' => $line, 'rule' => $rule,'complete'=>1));
+				
 			}
 			
 
@@ -235,6 +242,7 @@ class redirectToRule {
 					// this means include the old path from the original string, not the redirect, only used in wildcards.
 					$rule['include_path'] 	= 1;
 					$rule['RULE_NAME'] = 'WILDCARD_PATH_REDIRECT';
+					if ($this->debug) $this->log[] = 'WILDCARD_PATH_REDIRECT Triggered.';
 					$function =  ($querymatch) ? 'array_push' : 'array_unshift';
 					//this should get lower priority
 					$function($this->potentials, array('line'=>$line,'rule'=>$rule,'complete'=>1));
@@ -249,6 +257,7 @@ class redirectToRule {
 			elseif ($rule['host'] == $this->request['host']) {
 				$rule['include_path'] = 0;
 				$rule['RULE_NAME'] = 'ONLY_HOST_MATCHES';
+				if ($this->debug) $this->log[] = 'ONLY_HOST_MATCHES Triggered.';
 				array_push($this->potentials, array('line'=>$line,'rule'=>$rule,'complete'=>0));
 			}
 
@@ -336,32 +345,35 @@ class redirectToRule {
 	}
 
 	public function outputLog() {
-
+		$output = '';
 		if ($this->debug) {
-			//Performance::point( 'logger' );
-			echo '<pre>';
-			echo implode("\n\n", $this->log);
-			echo '</pre>';
+			$output =  '<pre>';
+			$output .= implode("\n\n", $this->log);
+			$output .= '</pre>';
+			return $output;
 		}
 		else {
+			//if ($this->debug) Performance::point( 'logger' );
 			$logger = new Katzgrau\KLogger\Logger(dirname(__DIR__).'/logs', LogLevel::INFO, array('extension'=>'log','prefix'=>'redirect_'));
 			//log the results to KLogger class
 			foreach($this->log as $l) {
 				$logger->info($l);
 			}
+			//if ($this->debug) 	Performance::finish();
 		}
 
-		//if ($this->debug) 	Performance::finish();
-		if ($this->debug) 	echo '</pre>';
+		
 		return true;
 	}
 
 
-	public function redirect() {
+	public function redirect($outputLog = false) {
 		// if ($this->debug)  Performance::point( 'redirect' );
 		if ($this->debug)  $this->log[] = print_r($this->potentials,true);
 		if ($this->debug)  $this->log[] =  'REDIRECT: '.$this->request_string.' TO: '.$this->redirectTo;
-		if ($this->debug)  $this->outputLog();
+		if ($this->debug && $outputLog)  $this->outputLog();
+		
+		
 		if (!$this->debug) {
 			//header('HTTP/1.1 301 Moved Permanently');
 			header('Cache-Control: no-store, no-cache, must-revalidate');
@@ -371,7 +383,10 @@ class redirectToRule {
 			    }";
 			exit;
 		} else {
-			echo '{ "error" : "Debugging currently enabled." }';
+			return "{ 
+			    \"url\" :  \"{$this->redirectTo}\"
+			    }";
+			// echo '{ "error" : "Debugging currently enabled." }';
 			//Performance::finish();
 			//Performance::results();
 		}
