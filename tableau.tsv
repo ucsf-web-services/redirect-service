@@ -1,6 +1,7 @@
 # DOMAIN TO REDIRECT 	DESTINATION
+# tableau.ucsf.edu	https://tableauprd.ucsf.edu/#/site/ucsfprd
+# tableauqa.ucsf.edu	https://tableautst.ucsf.edu/#/site/ucsftst
 tableau.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://tableauprod.ucsf.edu/#/site/ucsfprod
 tableauqa.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://tableautst.ucsf.edu/#/site/ucsftst
 tableau-snd.ucsf.edu/?rule=RULE_TRIGGER_TABLEAU	https://10ay.online.tableau.com/#/site/ucsfsnd
-# tableau.ucsf.edu	https://tableauprd.ucsf.edu/#/site/ucsfprd
-# tableauqa.ucsf.edu	https://tableautst.ucsf.edu/#/site/ucsftst
+tableauqa.ucsf.edu/#/site/QA/views/PRISM_MD-DM_VAT/ProviderVisitAnalyticsTool	https://10ay.online.tableau.com/#/site/ucsftst/views/PRISM_MD-DM_VAT_17706989150890/ProviderVisitAnalyticsTool
